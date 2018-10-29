@@ -54,10 +54,7 @@
 
 
 
-  <title>
-  Hexo
-  
-</title>
+  <title>  · Hexo </title>
 </head>
 <body>
   <div class="progress">
@@ -222,67 +219,11 @@
       <main class="main" id="main">
         <div class="main-wrapper">
           
-  
-
-<section class="posts">
-  
     
   
   <article class="
   post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-08-03</span>
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/08/03/HTML/"></a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
-      
-        
-          <p>title: “HTML笔记”</p>
-<h2 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h2><h2 id="lt-p"><a href="#lt-p" class="headerlink" title="\&lt;p/>"></a>\&lt;p/></h2><p>p标签内的文字自动换行设置:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">word-break</span><span class="selector-pseudo">:normal</span>;</span><br><span class="line"><span class="selector-tag">white-space</span><span class="selector-pseudo">:pre-warp</span>;</span><br><span class="line"><span class="selector-tag">word-wrapL</span><span class="selector-pseudo">:break-word</span>;</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>word-break属性：</p>
-<p> 在恰当的断字点进行换行。有三个值：normal(使用浏览器默认的换行规则)、break-all(允许单词内换行)、keep-all(只能在半角空格或连字符处换行)</p>
-</li>
-<li><p>white-space属性：</p>
-<p>white-space属性设置如何处理元素内的空白。</p>
-<p>这个属性声明建立布局中如何处理元素中的空白字符，有六个值：normal(默认。空白会被忽略)、pre(空白会被浏览器保留。其行为方式类似HTML代码中的<pre>标签)、</pre></p>
-<p>nowrap（文本不会换行，文本会在同一行上继续，直到遇到<br>标签为止）、pre-wrap（保留空白符序列，但是正常的换行）、pre-line（合并空白符序列，但是保留空白      符）、inherit（规定应该从父元素继承white-space属性的值）;</p>
-</li>
-<li><p>word-wrap属性：</p>
-<p>允许长单词换行到下一行；有两个值：normal（只允许在断字点换行）、break-word(在长单词或者URL地址内部进行换行)</p>
-</li>
-</ol>
-
-        
-      
-    
-    </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
+   is_post 
   ">
     <header class="post-header">
       <div class="post-time syuanpi fadeInUpShort back-1">
@@ -290,18 +231,19 @@
           <span>2018-07-31</span>
           
           
+            
+          
         </div>
       </div>
       <h1 class="post-title syuanpi fadeInUpShort back-2">
         
-          <a href="/2018/07/31/JS笔记/"></a>
+          
         
       </h1>
     </header>
     <div class="post-content syuanpi fadeInUpShort back-3">
       
-        
-          <p>title: “JS笔记”</p>
+        <p>title: “JS笔记”</p>
 <h2 id="第六章-面向对象的程序设计"><a href="#第六章-面向对象的程序设计" class="headerlink" title="第六章 面向对象的程序设计"></a>第六章 面向对象的程序设计</h2><h4 id="6-1-对象"><a href="#6-1-对象" class="headerlink" title="6.1 对象"></a>6.1 对象</h4><h5 id="6-1-1-理解对象"><a href="#6-1-1-理解对象" class="headerlink" title="6.1.1 理解对象"></a>6.1.1 理解对象</h5><p>无序属性的集合，其属性可以包含基本值，对象或者函数</p>
 <ol>
 <li>两种创建方法：</li>
@@ -1013,23 +955,76 @@ false:执行浅复制，只复制节点本身
 <p>通常添加一个隐藏表单字段，在提交表单之前，从iframe中提取出HTML，并插入隐藏的字段中</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">EventUtil.addHandler(form,<span class="string">"submit"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    event = EventUtil.getEvent(event);</span><br><span class="line">    <span class="keyword">var</span> target = EventUtil.getTarget(event);</span><br><span class="line">    </span><br><span class="line">    target.elements[<span class="string">"comments"</span>].value = frames[<span class="string">"richedit"</span>].document.body.innerHTML;<span class="comment">//frame元素</span></span><br><span class="line">    target.elements[<span class="string">"comments"</span>].value = <span class="built_in">document</span>.getElementById(<span class="string">"richedit"</span>).innerHTML <span class="comment">//contentditable元素</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-        
       
     
     </div>
     
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>John Doe</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://yoursite.com/2018/07/31/JS笔记/">http://yoursite.com/2018/07/31/JS笔记/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://yoursite.com">http://yoursite.com</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
   </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/2018/08/03/HTML/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>
+        </span>
+      </a>
+    
+    
+  </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
   
   
     
   
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop"></a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第六章-面向对象的程序设计"><span class="toc-text">第六章 面向对象的程序设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-对象"><span class="toc-text">6.1 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#6-1-1-理解对象"><span class="toc-text">6.1.1 理解对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-1-2-创建对象"><span class="toc-text">6.1.2 创建对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-继承"><span class="toc-text">6.2 继承</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#6-2-1-原型链继承"><span class="toc-text">6.2.1 原型链继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-2-2-借用构造函数"><span class="toc-text">6.2.2 借用构造函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-2-3组合继承"><span class="toc-text">6.2.3组合继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-2-4-原型式继承"><span class="toc-text">6.2.4 原型式继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-3-5-寄生式继承"><span class="toc-text">6.3.5 寄生式继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-3-6-寄生组合式继承-最理想"><span class="toc-text">6.3.6 寄生组合式继承(最理想)</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#第七章-函数"><span class="toc-text">第七章 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第八章-迭代器和生成器-ES6"><span class="toc-text">第八章  迭代器和生成器 ES6</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-迭代器-amp-amp-生成器"><span class="toc-text">8.1 迭代器&amp;&amp;生成器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#迭代器"><span class="toc-text">迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成器"><span class="toc-text">生成器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-可迭代对象和for-of循环"><span class="toc-text">8.2 可迭代对象和for-of循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#访问默认迭代器"><span class="toc-text">访问默认迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建可迭代对象"><span class="toc-text">创建可迭代对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-内建迭代器"><span class="toc-text">8.3 内建迭代器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#集合对象迭代器"><span class="toc-text">集合对象迭代器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#entries-迭代器"><span class="toc-text">entries()迭代器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#values-迭代器"><span class="toc-text">values()迭代器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#keys迭代器"><span class="toc-text">keys迭代器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不同集合类型的默认迭代器"><span class="toc-text">不同集合类型的默认迭代器</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串迭代器"><span class="toc-text">字符串迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NodeList迭代器"><span class="toc-text">NodeList迭代器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#展开运算符与非数组可迭代对象"><span class="toc-text">展开运算符与非数组可迭代对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-高级迭代器功能"><span class="toc-text">8.4 高级迭代器功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#给迭代器传递参数"><span class="toc-text">给迭代器传递参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成器返回语句"><span class="toc-text">生成器返回语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#委托生成器"><span class="toc-text">委托生成器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-异步任务执行"><span class="toc-text">8.5 异步任务执行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-1-简单任务执行器"><span class="toc-text">8.5.1 简单任务执行器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-2-像任务执行器传递数据"><span class="toc-text">8.5.2 像任务执行器传递数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-3-异步任务执行器"><span class="toc-text">8.5.3 异步任务执行器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十章-DOM"><span class="toc-text">第十章 DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-节点层次"><span class="toc-text">10.1 节点层次</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-1-Node类型"><span class="toc-text">10.1.1 Node类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#nodeName和nodeValue属性"><span class="toc-text">nodeName和nodeValue属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#节点关系"><span class="toc-text">节点关系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#操作节点"><span class="toc-text">操作节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一些其他方法"><span class="toc-text">一些其他方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-2-Document类型"><span class="toc-text">10.1.2 Document类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#document的子节点"><span class="toc-text">document的子节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#document的属性"><span class="toc-text">document的属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查找元素"><span class="toc-text">查找元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#特殊集合"><span class="toc-text">特殊集合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一致性检测"><span class="toc-text">一致性检测</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#文档写入"><span class="toc-text">文档写入</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-3-Element类型"><span class="toc-text">10.1.3 Element类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML元素"><span class="toc-text">HTML元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#取得特性"><span class="toc-text">取得特性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#设置特性-amp-amp-删除特性"><span class="toc-text">设置特性&amp;&amp;删除特性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#arrtibute属性"><span class="toc-text">arrtibute属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建元素"><span class="toc-text">创建元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#元素的子节点"><span class="toc-text">元素的子节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-4-Text类型"><span class="toc-text">10.1.4  Text类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建文本节点"><span class="toc-text">创建文本节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#规范化文本节点"><span class="toc-text">规范化文本节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分割文本节点"><span class="toc-text">分割文本节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-5-Attr类型"><span class="toc-text">10.1.5  Attr类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-DOM操作技术"><span class="toc-text">10.2 DOM操作技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#10-2-1-动态脚本"><span class="toc-text">10.2.1 动态脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-2-2-动态样式"><span class="toc-text">10.2.2 动态样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-2-3-操作表格"><span class="toc-text">10.2.3 操作表格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-2-4-使用nodeList"><span class="toc-text">10.2.4 使用nodeList</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十一章-DOM扩展"><span class="toc-text">第十一章  DOM扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1-选择符API"><span class="toc-text">11.1 选择符API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-1-querySelector"><span class="toc-text">11.1.1 querySelector()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-2-querySelectorAll"><span class="toc-text">11.1.2 querySelectorAll()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-3-matchedSelector"><span class="toc-text">11.1.3 matchedSelector()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2-元素遍历（不包含空白文本节点）"><span class="toc-text">11.2 元素遍历（不包含空白文本节点）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-3-HTML5"><span class="toc-text">11.3 HTML5</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-3-1-与类相关的扩充"><span class="toc-text">11.3.1  与类相关的扩充</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#getElementsByClassName-方法"><span class="toc-text">getElementsByClassName() 方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#classList-属性"><span class="toc-text">classList 属性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-3-2-焦点管理"><span class="toc-text">11.3.2 焦点管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-3-3-HEMLDocument的变化"><span class="toc-text">11.3.3 HEMLDocument的变化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#readyState属性"><span class="toc-text">readyState属性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-3-4-自定义数据属性"><span class="toc-text">11.3.4 自定义数据属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-4-一些专有扩展"><span class="toc-text">11.4 一些专有扩展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十二章-DOM2和DOM3"><span class="toc-text">第十二章 DOM2和DOM3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-1-DOM变化"><span class="toc-text">12.1 DOM变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-2-DOM操作样式"><span class="toc-text">12.2 DOM操作样式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12-2-1-访问元素的样式"><span class="toc-text">12.2.1 访问元素的样式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DOM样式属性和方法"><span class="toc-text">DOM样式属性和方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#计算的样式"><span class="toc-text">计算的样式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-2-2-操作样式表"><span class="toc-text">12.2.2 操作样式表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-2-3-元素大小"><span class="toc-text">12.2.3 元素大小</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-3-遍历"><span class="toc-text">12.3 遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-4-范围"><span class="toc-text">12.4 范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-1-事件流"><span class="toc-text">13.1 事件流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13-1-1-事件冒泡"><span class="toc-text">13.1.1 事件冒泡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-1-2-事件捕获"><span class="toc-text">13.1.2 事件捕获</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-1-3-DOM事件流"><span class="toc-text">13.1.3 DOM事件流</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-2-事件处理程序"><span class="toc-text">13.2 事件处理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12-2-1-HTML事件处理程序"><span class="toc-text">12.2.1 HTML事件处理程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-2-2-DOM0级事件处理程序"><span class="toc-text">12.2.2 DOM0级事件处理程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-2-3-DOM2级事件处理程序"><span class="toc-text">13.2.3 DOM2级事件处理程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-2-4-IE事件处理程序"><span class="toc-text">13.2.4 IE事件处理程序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-3-事件对象"><span class="toc-text">13.3 事件对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13-3-1-DOM中的事件对象"><span class="toc-text">13.3.1 DOM中的事件对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#target-currentTarget"><span class="toc-text">target currentTarget</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Type"><span class="toc-text">Type</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-4-事件类型"><span class="toc-text">13.4 事件类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-5-内存性能-amp-amp-模拟事件"><span class="toc-text">13.5 内存性能&amp;&amp;模拟事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-5-1-事件委托"><span class="toc-text">13.5.1  事件委托</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第十四章-表单脚本"><span class="toc-text">第十四章 表单脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#14-1-表单的基础知识"><span class="toc-text">14.1 表单的基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#14-1-1-提交表单"><span class="toc-text">14.1.1 提交表单</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#提交方法"><span class="toc-text">提交方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#解决出现的问题"><span class="toc-text">解决出现的问题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-1-2-重置表单"><span class="toc-text">14.1.2 重置表单</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-1-3-表单字段"><span class="toc-text">14.1.3 表单字段</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#共用的表单字段属性"><span class="toc-text">共用的表单字段属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#共有的表单字段方法"><span class="toc-text">共有的表单字段方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#共用的表单字段事件"><span class="toc-text">共用的表单字段事件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-2-文本框脚本"><span class="toc-text">14.2 文本框脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#14-2-1-选择文本"><span class="toc-text">14.2.1  选择文本</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#选择事件"><span class="toc-text">选择事件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#取得选择的文本"><span class="toc-text">取得选择的文本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#选择部分文本"><span class="toc-text">选择部分文本</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-2-2-过滤输入"><span class="toc-text">14.2.2 过滤输入</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#屏蔽字符"><span class="toc-text">屏蔽字符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#操作剪贴板-424"><span class="toc-text">操作剪贴板 424</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-2-3-自动切换焦点-P426"><span class="toc-text">14.2.3 自动切换焦点 P426</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-2-4-HTML5约束验证API-P427"><span class="toc-text">14.2.4 HTML5约束验证API P427</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-3-选择框脚本"><span class="toc-text">14.3 选择框脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#14-3-1-选择选项"><span class="toc-text">14.3.1 选择选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-3-2-添加选项"><span class="toc-text">14.3.2 添加选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-3-3-移除选项"><span class="toc-text">14.3.3 移除选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-3-4-移动和重排序"><span class="toc-text">14.3.4 移动和重排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-4-表单序列化-P436"><span class="toc-text">14.4 表单序列化 P436</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-5-富文本编辑"><span class="toc-text">14.5 富文本编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#14-5-1-使用contenteditable属性"><span class="toc-text">14.5.1 使用contenteditable属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-5-2-操作富文本"><span class="toc-text">14.5.2 操作富文本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-5-3-富文本选区"><span class="toc-text">14.5.3 富文本选区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-5-4-表单与富文本"><span class="toc-text">14.5.4 表单与富文本</span></a></li></ol></li></ol></li>
+    </div>
+  </aside>
+
+
 
   
-</section>
-  
-  <nav class="pagination">
-      <span class="page-number current">1</span>
-  </nav>
 
 
         </div>
