@@ -56,11 +56,9 @@
 
 
 
-  <title>
-  
-    JS · Hexo
-  
-</title>
+  <meta name="keywords" content="前端, js, Nlvi">
+
+  <title> js数据转换 · Hexo </title>
 </head>
 <body>
   <div class="progress">
@@ -226,36 +224,138 @@
         <div class="main-wrapper">
           
     
-    <div class="archive syuanpi fadeInUp" id="archive">
-        
-            <h2 class="archive-title"> now in </h2>
-            <span class="archive-name"> — JS</span>
-        
-        <div class="archive-list">
-            <ul>
-        
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInUpShort back-1">
+        <div class="post-time-wrapper">
+          <span>2018-10-29</span>
+          
+          
             
+              <aside class="post-tags syuanpi fadeInUpShort back-3">
+              
+                <a href="/tags/前端/">前端</a>
+              
+                <a href="/tags/js/">js</a>
+              
+              </aside>
             
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-10-29
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/29/JS笔记/">JS笔记</a>
-                </span>
-            </li>
-
-        
-            </ul>
+          
         </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInUpShort back-2">
+        
+          js数据转换
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInUpShort back-3">
+      
+        <a id="more"></a>
+<p>最近第一次写前后端数据的互传，遇到了很多数据类型的转换，每次都记不住然后再查，先总结一下JS的转换问题，Python的转换问题后面补上</p>
+<h4 id="查看数据类型-typeof"><a href="#查看数据类型-typeof" class="headerlink" title="查看数据类型 typeof()"></a>查看数据类型 typeof()</h4><p>JS中一共有5种简单的数据类型：Undifined,Null,Boolean,Number,String<br>其他引用类型：<br>Object(Array,Date,RegExp,Function)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typeof //在js中用于检查数据类型</span><br><span class="line">var message = &apos;hello world&apos;;</span><br><span class="line">console.log(typeof(message));</span><br></pre></td></tr></table></figure></p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><table>
+<thead>
+<tr>
+<th>转数字</th>
+<th>转数组</th>
+<th>其他类型转字符串</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parseInt(str)      转整数</td>
+<td>str.split(“,”)</td>
+<td>toString()</td>
+</tr>
+<tr>
+<td>parseFloat(str)  转浮点数</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>数组转字符串  arr.join(“ “)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.join(&quot;-&quot;)  //引号内是分隔符</span><br></pre></td></tr></table></figure></p>
+
+      
+    
     </div>
     
-  <nav class="pagination">
-      <span class="page-number current">1</span>
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>John Doe</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://yoursite.com/2018/10/29/js数据转换/">http://yoursite.com/2018/10/29/js数据转换/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://yoursite.com">http://yoursite.com</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/2018/10/29/python数据转换/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>python数据转换
+        </span>
+      </a>
+    
+    
+      <a href="/2018/10/29/HTML/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          HTML笔记<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
   </nav>
 
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop">js数据转换</a></li>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#查看数据类型-typeof"><span class="toc-text">查看数据类型 typeof()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串"><span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a></li></ol>
+    </div>
+  </aside>
+
+
+
+  
 
 
         </div>
@@ -417,6 +517,4 @@
 
 
 </body>
-</html>
-dy>
 </html>
