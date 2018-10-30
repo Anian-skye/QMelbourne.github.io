@@ -54,9 +54,9 @@
 
 
 
-  <meta name="keywords" content="前端, HTML, Nlvi">
+  <meta name="keywords" content="leetcode, Nlvi">
 
-  <title> HTML笔记 · Hexo </title>
+  <title> leetcode160寻找链表交叉点 · Hexo </title>
 </head>
 <body>
   <div class="progress">
@@ -230,15 +230,13 @@
     <header class="post-header">
       <div class="post-time syuanpi fadeInUpShort back-1">
         <div class="post-time-wrapper">
-          <span>2018-10-29</span>
+          <span>2018-10-30</span>
           
           
             
               <aside class="post-tags syuanpi fadeInUpShort back-3">
               
-                <a href="/tags/前端/">前端</a>
-              
-                <a href="/tags/HTML/">HTML</a>
+                <a href="/tags/leetcode/">leetcode</a>
               
               </aside>
             
@@ -247,29 +245,29 @@
       </div>
       <h1 class="post-title syuanpi fadeInUpShort back-2">
         
-          HTML笔记
+          leetcode160寻找链表交叉点
         
       </h1>
     </header>
     <div class="post-content syuanpi fadeInUpShort back-3">
       
-        <p>很少的一些html中的笔记<br><a id="more"></a></p>
-<h2 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h2><h2 id="lt-p"><a href="#lt-p" class="headerlink" title="\&lt;p/>"></a>\&lt;p/></h2><p>p标签内的文字自动换行设置:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">word-break</span><span class="selector-pseudo">:normal</span>;</span><br><span class="line"><span class="selector-tag">white-space</span><span class="selector-pseudo">:pre-warp</span>;</span><br><span class="line"><span class="selector-tag">word-wrapL</span><span class="selector-pseudo">:break-word</span>;</span><br></pre></td></tr></table></figure>
-<!-- more -->
-<ol>
-<li><p>word-break属性：</p>
-<p> 在恰当的断字点进行换行。有三个值：normal(使用浏览器默认的换行规则)、break-all(允许单词内换行)、keep-all(只能在半角空格或连字符处换行)</p>
+        <h2 id="题目：-Intersection-of-Two-Linked-Lists"><a href="#题目：-Intersection-of-Two-Linked-Lists" class="headerlink" title="题目： Intersection of Two Linked Lists"></a>题目： Intersection of Two Linked Lists</h2><p>寻找两个链表相交的节点</p>
+<p>提示：</p>
+<ul>
+<li><p>If the two linked lists have no intersection at all, return <code>null</code>.</p>
 </li>
-<li><p>white-space属性：</p>
-<p>white-space属性设置如何处理元素内的空白。</p>
-<p>这个属性声明建立布局中如何处理元素中的空白字符，有六个值：normal(默认。空白会被忽略)、pre(空白会被浏览器保留。其行为方式类似HTML代码中的<pre>标签)、</pre></p>
-<p>nowrap（文本不会换行，文本会在同一行上继续，直到遇到<br>标签为止）、pre-wrap（保留空白符序列，但是正常的换行）、pre-line（合并空白符序列，但是保留空白      符）、inherit（规定应该从父元素继承white-space属性的值）;</p>
+<li><p>The linked lists must retain their original structure after the function returns.</p>
 </li>
-<li><p>word-wrap属性：</p>
-<p>允许长单词换行到下一行；有两个值：normal（只允许在断字点换行）、break-word(在长单词或者URL地址内部进行换行)</p>
+<li><p>You may assume there are no cycles anywhere in the entire linked structure.</p>
 </li>
-</ol>
+<li><p>Your code should preferably run in O(n) time and use only O(1) memory.</p>
+</li>
+</ul>
+<p><img src="/var/folders/6p/_f33fscs7j316s490d30bm6c0000gn/T/abnerworks.Typora/image-20181030202024970.png" alt="image-20181030202024970"></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>如果两个链表有交点，那么从交点开始算起他们的长度一定是相等的。</p>
+<p>先得到两个链表的长度，然后把长的那个链表的前半部分截去（如果有交点一定不可能发生在长的这一段）</p>
+<p>然后再一起遍历，如果有相同的节点则相交，否则没有</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getIntersectionNode</span><span class="params">(self, headA, headB)</span>:</span></span><br><span class="line">        a = headA</span><br><span class="line">        b = headB</span><br><span class="line">        alen=<span class="number">0</span></span><br><span class="line">        blen=<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(a!=<span class="keyword">None</span>):</span><br><span class="line">            alen=alen+<span class="number">1</span></span><br><span class="line">            a=a.next</span><br><span class="line">        <span class="keyword">while</span>(b!=<span class="keyword">None</span>):</span><br><span class="line">            blen=blen+<span class="number">1</span></span><br><span class="line">            b=b.next</span><br><span class="line">        print(alen,blen)</span><br><span class="line">        a = headA</span><br><span class="line">        b = headB</span><br><span class="line">        <span class="keyword">if</span>(alen&gt;blen):        </span><br><span class="line">            i=<span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span>(i&lt;alen-blen):</span><br><span class="line">                a = a.next</span><br><span class="line">                i=i+<span class="number">1</span></span><br><span class="line">            print(i)</span><br><span class="line">        <span class="keyword">elif</span>(blen&gt;alen):     </span><br><span class="line">            j=<span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span>(j&lt;blen-alen):</span><br><span class="line">                b = b.next</span><br><span class="line">                j=j+<span class="number">1</span></span><br><span class="line">            print(j)</span><br><span class="line">        <span class="keyword">while</span> a != b:</span><br><span class="line">            a, b = a.next, b.next</span><br><span class="line">        <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
 
       
     
@@ -286,7 +284,7 @@
     </div>
     <div class="copy-url">
       <span>Url :</span>
-      <a href="http://yoursite.com/2018/10/29/HTML/">http://yoursite.com/2018/10/29/HTML/</a>
+      <a href="http://yoursite.com/2018/10/30/leetcode160寻找链表交叉点/">http://yoursite.com/2018/10/30/leetcode160寻找链表交叉点/</a>
     </div>
     <div class="copy-origin">
       <span>Origin :</span>
@@ -304,16 +302,10 @@
     
   <nav class="article-page">
     
-      <a href="/2018/10/29/js数据转换/" id="art-left" class="art-left">
-        <span class="next-title">
-          <i class="iconfont icon-left"></i>js数据转换
-        </span>
-      </a>
     
-    
-      <a href="/2018/10/29/JS笔记/" id="art-right" class="art-right">
+      <a href="/2018/10/29/flask前后端数据传递/" id="art-right" class="art-right">
         <span class="prev-title"> 
-          JS笔记<i class="iconfont icon-right"></i>  
+          flask前后端数据传递<i class="iconfont icon-right"></i>  
         </span>
       </a>
     
@@ -339,8 +331,8 @@
   <aside class="post-toc">
     <span class="title" id="toc-switch"><span>Index</span></span>
     <div class="toc-inner syuanpi back-1" style="display:none;">
-      <li class="title-link"><a href="javascript:;" class="toTop">HTML笔记</a></li>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文本标签"><span class="toc-text">文本标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lt-p"><span class="toc-text">\&lt;p/&gt;</span></a></li></ol>
+      <li class="title-link"><a href="javascript:;" class="toTop">leetcode160寻找链表交叉点</a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目：-Intersection-of-Two-Linked-Lists"><span class="toc-text">题目： Intersection of Two Linked Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a></li></ol></li></ol>
     </div>
   </aside>
 
