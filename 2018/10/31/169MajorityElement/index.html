@@ -54,10 +54,9 @@
 
 
 
-  <title>
-  CuteNian
-  
-</title>
+  <meta name="keywords" content="刷题, Nlvi">
+
+  <title> 169.MajorityElement · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -222,15 +221,11 @@
       <main class="main" id="main">
         <div class="main-wrapper">
           
-  
-
-<section class="posts">
-  
     
   
   <article class="
   post
-  
+   is_post 
   ">
     <header class="post-header">
       <div class="post-time syuanpi fadeInUpShort back-1">
@@ -242,325 +237,102 @@
             
           
           
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/31/169MajorityElement/">169.MajorityElement</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
-      
-        
-          <p>在一个长度为n的数组中，寻找出现次数大于n/2的数<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/31/169MajorityElement/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
-    </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-30</span>
-          
             
-              <span class="post-category"><a href="/categories/leetcode/">leetcode</a></span>
+              <aside class="post-tags syuanpi fadeInUpShort back-3">
+              
+                <a href="/tags/刷题/">刷题</a>
+              
+              </aside>
             
-          
           
         </div>
       </div>
       <h1 class="post-title syuanpi fadeInUpShort back-2">
         
-          <a href="/2018/10/30/leetcode160寻找链表交叉点/">leetcode160寻找链表交叉点</a>
+          169.MajorityElement
         
       </h1>
     </header>
     <div class="post-content syuanpi fadeInUpShort back-3">
       
-        
-          <p>160寻找链表交叉点<br>
-        
+        <p>在一个长度为n的数组中，寻找出现次数大于n/2的数<br><a id="more"></a></p>
+<h2 id="169-Majority-Element"><a href="#169-Majority-Element" class="headerlink" title="169. Majority Element"></a>169. Majority Element</h2><p>Given an array of size <em>n</em>, find the majority element. The majority element is the element that appears <strong>more than</strong>n/2times.</p>
+<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
+<p>最直接的思路，用一个字典保存所有数出现的次数，当出现大于n/2的直接返回</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        d = dict()</span><br><span class="line">        l = len(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">            <span class="keyword">if</span>(d.has_key(nums[i])):</span><br><span class="line">                d[nums[i]] = d[nums[i]]+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                d[nums[i]] = <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span>(d[nums[i]]&gt;=l/<span class="number">2</span>):</span><br><span class="line">                <span class="keyword">return</span> nums[i]</span><br></pre></td></tr></table></figure>
+<p>看到别人的思路，把数组排序，中间的值一定是出现次数大于等于2的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="keyword">return</span> nums[len(nums)/<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
       
-    
-      </p><p class="content-link">
-        <a href="/2018/10/30/leetcode160寻找链表交叉点/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
     
     </div>
     
-  </article>
-  
-  
-    
-  
+      
 
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/Flask/">Flask</a></span>
-            
-              <span class="post-category"><a href="/categories/Flask/Ajax/">Ajax</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/flask前后端数据传递/">flask前后端数据传递</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
       
-        
-          <p>flask前后端数据传递的问题<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/flask前后端数据传递/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Nian</span>
     </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/python/">python</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/python数据转换/">python数据转换</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
-      
-        
-          <p>简单介绍了python中的数据转换问题<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/python数据转换/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://cuteanian.top/2018/10/31/169MajorityElement/">http://cuteanian.top/2018/10/31/169MajorityElement/</a>
     </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/前端/">前端</a></span>
-            
-              <span class="post-category"><a href="/categories/前端/JS/">JS</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/js数据转换/">js数据转换</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
-      
-        
-          <p>最近第一次写前后端数据的互传，遇到了很多数据类型的转换，每次都记不住然后再查，先总结一下JS的转换问题，Python的转换问题后面补上<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/js数据转换/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://cuteanian.top">http://cuteanian.top</a>
     </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/前端/">前端</a></span>
-            
-              <span class="post-category"><a href="/categories/前端/HTML/">HTML</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/HTML/">HTML笔记</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
+    <div class="copy-license">
       
-        
-          <p>很少的一些html中的笔记<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/HTML/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+      著作权归作者所有，转载请联系作者获得授权。
     </div>
+  </div>
+
     
   </article>
   
-  
     
-  
-
-  
+  <nav class="article-page">
     
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/前端/">前端</a></span>
-            
-              <span class="post-category"><a href="/categories/前端/JS/">JS</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/JS笔记/">JS笔记</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
-      
-        
-          <p>全部都是看红宝书时候记得笔记，十分杂乱<br>
-        
-      
     
-      </p><p class="content-link">
-        <a href="/2018/10/29/JS笔记/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
+      <a href="/2018/10/30/leetcode160寻找链表交叉点/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          leetcode160寻找链表交叉点<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
     
-    </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-</section>
-  
-  <nav class="pagination">
-      <span class="page-number current">1</span>
   </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop">169.MajorityElement</a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#169-Majority-Element"><span class="toc-text">169. Majority Element</span></a></li></ol>
+    </div>
+  </aside>
+
+
+
+  
 
 
         </div>
