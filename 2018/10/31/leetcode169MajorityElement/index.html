@@ -54,11 +54,9 @@
 
 
 
-  <title>
-  
-    leetcode · CuteNian
-  
-</title>
+  <meta name="keywords" content="刷题, Nlvi">
+
+  <title> leetcode169寻找出现次数最多的数 · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -69,7 +67,7 @@
     <div class="tagcloud-mask"></div>  
 <div class="tagcloud" id="tagcloud">
   <div class="tagcloud-inner">
-    <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/DP/" style="font-size: 14px;">DP</a> <a href="/tags/Flask/" style="font-size: 14px;">Flask</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/leetcode/" style="font-size: 14px;">leetcode</a> <a href="/tags/paper/" style="font-size: 14px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/体系结构/" style="font-size: 14px;">体系结构</a> <a href="/tags/刷题/" style="font-size: 14px;">刷题</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a>
+    <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/DP/" style="font-size: 14px;">DP</a> <a href="/tags/Flask/" style="font-size: 14px;">Flask</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/paper/" style="font-size: 14px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/体系结构/" style="font-size: 14px;">体系结构</a> <a href="/tags/刷题/" style="font-size: 14px;">刷题</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a>
   </div>
 </div>
   
@@ -189,7 +187,7 @@
             </div>
             <div class="mobile-nav-tagcloud">
               <div class="mobile-tagcloud-inner">
-                <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/DP/" style="font-size: 14px;">DP</a> <a href="/tags/Flask/" style="font-size: 14px;">Flask</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/leetcode/" style="font-size: 14px;">leetcode</a> <a href="/tags/paper/" style="font-size: 14px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/体系结构/" style="font-size: 14px;">体系结构</a> <a href="/tags/刷题/" style="font-size: 14px;">刷题</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a>
+                <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/DP/" style="font-size: 14px;">DP</a> <a href="/tags/Flask/" style="font-size: 14px;">Flask</a> <a href="/tags/HTML/" style="font-size: 14px;">HTML</a> <a href="/tags/JS/" style="font-size: 14px;">JS</a> <a href="/tags/paper/" style="font-size: 14px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/体系结构/" style="font-size: 14px;">体系结构</a> <a href="/tags/刷题/" style="font-size: 14px;">刷题</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a>
               </div>
             </div>
           </div>
@@ -224,36 +222,123 @@
         <div class="main-wrapper">
           
     
-    <div class="archive syuanpi fadeInUp" id="archive">
-        
-            <h2 class="archive-title"> now in </h2>
-            <span class="archive-name"> — leetcode</span>
-        
-        <div class="archive-list">
-            <ul>
-        
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInUpShort back-1">
+        <div class="post-time-wrapper">
+          <span>2018-10-31</span>
+          
             
+              <span class="post-category"><a href="/categories/leetcode/">leetcode</a></span>
             
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-10-30
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/30/leetcode160寻找链表交叉点/">leetcode160寻找链表交叉点</a>
-                </span>
-            </li>
-
-        
-            </ul>
+          
+          
+            
+              <aside class="post-tags syuanpi fadeInUpShort back-3">
+              
+                <a href="/tags/刷题/">刷题</a>
+              
+              </aside>
+            
+          
         </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInUpShort back-2">
+        
+          leetcode169寻找出现次数最多的数
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInUpShort back-3">
+      
+        <p>在一个长度为n的数组中，寻找出现次数大于n/2的数<br><a id="more"></a></p>
+<h2 id="169-Majority-Element"><a href="#169-Majority-Element" class="headerlink" title="169. Majority Element"></a>169. Majority Element</h2><p>Given an array of size <em>n</em>, find the majority element. The majority element is the element that appears <strong>more than</strong>n/2times.</p>
+<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
+<p>最直接的思路，用一个字典保存所有数出现的次数，当出现大于n/2的直接返回</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        d = dict()</span><br><span class="line">        l = len(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">            <span class="keyword">if</span>(d.has_key(nums[i])):</span><br><span class="line">                d[nums[i]] = d[nums[i]]+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                d[nums[i]] = <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span>(d[nums[i]]&gt;=l/<span class="number">2</span>):</span><br><span class="line">                <span class="keyword">return</span> nums[i]</span><br></pre></td></tr></table></figure>
+<p>看到别人的思路，把数组排序，中间的值一定是出现次数大于等于2的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorityElement</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        nums.sort()</span><br><span class="line">        <span class="keyword">return</span> nums[len(nums)/<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+      
+    
     </div>
     
-  <nav class="pagination">
-      <span class="page-number current">1</span>
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Nian</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://cuteanian.top/2018/10/31/leetcode169MajorityElement/">http://cuteanian.top/2018/10/31/leetcode169MajorityElement/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://cuteanian.top">http://cuteanian.top</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/2018/10/31/1031Adversarial-Attacks/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>1031Adversarial_Attacks
+        </span>
+      </a>
+    
+    
+      <a href="/2018/10/30/leetcode160寻找链表交叉点/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          leetcode160寻找链表交叉点<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
   </nav>
 
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop">leetcode169寻找出现次数最多的数</a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#169-Majority-Element"><span class="toc-text">169. Majority Element</span></a></li></ol>
+    </div>
+  </aside>
+
+
+
+  
 
 
         </div>
