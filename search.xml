@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>leetcode226反转二叉树</title>
+      <link href="/2018/11/06/leetcode226%E5%8F%8D%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+      <url>/2018/11/06/leetcode226%E5%8F%8D%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+      
+        <content type="html"><![CDATA[<p>Invert Binary Tree</p><a id="more"></a><p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwypqvxn6pj31cw0lkjsk.jpg" alt="img"></p><p>思路：</p><p>跟昨天的题一样都是很简单的递归思路，有进步的地方就是这次没有去看别人的代码啦hhhh</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">invertTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(root!=<span class="keyword">None</span>):</span><br><span class="line">            root.left,root.right = root.right,root.left</span><br><span class="line">            self.invertTree(root.left)</span><br><span class="line">            self.invertTree(root.right)</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure><p>代码是很简洁的三行，如果节点不为空先交换，然后再依次递归左子树和右子树</p><p>但是在写的过程中对于递归返回值理解不对，以为返回了这个函数就结束了，不知道该在哪里返回root，摸索中AC了。</p><p>递归的返回值应该是依次往上返回，最后一个返回空之后会回到上一个调用他的函数体中，然后返回这个节点，依次往上返回，最后回到最初调用的函数中，然后返回根节点root。</p><p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwypz9t4g6j30yq0f0teq.jpg" alt="img"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> leetcode </category>
+          
+          <category> 递归 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 刷题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>leetcode617合并二叉树</title>
       <link href="/2018/11/05/leetcode617%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
       <url>/2018/11/05/leetcode617%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
