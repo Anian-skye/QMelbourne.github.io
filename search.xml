@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>vue基础一</title>
+      <link href="/2018/11/08/vue%E5%9F%BA%E7%A1%80%E4%B8%80/"/>
+      <url>/2018/11/08/vue%E5%9F%BA%E7%A1%80%E4%B8%80/</url>
+      
+        <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href=""></a></li><li><a href=""></a></li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>leetcode543找出二叉树中最长的路径</title>
       <link href="/2018/11/07/leetcode543%E6%89%BE%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E8%B7%AF%E5%BE%84/"/>
       <url>/2018/11/07/leetcode543%E6%89%BE%E5%87%BA%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E6%9C%80%E9%95%BF%E7%9A%84%E8%B7%AF%E5%BE%84/</url>
@@ -32,7 +55,7 @@
       <link href="/2018/11/07/a-simple-and-accurate-method-to-fool-deep-neural-networks/"/>
       <url>/2018/11/07/a-simple-and-accurate-method-to-fool-deep-neural-networks/</url>
       
-        <content type="html"><![CDATA[<p>一种攻击深度神经网络的方法</p><a id="more"></a><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p><strong>main idea:</strong>propose the DeepFool algorithm to efficiently compute perturbations that fool deep networks, and thus reliably quantify the robustness of these classifiers. </p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Define an adversarial perturbation as the minimal perturbation r that is sufficient to change the estimated label $k(x)​$:</p><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwzrenyb1aj30bz01ejrh.jpg" alt="img"></p><p>We call ∆(x; k) the robustness of k at point x. The robustness of classifier k is then defined as:</p><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwzrfmm6igj306t01oglm.jpg" alt="img"></p><p>The study of adversarial perturbations helps us understand what features are used by a classifier.</p><h2 id="DeepFool"><a href="#DeepFool" class="headerlink" title="DeepFool"></a>DeepFool</h2><p>the algorithm perturbs the image by a small vector that is computed to take the resulting image to the boundary of the polyhydron that is obtained by linearizing the boundaries of the region within which the image resides. The perturbations added to the image in each iteration are accumulated to compute the final perturbation once the perturbed image changes its label according to the original decision boundaries of the network.</p><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p> DeepFool is based on an iterative linearization of the classifier to generate minimal perturbations that are sufficient to change classification labels.</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li>DeepFool: a simple and accurate method to fool deep neural networks</li></ul></blockquote>]]></content>
+        <content type="html"><![CDATA[<p>一种攻击深度神经网络的方法</p><a id="more"></a><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p><strong>main idea:</strong>propose the DeepFool algorithm to efficiently compute perturbations that fool deep networks, and thus reliably quantify the robustness of these classifiers. </p><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Define an adversarial perturbation as the minimal perturbation r that is sufficient to change the estimated label $k(x)$:</p><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwzrenyb1aj30bz01ejrh.jpg" alt="img"></p><p>We call ∆(x; k) the robustness of k at point x. The robustness of classifier k is then defined as:</p><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwzrfmm6igj306t01oglm.jpg" alt="img"></p><p>The study of adversarial perturbations helps us understand what features are used by a classifier.</p><h2 id="DeepFool"><a href="#DeepFool" class="headerlink" title="DeepFool"></a>DeepFool</h2><p>the algorithm perturbs the image by a small vector that is computed to take the resulting image to the boundary of the polyhydron that is obtained by linearizing the boundaries of the region within which the image resides. The perturbations added to the image in each iteration are accumulated to compute the final perturbation once the perturbed image changes its label according to the original decision boundaries of the network.</p><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p> DeepFool is based on an iterative linearization of the classifier to generate minimal perturbations that are sufficient to change classification labels.</p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li>DeepFool: a simple and accurate method to fool deep neural networks</li></ul></blockquote>]]></content>
       
       
       <categories>
@@ -47,8 +70,6 @@
         <tags>
             
             <tag> paper </tag>
-            
-            <tag> DP </tag>
             
         </tags>
       
@@ -198,8 +219,6 @@
             
             <tag> paper </tag>
             
-            <tag> DP </tag>
-            
         </tags>
       
     </entry>
@@ -269,9 +288,7 @@
       
         <tags>
             
-            <tag> Flask </tag>
-            
-            <tag> Ajax </tag>
+            <tag> 前端 </tag>
             
         </tags>
       
@@ -321,8 +338,6 @@
             
             <tag> 前端 </tag>
             
-            <tag> JS </tag>
-            
         </tags>
       
     </entry>
@@ -348,8 +363,6 @@
             
             <tag> 前端 </tag>
             
-            <tag> HTML </tag>
-            
         </tags>
       
     </entry>
@@ -374,8 +387,6 @@
         <tags>
             
             <tag> 前端 </tag>
-            
-            <tag> JS </tag>
             
         </tags>
       
