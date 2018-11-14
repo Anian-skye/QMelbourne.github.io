@@ -260,7 +260,7 @@
         <p>判断一个字符串是否是回文字符串</p>
 <a id="more"></a>
 <p>既然第一天做了双指针的问题，就干脆这周都做双指针的问题吧~应该相对比较好理解，考试压力大刷点简单的题目&gt;&lt;</p>
-<h2 id="125-Valid-Palindrome"><a href="#125-Valid-Palindrome" class="headerlink" title="125. Valid Palindrome"></a>125. Valid Palindrome</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx6mkgaxhqj31ci0bi758.jpg" alt="image-20181113184618313"></p>
+<h1 id="125-Valid-Palindrome"><a href="#125-Valid-Palindrome" class="headerlink" title="125. Valid Palindrome"></a>125. Valid Palindrome</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx6mkgaxhqj31ci0bi758.jpg" alt="image-20181113184618313"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isPalindrome</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(len(s)==<span class="number">0</span> <span class="keyword">or</span> len(s)==<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        ss = [ch <span class="keyword">for</span> ch <span class="keyword">in</span> s.lower() <span class="keyword">if</span> ch.isalpha() <span class="keyword">or</span> ch.isdigit()]</span><br><span class="line">        l = len(ss)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(l/<span class="number">2</span>):</span><br><span class="line">            print(i,l-i<span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">if</span>(ss[i]!=ss[l-i<span class="number">-1</span>]):</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
 <p>就很简单的先把数组中非字母非数字的字符去掉，然后双指针比较，如果不相同则返回Flase</p>
 <p><strong>Python列表的过滤</strong></p>
@@ -298,6 +298,12 @@
     
   <nav class="article-page">
     
+      <a href="/2018/11/13/vue基础三/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>
+        </span>
+      </a>
+    
     
       <a href="/2018/11/12/Machine-Learning-Explanations-with-Topological-Data-Analysis/" id="art-right" class="art-right">
         <span class="prev-title"> 
@@ -328,7 +334,7 @@
     <span class="title" id="toc-switch"><span>Index</span></span>
     <div class="toc-inner syuanpi back-1" style="display:none;">
       <li class="title-link"><a href="javascript:;" class="toTop"></a></li>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#125-Valid-Palindrome"><span class="toc-text">125. Valid Palindrome</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#125-Valid-Palindrome"><span class="toc-text">125. Valid Palindrome</span></a></li></ol>
     </div>
   </aside>
 

@@ -54,10 +54,9 @@
 
 
 
-  <title>
-  CuteNian
-  
-</title>
+  <meta name="keywords" content="刷题, Nlvi">
+
+  <title> leetcode27移除元素 · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -222,253 +221,129 @@
       <main class="main" id="main">
         <div class="main-wrapper">
           
-  
-
-<section class="posts">
-  
     
   
   <article class="
   post
-  
+   is_post 
   ">
     <header class="post-header">
       <div class="post-time syuanpi fadeInUpShort back-1">
         <div class="post-time-wrapper">
-          <span>2018-10-29</span>
+          <span>2018-11-14</span>
           
             
-              <span class="post-category"><a href="/categories/Flask/">Flask</a></span>
+              <span class="post-category"><a href="/categories/leetcode/">leetcode</a></span>
             
-              <span class="post-category"><a href="/categories/Flask/Ajax/">Ajax</a></span>
+              <span class="post-category"><a href="/categories/leetcode/双指针/">双指针</a></span>
             
           
+          
+            
+              <aside class="post-tags syuanpi fadeInUpShort back-3">
+              
+                <a href="/tags/刷题/">刷题</a>
+              
+              </aside>
+            
           
         </div>
       </div>
       <h1 class="post-title syuanpi fadeInUpShort back-2">
         
-          <a href="/2018/10/29/flask前后端数据传递/">flask前后端数据传递</a>
+          leetcode27移除元素
         
       </h1>
     </header>
     <div class="post-content syuanpi fadeInUpShort back-3">
       
-        
-          <p>flask前后端数据传递的问题<br>
-        
+        <p>双指针移除元素</p>
+<a id="more"></a>
+<h1 id="leetcode27移除元素"><a href="#leetcode27移除元素" class="headerlink" title="leetcode27移除元素"></a>leetcode27移除元素</h1><p>Given an array <em>nums</em> and a value <em>val</em>, remove all instances of that value <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener"><strong>in-place</strong></a> and return the new length.</p>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array in-place</strong> with O(1) extra memory.</p>
+<p>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx7wdbssfkj31cq0iwq5w.jpg" alt="image-20181114211103822"></p>
+<p>题目虽然要求的是返回移除后的数组长度l，但是最后的输出值是移除元素后的数组。（输出原数组的前l项）</p>
+<p>所以不能只得到长度，要对数组进行操作，把数组的前l项变为移除val后的值。</p>
+<p>因为还是特意找的双指针的题目，所以知道双指针的思路后发现跟之前做过的一个把所有的0移到后面的题目是一样的，把所有val值后移即可</p>
+<p>思路：</p>
+<ol>
+<li>两个指针i,j，j始终在后面</li>
+<li>如果i指向不是val的值则交换并且j+1</li>
+<li>如果指向的是val则j和数组不作操作,i+1。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></span><br><span class="line">        l = len(nums)</span><br><span class="line">        result = l</span><br><span class="line">        j=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">            <span class="keyword">if</span>(val != nums[i]):</span><br><span class="line">                temp = nums[i]</span><br><span class="line">                nums[i] = nums[j]</span><br><span class="line">                nums[j] = temp</span><br><span class="line">                j+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result-=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
       
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/flask前后端数据传递/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
     
     </div>
     
-  </article>
-  
-  
-    
-  
+      
 
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/python/">python</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/python数据转换/">python数据转换</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
       
-        
-          <p>简单介绍了python中的数据转换问题<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/python数据转换/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Nian</span>
     </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/前端/">前端</a></span>
-            
-              <span class="post-category"><a href="/categories/前端/JS/">JS</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/js数据转换/">js数据转换</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
-      
-        
-          <p>最近第一次写前后端数据的互传，遇到了很多数据类型的转换，每次都记不住然后再查，先总结一下JS的转换问题，Python的转换问题后面补上<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/js数据转换/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://cuteanian.top/2018/11/14/leetcode27移除元素/">http://cuteanian.top/2018/11/14/leetcode27移除元素/</a>
     </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/前端/">前端</a></span>
-            
-              <span class="post-category"><a href="/categories/前端/HTML/">HTML</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/HTML/">HTML笔记</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
-      
-        
-          <p>很少的一些html中的笔记<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/HTML/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://cuteanian.top">http://cuteanian.top</a>
     </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/前端/">前端</a></span>
-            
-              <span class="post-category"><a href="/categories/前端/JS/">JS</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/JS笔记/">JS笔记</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
+    <div class="copy-license">
       
-        
-          <p>全部都是看红宝书时候记得笔记，十分杂乱<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/JS笔记/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+      著作权归作者所有，转载请联系作者获得授权。
     </div>
+  </div>
+
     
   </article>
   
-  
     
-  
-
-  
-</section>
-  
-  <nav class="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/">< Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  <nav class="article-page">
+    
+    
+      <a href="/2018/11/13/vue基础三/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          <i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
   </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop">leetcode27移除元素</a></li>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode27移除元素"><span class="toc-text">leetcode27移除元素</span></a></li></ol>
+    </div>
+  </aside>
+
+
+
+  
 
 
         </div>
