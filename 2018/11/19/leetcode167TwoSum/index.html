@@ -54,11 +54,9 @@
 
 
 
-  <title>
-  
-    Archives · CuteNian
-  
-</title>
+  <meta name="keywords" content="刷题, Nlvi">
+
+  <title> leetcode167TwoSum · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -224,189 +222,131 @@
         <div class="main-wrapper">
           
     
-    <div class="archive syuanpi fadeInUp" id="archive">
-        
-            <h1 class="archive-title">Total</h1>
-            <span class="archive-num">31 Posts In Total</span>
-        
-        <div class="archive-list">
-            <ul>
-        
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInUpShort back-1">
+        <div class="post-time-wrapper">
+          <span>2018-11-19</span>
+          
             
-                
-                
-                
-                    
-                     
-                        <h2 class="archive-year"> 2018 </h2>
-                    
-                
+              <span class="post-category"><a href="/categories/leetcode/">leetcode</a></span>
             
+              <span class="post-category"><a href="/categories/leetcode/sum/">sum</a></span>
             
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-31
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/31/mvvm/">mvvm</a>
-                </span>
-            </li>
-
-        
+          
+          
             
-                
-                
-                
+              <aside class="post-tags syuanpi fadeInUpShort back-3">
+              
+                <a href="/tags/刷题/">刷题</a>
+              
+              </aside>
             
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-31
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/31/1031Adversarial-Attacks/">1031Adversarial_Attacks</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-31
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/31/leetcode169MajorityElement/">leetcode169寻找出现次数最多的数</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-30
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/30/leetcode160寻找链表交叉点/">leetcode160寻找链表交叉点</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-29
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/29/flask前后端数据传递/">flask前后端数据传递</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-29
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/29/python数据转换/">python数据转换</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-29
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/29/js数据转换/">js数据转换</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-29
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/29/HTML/">HTML笔记</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    10-29
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/29/JS笔记/">JS笔记</a>
-                </span>
-            </li>
-
-        
-            </ul>
+          
         </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInUpShort back-2">
+        
+          leetcode167TwoSum
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInUpShort back-3">
+      
+        <p>群里今天的题是4sum，找出四个数的和是给定值</p>
+<p>想了一下不知道咋搞，查的时候看到leetcode上有一堆类似的题，2sum,3sum</p>
+<p>那就这周的五个题就做这个类型吧，也不知道算啥类型就写了个sum</p>
+<a id="more"></a>
+<h1 id="167-Two-Sum-II-Input-array-is-sorted"><a href="#167-Two-Sum-II-Input-array-is-sorted" class="headerlink" title="167. Two Sum II - Input array is sorted"></a>167. Two Sum II - Input array is sorted</h1><p>这个题目也不是最原型的题目，这个是给了一个给定顺序的数组，要求返回索引值</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxdg9cmndbj31bs04ujs5.jpg" alt="image-20181119162622697"></p>
+<p>最原型的题目是无序的数组，然后返回数组值，用一个map保存然后输出的时候判断一下大小即可。</p>
+<p>这次要输出索引值，换成字典</p>
+<ol>
+<li>每一次遍历时判断字典中是否已经有target-numbers[i],有的话直接返回[d[numbers[i]],i+1]</li>
+<li>没有则把t-n[i]的值和i一起存入字典</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, numbers, target)</span>:</span></span><br><span class="line">        d = dict()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(numbers)):</span><br><span class="line">            com = target - numbers[i]</span><br><span class="line">            <span class="keyword">if</span>(d.has_key(numbers[i])):</span><br><span class="line">                <span class="keyword">return</span> [d[numbers[i]],i+<span class="number">1</span>]</span><br><span class="line">            d.setdefault(com,i+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+      
+    
     </div>
     
-  <nav class="pagination">
-      <span class="page-number current">1</span>
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Nian</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://cuteanian.top/2018/11/19/leetcode167TwoSum/">http://cuteanian.top/2018/11/19/leetcode167TwoSum/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://cuteanian.top">http://cuteanian.top</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+    
+      <a href="/2018/11/18/双指针总结/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          双指针总结<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
   </nav>
 
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop">leetcode167TwoSum</a></li>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#167-Two-Sum-II-Input-array-is-sorted"><span class="toc-text">167. Two Sum II - Input array is sorted</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
+    </div>
+  </aside>
+
+
+
+  
 
 
         </div>
