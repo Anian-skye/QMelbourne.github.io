@@ -257,17 +257,31 @@
       
         <p>用拓扑数据分析来解释深度学习</p>
 <a id="more"></a>
-<h1 id="Machine-Learning-Explanations-with-Topological-Data-Analysis"><a href="#Machine-Learning-Explanations-with-Topological-Data-Analysis" class="headerlink" title="Machine Learning Explanations with  Topological Data Analysis"></a>Machine Learning Explanations with  Topological Data Analysis</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>We will demonstrate a novel application of Mapper to the domain of explanatory machine learning and show how Mapper can be used to understand not just the shape of data, but also understand a machine learning model.</p>
+<h1 id="Machine-Learning-Explanations-with-Topological-Data-Analysis"><a href="#Machine-Learning-Explanations-with-Topological-Data-Analysis" class="headerlink" title="Machine Learning Explanations with  Topological Data Analysis"></a>Machine Learning Explanations with  Topological Data Analysis</h1><p>术语解释</p>
+<p><strong>simplicial complexes</strong>：单纯复形是拓扑学中的概念，指由点，线，三角形等单纯形“粘合”而得的拓扑对象。</p>
+<p><strong>cover of dataset</strong>:A cover of a data set is a collection of subsets of the data such that every data point is in at least one of the subsets.</p>
+<p><strong>nerve</strong>:The nerve is a simplicial complex created from a cover by collapsing each cover element into vertices and connecting vertices when the cover elements had points in common.</p>
+<p><strong>nerve of a cover</strong> :  A construction of an <a href="https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Abstract_simplicial_complex.html" target="_blank" rel="noopener">abstract simplicial complex</a> from an <a href="https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Cover_(topology" target="_blank" rel="noopener">open covering</a>.html)of a <a href="https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Topological_space.html" target="_blank" rel="noopener">topological space</a> <em>X</em>.</p>
+<p><strong>lens:</strong> A secondary representation of the data that encodes some interested aspect or information about the data set.    ??</p>
+<p><strong>pullback cover</strong>:</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>We will demonstrate a novel application of Mapper to the domain of explanatory machine learning and show how Mapper can be used to understand not just the shape of data, but also understand a machine learning model.</p>
 <p>提出了Mapper的一个新的应用来解释机器学习。</p>
 <h2 id="Topological-Building-Blocks"><a href="#Topological-Building-Blocks" class="headerlink" title="Topological Building Blocks"></a>Topological Building Blocks</h2><p>Both Mapper and Persistent Homology make use of <strong>simplicial complexes</strong> as the tool for understanding complicated shape. A simplicial complex is a generalization of a graph, with a few special features.</p>
-<p><strong><em>simplicial complexes :单纯复形是拓扑学中的概念，指由点，线，三角形等单纯形“粘合”而得的拓扑对象。</em></strong></p>
 <p>simplicial complexes are built from the <strong>nerve of a cover</strong></p>
 <p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fx5lwcfjcfj30cj07c3z9.jpg" alt="image-20181112213732110"></p>
 <p>Mapper constructs a single cover in a supervised manner and provides a representation suitable for exploratory data analysis.</p>
 <p>In this work, we will focus on understanding the exploratory power of Mapper and how we can apply it to understand a machine learning model. </p>
 <h2 id="Mapper"><a href="#Mapper" class="headerlink" title="Mapper"></a>Mapper</h2><p> Mapper can be thought of as a method of estimating and capturing this essential high dimensional structure.</p>
-<p>Mapper是一个评价刻画高维数据的方法</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p>Mapper是一个评价刻画高维数据的方法。</p>
+<p>单纯复形在探索数据间的关系时美观实用</p>
+<ol>
+<li>creating a lens</li>
+<li>computing the <strong>pullback cover</strong> of our constructed lens cover.</li>
+<li>compute the nerve of our constructed pullback cover. </li>
+</ol>
+<h2 id="Data-and-Model"><a href="#Data-and-Model" class="headerlink" title="Data and Model"></a>Data and Model</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxdjl1bmebj30g7093tan.jpg" alt="image-20181119182128358"></p>
+<p> A Logistic Regression model to 91.5% test set accuracy using Scikit-Learn</p>
+<h2 id="Mapper-for-explaining-machine-learning"><a href="#Mapper-for-explaining-machine-learning" class="headerlink" title="Mapper for explaining machine learning"></a>Mapper for explaining machine learning</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href=""></a><a href="https://sauln.github.io/blog/tda_explanations/" target="_blank" rel="noopener">https://sauln.github.io/blog/tda_explanations/</a></li>
 </ul>
@@ -342,7 +356,7 @@
     <span class="title" id="toc-switch"><span>Index</span></span>
     <div class="toc-inner syuanpi back-1" style="display:none;">
       <li class="title-link"><a href="javascript:;" class="toTop">Machine_Learning_Explanations_with_Topological_Data_Analysis</a></li>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Machine-Learning-Explanations-with-Topological-Data-Analysis"><span class="toc-text">Machine Learning Explanations with  Topological Data Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Topological-Building-Blocks"><span class="toc-text">Topological Building Blocks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mapper"><span class="toc-text">Mapper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Machine-Learning-Explanations-with-Topological-Data-Analysis"><span class="toc-text">Machine Learning Explanations with  Topological Data Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Topological-Building-Blocks"><span class="toc-text">Topological Building Blocks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mapper"><span class="toc-text">Mapper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-and-Model"><span class="toc-text">Data and Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mapper-for-explaining-machine-learning"><span class="toc-text">Mapper for explaining machine learning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
     </div>
   </aside>
 
