@@ -256,6 +256,7 @@
     <div class="post-content syuanpi fadeInUpShort back-3">
       
         <p>用拓扑数据分析来解释深度学习</p>
+<p>[TOC]</p>
 <a id="more"></a>
 <h1 id="Machine-Learning-Explanations-with-Topological-Data-Analysis"><a href="#Machine-Learning-Explanations-with-Topological-Data-Analysis" class="headerlink" title="Machine Learning Explanations with  Topological Data Analysis"></a>Machine Learning Explanations with  Topological Data Analysis</h1><p>术语解释</p>
 <p><strong>simplicial complexes</strong>：单纯复形是拓扑学中的概念，指由点，线，三角形等单纯形“粘合”而得的拓扑对象。</p>
@@ -279,9 +280,21 @@
 <li>computing the <strong>pullback cover</strong> of our constructed lens cover.</li>
 <li>compute the nerve of our constructed pullback cover. </li>
 </ol>
-<h2 id="Data-and-Model"><a href="#Data-and-Model" class="headerlink" title="Data and Model"></a>Data and Model</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxdjl1bmebj30g7093tan.jpg" alt="image-20181119182128358"></p>
+<h2 id="Data-and-Model"><a href="#Data-and-Model" class="headerlink" title="Data and Model"></a>Data and Model</h2><p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxewzivxijj30g7093t98.jpg" alt="image-20181119182128358"></p>
 <p> A Logistic Regression model to 91.5% test set accuracy using Scikit-Learn</p>
-<h2 id="Mapper-for-explaining-machine-learning"><a href="#Mapper-for-explaining-machine-learning" class="headerlink" title="Mapper for explaining machine learning"></a>Mapper for explaining machine learning</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<h2 id="Mapper-for-explaining-machine-learning"><a href="#Mapper-for-explaining-machine-learning" class="headerlink" title="Mapper for explaining machine learning"></a>Mapper for explaining machine learning</h2><p>Designing a new type of cover specifically for machine learning classifiers. </p>
+<p>method: rank and threshold the predicted probabilities for each observation and generate a cover element for similarly ranked observations.</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxewzf52ngj30dl0begm4.jpg" alt="image-20181120214611985"></p>
+<pre><code>new covering technique
+</code></pre><h2 id="Instance-Based-Explanation"><a href="#Instance-Based-Explanation" class="headerlink" title="Instance Based Explanation"></a>Instance Based Explanation</h2><p>Instance based explanation is a particular type of explainable machine learning that focuses on explaining predictions through other observations. </p>
+<h2 id="A-Global-View"><a href="#A-Global-View" class="headerlink" title="A Global View"></a>A Global View</h2><p>Each node represents a heterogenous set of leaves that are the model considers similar and each edge represents a relationship between nodes. </p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxewzcpkabj30jp0hkta6.jpg" alt="image-20181120223402308"></p>
+<p>概率较高的在上部，概率较低的在下部，中间由 <em>Spindle</em> and <em>Cork Oak</em> 连接</p>
+<h2 id="Local-Instances"><a href="#Local-Instances" class="headerlink" title="Local Instances"></a>Local Instances</h2><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxewzaiqz2j305u08vwfc.jpg" alt="image-20181120225031149"></p>
+<p>This particular <em>Chestnut</em> was chosen for demonstration because, while the classification was correct, the confidence in prediction was not very large. </p>
+<p>These three graphs show different levels of information about the instance. The first shows only the nodes that contain this particular <em>Chestnut</em>. The middle graph shows all nodes that contain any <em>Chestnut</em> leaves at all. The third graph shows the same region of <em>Chestnut</em> nodes, but also shows all of neighboring nodes, colored by their majority leaf type. The edges of the third graph are also colored based on the majority class comprising that edge.</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxex2p3vmjj30ni07wwf5.jpg" alt="image-20181120225347431"></p>
+<h2 id="Escape-Routes"><a href="#Escape-Routes" class="headerlink" title="Escape Routes"></a>Escape Routes</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href=""></a><a href="https://sauln.github.io/blog/tda_explanations/" target="_blank" rel="noopener">https://sauln.github.io/blog/tda_explanations/</a></li>
 </ul>
@@ -356,7 +369,7 @@
     <span class="title" id="toc-switch"><span>Index</span></span>
     <div class="toc-inner syuanpi back-1" style="display:none;">
       <li class="title-link"><a href="javascript:;" class="toTop">Machine_Learning_Explanations_with_Topological_Data_Analysis</a></li>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Machine-Learning-Explanations-with-Topological-Data-Analysis"><span class="toc-text">Machine Learning Explanations with  Topological Data Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Topological-Building-Blocks"><span class="toc-text">Topological Building Blocks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mapper"><span class="toc-text">Mapper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-and-Model"><span class="toc-text">Data and Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mapper-for-explaining-machine-learning"><span class="toc-text">Mapper for explaining machine learning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Machine-Learning-Explanations-with-Topological-Data-Analysis"><span class="toc-text">Machine Learning Explanations with  Topological Data Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Topological-Building-Blocks"><span class="toc-text">Topological Building Blocks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mapper"><span class="toc-text">Mapper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Data-and-Model"><span class="toc-text">Data and Model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mapper-for-explaining-machine-learning"><span class="toc-text">Mapper for explaining machine learning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Instance-Based-Explanation"><span class="toc-text">Instance Based Explanation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Global-View"><span class="toc-text">A Global View</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Local-Instances"><span class="toc-text">Local Instances</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Escape-Routes"><span class="toc-text">Escape Routes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
     </div>
   </aside>
 
