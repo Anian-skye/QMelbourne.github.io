@@ -256,8 +256,113 @@
     <div class="post-content syuanpi fadeInUpShort back-3">
       
         <p>机器学习的可解释性</p>
+<p>[TOC]</p>
 <a id="more"></a>
-<h1 id="Interpretable-Machine-Learning"><a href="#Interpretable-Machine-Learning" class="headerlink" title="Interpretable Machine Learning"></a>Interpretable Machine Learning</h1><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<h1 id="2-Interpretable"><a href="#2-Interpretable" class="headerlink" title="2. Interpretable"></a>2. Interpretable</h1><h2 id="2-1-Importance"><a href="#2-1-Importance" class="headerlink" title="2.1 Importance"></a>2.1 Importance</h2><p>A correct prediction only partially solves your original problem. The following reasons(Why) drive the demand for interpretability and explanations</p>
+<ol>
+<li>To facilitate learning and satisfy curiosity as to why certain predictions or behaviors are created by machines, interpretability and explanations are crucial. </li>
+<li>The more a machine’s decision affects a person’s life, the more important it will be for the machine to explain its behavior.</li>
+<li>Interpretability makes it possible to extract this additional knowledge captured by the model.</li>
+<li>Machine learning models take on real-world tasks that require <strong>safety measures</strong> and testing.</li>
+<li>Interpretability is a useful debugging tool for <strong>detecting bias</strong> in machine learning models.</li>
+<li>The process of integrating machines and algorithms into our daily lives requires interpretability to increase <strong>social acceptance</strong>.</li>
+<li>Machine learning models can only be <strong>debugged and audited</strong> when they can be interpreted.</li>
+</ol>
+<h2 id="2-2-Taxonomy-of-Interpretability-Methods"><a href="#2-2-Taxonomy-of-Interpretability-Methods" class="headerlink" title="2.2 Taxonomy of Interpretability Methods"></a>2.2 Taxonomy of Interpretability Methods</h2><h3 id="Intrinsic-amp-amp-Post-hoc"><a href="#Intrinsic-amp-amp-Post-hoc" class="headerlink" title="Intrinsic &amp;&amp; Post hoc"></a>Intrinsic &amp;&amp; Post hoc</h3><p><strong>Intrinsic</strong> interpretability refers to machine learning models that are considered interpretable due to their simple structure, such as short decision trees or sparse linear models. </p>
+<p><strong>Post hoc</strong> interpretability refers to the application of interpretability methods after model training.</p>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><p>The various interpretability methods can be roughly differentiated according to their results.</p>
+<ol>
+<li>Feature summary statistic</li>
+<li>Feature summary visualization</li>
+<li><p>Model internals(e.g.:learned weight)</p>
+</li>
+<li><p>Data point（for images and text)</p>
+</li>
+<li>Intrinsically interpertable model</li>
+</ol>
+<h3 id="Model-specific-amp-amp-model-agnostic"><a href="#Model-specific-amp-amp-model-agnostic" class="headerlink" title="Model-specific &amp;&amp; model-agnostic"></a>Model-specific &amp;&amp; model-agnostic</h3><p>Model-specific interpretation tools are limited to specific model classes.(e.g.:intrinsic)</p>
+<p>Model-agnostic tools can be used on any machine learning model (e.g.:post hoc)</p>
+<h3 id="Local-or-Global"><a href="#Local-or-Global" class="headerlink" title="Local or Global"></a>Local or Global</h3><p>Does the interpretation method explain an individual prediction or the entire model behavior? Or is the scope somewhere in between?</p>
+<h2 id="2-3-Scope-of-Interpretability"><a href="#2-3-Scope-of-Interpretability" class="headerlink" title="2.3 Scope of Interpretability"></a>2.3 Scope of Interpretability</h2><h3 id="Algorithm-Transparency"><a href="#Algorithm-Transparency" class="headerlink" title="Algorithm Transparency"></a>Algorithm Transparency</h3><p><em>How does the algorithm create the model?</em></p>
+<p>Algorithm transparency only requires knowledge of the algorithm and not of the data or learned models</p>
+<h3 id="Global-Holistic-Model-Interpretablity"><a href="#Global-Holistic-Model-Interpretablity" class="headerlink" title="Global,Holistic Model Interpretablity"></a>Global,Holistic Model Interpretablity</h3><p><em>How does the trained model make predictions?</em></p>
+<p>To explain the global model output, you need the trained model, knowledge of the algorithm and the data. </p>
+<p>Global is very difficulit to achieve in practice</p>
+<h3 id="Global-Model-Interpretability-on-a-Modular-Level"><a href="#Global-Model-Interpretability-on-a-Modular-Level" class="headerlink" title="Global Model Interpretability on a Modular Level"></a>Global Model Interpretability on a Modular Level</h3><p><em>How do parts of the model affect predictions?</em></p>
+<h3 id="Local-Interpretability-for-a-Single-Prediction"><a href="#Local-Interpretability-for-a-Single-Prediction" class="headerlink" title="Local Interpretability for a Single Prediction"></a>Local Interpretability for a Single Prediction</h3><p><em>Why did the model make a certain prediction for an instance?</em></p>
+<p>You can zoom in on a single instance and examine what kind of prediction the model makes for this input, and explain why it made this decision.</p>
+<h3 id="Local-Interpretability-for-a-Group-of-Predictions"><a href="#Local-Interpretability-for-a-Group-of-Predictions" class="headerlink" title="Local Interpretability for a Group of Predictions"></a>Local Interpretability for a Group of Predictions</h3><p><em>Why did the model make specific predictions for a group of instances?</em></p>
+<h2 id="2-4-Evaluating-Interpretability"><a href="#2-4-Evaluating-Interpretability" class="headerlink" title="2.4 Evaluating Interpretability"></a>2.4 Evaluating Interpretability</h2><p>Doshi-Velez and Kim (2017) propose three main levels for the evaluation of interpretability:</p>
+<h3 id="Application-level-evaluation-real-task"><a href="#Application-level-evaluation-real-task" class="headerlink" title="Application level evaluation(real task)"></a>Application level evaluation(real task)</h3><p>Put the explanation into the product and have it tested by the end user.</p>
+<h3 id="Human-level-evaluation-simple-task"><a href="#Human-level-evaluation-simple-task" class="headerlink" title="Human level evaluation(simple task)"></a>Human level evaluation(simple task)</h3><p> A simplified application level evaluation.</p>
+<p> The difference is that these experiments are not carried out with the domain experts, but with laypersons.</p>
+<h3 id="Function-level-evaluation-proxy-task"><a href="#Function-level-evaluation-proxy-task" class="headerlink" title="Function level evaluation (proxy task)"></a>Function level evaluation (proxy task)</h3><p>Does not require humans. </p>
+<h2 id="2-5-Properties-of-Explanations"><a href="#2-5-Properties-of-Explanations" class="headerlink" title="2.5 Properties of Explanations"></a>2.5 Properties of Explanations</h2><p>These properties can be used to judge how good an explanation (method) is. It’s not clear for all these properties how to measure them correctly, so one of the challenges is to formalize how they could be calculated.</p>
+<p><strong>Properties of Explanation Methods</strong></p>
+<ol>
+<li><strong>Express power </strong>is the “language” or structure of the explanations the method is able to generate. </li>
+<li><strong>Translucency</strong> describes how much the explanation method relies on looking into the machine learning model, like its parameters. </li>
+<li><strong>Portability</strong> describes the range of machine learning models with which the explanation method can be used. </li>
+<li><strong>Algorithmic Complexity</strong> describes the computational complexity of the method that generates the explanation. </li>
+</ol>
+<p><strong>Properties of Individual Explanations</strong></p>
+<ol>
+<li><strong>Accuracy</strong>: How well does an explanation predict unseen data?</li>
+<li><strong>Fidelity</strong>: How well does the explanation approximate the prediction of the black box model?</li>
+<li><strong>Consistency</strong>: How much does an explanation differ between models that have been trained on the same task and that produce similar predictions?</li>
+<li><strong>Stability</strong>: How similar are the explanations for similar instances? </li>
+<li><strong>Comprehensibility</strong>: How well do humans understand the explanations?</li>
+<li><strong>Certainty</strong>: Does the explanation reflect the certainty of the machine learning model?</li>
+<li><strong>Degree of Importance</strong>: How well does the explanation reflect the importance of features or parts of the explanation?</li>
+<li><p><strong>Novelty</strong>: Does the explanation reflect whether a data instance to be explained comes from a “new” region far removed from the distribution of training data?</p>
+</li>
+<li><p><strong>Representativeness</strong>: How many instances does an explanation cover?</p>
+</li>
+</ol>
+<h2 id="2-6-Human-friendly-Explanations"><a href="#2-6-Human-friendly-Explanations" class="headerlink" title="2.6 Human-friendly Explanations"></a>2.6 Human-friendly Explanations</h2><h3 id="What-is-a-good-explanation"><a href="#What-is-a-good-explanation" class="headerlink" title="What is a good explanation"></a>What is a good explanation</h3><ol>
+<li><strong>Explanations are contrastive</strong>: Humans usually don’t ask why a certain prediction was made, but rather why this prediction was made instead of another prediction. </li>
+<li><strong>Explanations are selected</strong> :<strong>What it means for interpretable machine learning</strong>: Make the explanation very short, give only 1 to 3 reasons, even if the world is more complex. </li>
+<li><strong>Explanations are social</strong>: Be mindful of the social setting of your machine learning application and of the target audience.</li>
+<li><strong>Explanations focus on the abnormal</strong>. If one of the input features for a prediction was abnormal in any sense (like a rare category of a categorical feature) and the feature influenced the prediction, it should be included in an explanation, even if other ‘normal’ features have the same influence on the prediction as the abnormal one. </li>
+<li><strong>Explanations are truthful</strong>. The explanation should predict the event as truthfully as possible, which is sometimes called <strong>fidelity</strong> in the context of machine learning. </li>
+<li><strong>Good explanations are coherent with prior beliefs of the explainee</strong>.</li>
+<li><strong>Good explanations are general and probable</strong>.</li>
+</ol>
+<h1 id="3-Datasets"><a href="#3-Datasets" class="headerlink" title="3. Datasets"></a>3. Datasets</h1><ol>
+<li>Bike sharing counts(Regression)</li>
+<li>YouTube Spam Comments(Text Classification)</li>
+<li>Risk Factors For Cervical Cancer(Classfication)</li>
+</ol>
+<h1 id="4-Interpretable-Models"><a href="#4-Interpretable-Models" class="headerlink" title="4. Interpretable Models"></a>4. Interpretable Models</h1><p><img src="/var/folders/6p/_f33fscs7j316s490d30bm6c0000gn/T/abnerworks.Typora/image-20181206161452656.png" alt="image-20181206161452656"></p>
+<h2 id="4-1-Linear-Regression-Model"><a href="#4-1-Linear-Regression-Model" class="headerlink" title="4.1 Linear Regression Model"></a>4.1 Linear Regression Model</h2><h3 id="Interpretation"><a href="#Interpretation" class="headerlink" title="Interpretation"></a>Interpretation</h3><p> $R^{2}$ measurement.  $R^{2}$ tells you how much of the total variance of your target outcome is explained by the model. The higher  $R^{2}$ the better your model explains the data.</p>
+<p>$R^{2} = 1 - SSE/SST$</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxx3rsaex1j306801m746.jpg" alt="image-20181206162539535"></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxx3rxt86yj306401z746.jpg" alt="image-20181206162549601"></p>
+<p>There is a catch, because R2R2 increases with the number of features in the model, even if they carry no information about the target value at all. So it is better to use the adjusted R-squared, which accounts for the number of features used in the model. </p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxx3t0q9drj30eu01xt8m.jpg" alt="image-20181206162652114"></p>
+<p>while p is the number of feature and n the number of instances.</p>
+<p>The importance of a feature in a linear regression model can be measured by the absolute value of its t-statistic. The t-statistic is the estimated weight scaled with it’s standard error.</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxx3un9dn6j3042025dfp.jpg" alt="image-20181206162824717"></p>
+<h1 id="5-Model-Agnostic-Methods"><a href="#5-Model-Agnostic-Methods" class="headerlink" title="5. Model-Agnostic Methods"></a>5. Model-Agnostic Methods</h1><h2 id="5-1-Partial-Dependence-Plot-PDP"><a href="#5-1-Partial-Dependence-Plot-PDP" class="headerlink" title="5.1 Partial Dependence Plot(PDP)"></a>5.1 Partial Dependence Plot(PDP)</h2><p>The partial dependence plot (PDP or PD plot) shows the marginal effect of a feature on the predicted outcome of a previously fit model.</p>
+<p>For classification, where the machine model outputs probabilities, the partial dependence function displays the probability for a certain class given different values for features xSxS. A straightforward way to handle multi-class problems is to plot one line or one plot per class.</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>In practice, the set of features xSxS usually only contains one feature or a maximum of two, because one feature produces 2D plots and two features produce 3D plots.</p>
+<p>The influence of the weather features on the predicted bike counts:</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxx5nm3m50j30m40fjt9i.jpg" alt="image-20181206173039784"></p>
+<h3 id="5-2-Advantages-amp-Disadvantages"><a href="#5-2-Advantages-amp-Disadvantages" class="headerlink" title="5.2 Advantages &amp; Disadvantages"></a>5.2 Advantages &amp; Disadvantages</h3><h4 id="Advantages"><a href="#Advantages" class="headerlink" title="Advantages"></a>Advantages</h4><ol>
+<li>The computation of partial dependence plots is <strong>intuitive</strong>: </li>
+<li>If the feature for which you computed the PDP is uncorrelated with the other model features, then the PDPs are perfectly representing how the feature influences the target on average.</li>
+<li>Partial dependence plots are <strong>simple to implement</strong>.</li>
+<li><strong>Causal interpretation</strong></li>
+</ol>
+<h4 id="Disadvantages"><a href="#Disadvantages" class="headerlink" title="Disadvantages"></a>Disadvantages</h4><ol>
+<li><p>The <strong>maximum number of features</strong> you can look at jointly is realistically two or three</p>
+</li>
+<li><p>Some PD plots don’t include the <strong>feature distribution</strong>. </p>
+</li>
+<li>The <strong>assumption of independence</strong> poses the biggest issue of PD plots.</li>
+<li><strong>Heterogeneous effects might be hidden</strong></li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href="https://christophm.github.io/interpretable-ml-book/" target="_blank" rel="noopener">https://christophm.github.io/interpretable-ml-book/</a></li>
 </ul>
@@ -332,7 +437,7 @@
     <span class="title" id="toc-switch"><span>Index</span></span>
     <div class="toc-inner syuanpi back-1" style="display:none;">
       <li class="title-link"><a href="javascript:;" class="toTop">Interpretable_Machine_Learning</a></li>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Interpretable-Machine-Learning"><span class="toc-text">Interpretable Machine Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Interpretable"><span class="toc-text">2. Interpretable</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Importance"><span class="toc-text">2.1 Importance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Taxonomy-of-Interpretability-Methods"><span class="toc-text">2.2 Taxonomy of Interpretability Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Intrinsic-amp-amp-Post-hoc"><span class="toc-text">Intrinsic &amp;&amp; Post hoc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Result"><span class="toc-text">Result</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Model-specific-amp-amp-model-agnostic"><span class="toc-text">Model-specific &amp;&amp; model-agnostic</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Local-or-Global"><span class="toc-text">Local or Global</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Scope-of-Interpretability"><span class="toc-text">2.3 Scope of Interpretability</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Algorithm-Transparency"><span class="toc-text">Algorithm Transparency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Global-Holistic-Model-Interpretablity"><span class="toc-text">Global,Holistic Model Interpretablity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Global-Model-Interpretability-on-a-Modular-Level"><span class="toc-text">Global Model Interpretability on a Modular Level</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Local-Interpretability-for-a-Single-Prediction"><span class="toc-text">Local Interpretability for a Single Prediction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Local-Interpretability-for-a-Group-of-Predictions"><span class="toc-text">Local Interpretability for a Group of Predictions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-Evaluating-Interpretability"><span class="toc-text">2.4 Evaluating Interpretability</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Application-level-evaluation-real-task"><span class="toc-text">Application level evaluation(real task)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Human-level-evaluation-simple-task"><span class="toc-text">Human level evaluation(simple task)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function-level-evaluation-proxy-task"><span class="toc-text">Function level evaluation (proxy task)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-Properties-of-Explanations"><span class="toc-text">2.5 Properties of Explanations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-Human-friendly-Explanations"><span class="toc-text">2.6 Human-friendly Explanations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#What-is-a-good-explanation"><span class="toc-text">What is a good explanation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Datasets"><span class="toc-text">3. Datasets</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Interpretable-Models"><span class="toc-text">4. Interpretable Models</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-Linear-Regression-Model"><span class="toc-text">4.1 Linear Regression Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Interpretation"><span class="toc-text">Interpretation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-Model-Agnostic-Methods"><span class="toc-text">5. Model-Agnostic Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-Partial-Dependence-Plot-PDP"><span class="toc-text">5.1 Partial Dependence Plot(PDP)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-text">Examples</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Advantages-amp-Disadvantages"><span class="toc-text">5.2 Advantages &amp; Disadvantages</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Advantages"><span class="toc-text">Advantages</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Disadvantages"><span class="toc-text">Disadvantages</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
     </div>
   </aside>
 
