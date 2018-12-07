@@ -54,10 +54,7 @@
 
 
 
-  <title>
-  CuteNian
-  
-</title>
+  <title> leetcode383Ransom_Note · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -222,253 +219,111 @@
       <main class="main" id="main">
         <div class="main-wrapper">
           
-  
-
-<section class="posts">
-  
     
   
   <article class="
   post
-  
+   is_post 
   ">
     <header class="post-header">
       <div class="post-time syuanpi fadeInUpShort back-1">
         <div class="post-time-wrapper">
-          <span>2018-10-29</span>
+          <span>2018-12-07</span>
+          
           
             
-              <span class="post-category"><a href="/categories/Flask/">Flask</a></span>
-            
-              <span class="post-category"><a href="/categories/Flask/Ajax/">Ajax</a></span>
-            
-          
           
         </div>
       </div>
       <h1 class="post-title syuanpi fadeInUpShort back-2">
         
-          <a href="/2018/10/29/flask前后端数据传递/">flask前后端数据传递</a>
+          leetcode383Ransom_Note
         
       </h1>
     </header>
     <div class="post-content syuanpi fadeInUpShort back-3">
       
-        
-          <p>flask前后端数据传递的问题<br>
-        
+        <p>判断一个字符串是否能用另一个字符串里的字符来构成</p>
+<a id="more"></a>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181207140305075.png" alt="image-20181207140305075"></p>
+<p>还是一道简单的string类型的题目</p>
+<h2 id="count"><a href="#count" class="headerlink" title="count"></a>count</h2><p>第一个想法就是用hash表记录下每个字符的个数，然后发现python的count函数可以直接计算个数</p>
+<p>有一个小技巧，在遍历ransomNote时使用set函数，去掉重复的值，加快运行速度</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canConstruct</span><span class="params">(self, ransomNote, magazine)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type ransomNote: str</span></span><br><span class="line"><span class="string">        :type magazine: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> set(ransomNote):</span><br><span class="line">            <span class="keyword">if</span>(ransomNote.count(item)&gt;magazine.count(item)):</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>不用count的方法:</p>
+<p>遍历ransomNote，然后记录下当前r中元素在m中的下标p。再遇到相同元素时，从m的p+1的位置开始查找，如果没有这个元素，则返回False，如果有，则更新这个元素保存的下标。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canConstruct</span><span class="params">(self, ransomNote, magazine)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type ransomNote: str</span></span><br><span class="line"><span class="string">        :type magazine: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        l = &#123;&#125;</span><br><span class="line">        m = len(ransomNote)</span><br><span class="line">        <span class="keyword">if</span>(m==<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">if</span>(m&gt;len(magazine)):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> ransomNote:</span><br><span class="line">            <span class="keyword">if</span>(i <span class="keyword">in</span> l):</span><br><span class="line">                p = magazine.find(i,l[i]+<span class="number">1</span>)</span><br><span class="line">                print(p)</span><br><span class="line">                <span class="keyword">if</span>(p==<span class="number">-1</span>):</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">                l[i] = p</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                p = magazine.find(i)</span><br><span class="line">                <span class="keyword">if</span>(p==<span class="number">-1</span>):</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">                l[i] = p</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+
       
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/flask前后端数据传递/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
     
     </div>
     
-  </article>
-  
-  
-    
-  
+      
 
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/python/">python</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/python数据转换/">python数据转换</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
       
-        
-          <p>简单介绍了python中的数据转换问题<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/python数据转换/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Nian</span>
     </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/前端/">前端</a></span>
-            
-              <span class="post-category"><a href="/categories/前端/JS/">JS</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/js数据转换/">js数据转换</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
-      
-        
-          <p>最近第一次写前后端数据的互传，遇到了很多数据类型的转换，每次都记不住然后再查，先总结一下JS的转换问题，Python的转换问题后面补上<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/js数据转换/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://cuteanian.top/2018/12/07/leetcode383Ransom-Note/">http://cuteanian.top/2018/12/07/leetcode383Ransom-Note/</a>
     </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/前端/">前端</a></span>
-            
-              <span class="post-category"><a href="/categories/前端/HTML/">HTML</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/HTML/">HTML笔记</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
-      
-        
-          <p>很少的一些html中的笔记<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/HTML/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://cuteanian.top">http://cuteanian.top</a>
     </div>
-    
-  </article>
-  
-  
-    
-  
-
-  
-    
-  
-  <article class="
-  post
-  
-  ">
-    <header class="post-header">
-      <div class="post-time syuanpi fadeInUpShort back-1">
-        <div class="post-time-wrapper">
-          <span>2018-10-29</span>
-          
-            
-              <span class="post-category"><a href="/categories/前端/">前端</a></span>
-            
-              <span class="post-category"><a href="/categories/前端/JS/">JS</a></span>
-            
-          
-          
-        </div>
-      </div>
-      <h1 class="post-title syuanpi fadeInUpShort back-2">
-        
-          <a href="/2018/10/29/JS笔记/">JS笔记</a>
-        
-      </h1>
-    </header>
-    <div class="post-content syuanpi fadeInUpShort back-3">
+    <div class="copy-license">
       
-        
-          <p>全部都是看红宝书时候记得笔记，十分杂乱<br>
-        
-      
-    
-      </p><p class="content-link">
-        <a href="/2018/10/29/JS笔记/#more">
-          <span>Read More...</span>
-        </a>
-      </p>
-    
+      著作权归作者所有，转载请联系作者获得授权。
     </div>
+  </div>
+
     
   </article>
   
-  
     
-  
-
-  
-</section>
-  
-  <nav class="pagination">
-      <a class="extend prev" rel="prev" href="/page/4/">< Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  <nav class="article-page">
+    
+    
+      <a href="/2018/12/06/vue组件实例-二/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          vue组件实例_二<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
   </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop">leetcode383Ransom_Note</a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#count"><span class="toc-text">count</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#find"><span class="toc-text">find</span></a></li></ol>
+    </div>
+  </aside>
+
+
+
+  
 
 
         </div>
