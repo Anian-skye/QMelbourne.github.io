@@ -56,7 +56,7 @@
 
   <meta name="keywords" content="刷题, Nlvi">
 
-  <title> leetcode205_Isomorphic_Strings · CuteNian </title>
+  <title> leetcode205_290 · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -251,7 +251,7 @@
       </div>
       <h1 class="post-title syuanpi fadeInUpShort back-2">
         
-          leetcode205_Isomorphic_Strings
+          leetcode205_290
         
       </h1>
     </header>
@@ -268,6 +268,9 @@
 <p>一个思路是把字符串改写成数字的形势，再去判断是否可以替换</p>
 <p>另一个思路是用字典去保存上一次该字符对应的位置，看看两个字符是否相等，如果相等则更新位置，如果不等则返回False</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isIsomorphic</span><span class="params">(self, s, t)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type t: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        s_count = dict()</span><br><span class="line">        t_count = dict()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="comment"># 如果字典中没有这个字符，则说明还没有进行过匹配，标为-1</span></span><br><span class="line">            <span class="keyword">if</span>(s_count.has_key(s[i])==<span class="keyword">False</span>):</span><br><span class="line">                s_count[s[i]] = <span class="number">-1</span>    </span><br><span class="line">            <span class="keyword">if</span>(t_count.has_key(t[i])==<span class="keyword">False</span>):</span><br><span class="line">                t_count[t[i]] = <span class="number">-1</span></span><br><span class="line">            <span class="keyword">if</span>(s_count[s[i]]!=t_count[t[i]]):</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            <span class="comment"># 记录下这次匹配的两个字符的下标，用于下次匹配时做判断</span></span><br><span class="line">            s_count[s[i]]=i</span><br><span class="line">            t_count[t[i]]=i</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h1 id="leetcode290-Word-Pattern"><a href="#leetcode290-Word-Pattern" class="headerlink" title="leetcode290_Word_Pattern"></a>leetcode290_Word_Pattern</h1><p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181212110729525.png" alt="image-20181212110729525"></p>
+<p>跟205其实是一个题，只不过第二个是一个多单词的字符串，把str转换成list用一样的方法求解就可以了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wordPattern</span><span class="params">(self, pattern, str)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type pattern: str</span></span><br><span class="line"><span class="string">        :type str: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        lstr = str.split(<span class="string">" "</span>)</span><br><span class="line">        mpattern = dict()</span><br><span class="line">        mstr = dict()</span><br><span class="line">        <span class="keyword">if</span>(len(pattern)!=len(lstr)):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(lstr)):</span><br><span class="line">            <span class="keyword">if</span>(pattern[i] <span class="keyword">not</span> <span class="keyword">in</span> mpattern):</span><br><span class="line">                mpattern[pattern[i]] = <span class="number">-1</span></span><br><span class="line">            <span class="keyword">if</span>(lstr[i] <span class="keyword">not</span> <span class="keyword">in</span> mstr):</span><br><span class="line">                mstr[lstr[i]] = <span class="number">-1</span></span><br><span class="line">            <span class="keyword">if</span>(mpattern[pattern[i]]!=mstr[lstr[i]]):</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">            mpattern[pattern[i]]  =i</span><br><span class="line">            mstr[lstr[i]] = i</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
 
       
     
@@ -302,6 +305,12 @@
     
   <nav class="article-page">
     
+      <a href="/2018/12/12/vue-router/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>vue_router
+        </span>
+      </a>
+    
     
       <a href="/2018/12/11/rough-set-theory/" id="art-right" class="art-right">
         <span class="prev-title"> 
@@ -331,8 +340,8 @@
   <aside class="post-toc">
     <span class="title" id="toc-switch"><span>Index</span></span>
     <div class="toc-inner syuanpi back-1" style="display:none;">
-      <li class="title-link"><a href="javascript:;" class="toTop">leetcode205_Isomorphic_Strings</a></li>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode205-Isomorphic-Strings"><span class="toc-text">leetcode205_Isomorphic_Strings</span></a></li></ol>
+      <li class="title-link"><a href="javascript:;" class="toTop">leetcode205_290</a></li>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode205-Isomorphic-Strings"><span class="toc-text">leetcode205_Isomorphic_Strings</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode290-Word-Pattern"><span class="toc-text">leetcode290_Word_Pattern</span></a></li></ol>
     </div>
   </aside>
 

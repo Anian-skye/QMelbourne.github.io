@@ -54,11 +54,9 @@
 
 
 
-  <title>
-  
-    前端 · CuteNian
-  
-</title>
+  <meta name="keywords" content="前端, Nlvi">
+
+  <title> vue_router · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -224,162 +222,119 @@
         <div class="main-wrapper">
           
     
-    <div class="archive syuanpi fadeInUp" id="archive">
-        
-            <h2 class="archive-title"> now in </h2>
-            <span class="archive-name"> — 前端</span>
-        
-        <div class="archive-list">
-            <ul>
-        
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInUpShort back-1">
+        <div class="post-time-wrapper">
+          <span>2018-12-12</span>
+          
             
+              <span class="post-category"><a href="/categories/vue/">vue</a></span>
             
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-12
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/12/vue-router/">vue_router</a>
-                </span>
-            </li>
-
-        
+              <span class="post-category"><a href="/categories/vue/router/">router</a></span>
             
+          
+          
             
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-06
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/06/vue组件实例-二/">vue组件实例_二</a>
-                </span>
-            </li>
-
-        
+              <aside class="post-tags syuanpi fadeInUpShort back-3">
+              
+                <a href="/tags/前端/">前端</a>
+              
+              </aside>
             
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-05
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/05/vue组件实例-一/">vue组件实例_一</a>
-                </span>
-            </li>
-
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-11-16
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/16/vue基础五/">vue基础五</a>
-                </span>
-            </li>
-
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-11-15
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/15/vue基础四/">vue基础四</a>
-                </span>
-            </li>
-
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-11-09
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/09/vue基础二/">vue基础二</a>
-                </span>
-            </li>
-
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-11-08
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/08/vue基础一/">vue基础一</a>
-                </span>
-            </li>
-
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-11-05
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/05/vue基础三/">vue基础(三)  条件渲染、列表渲染</a>
-                </span>
-            </li>
-
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-10-29
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/29/flask前后端数据传递/">flask前后端数据传递</a>
-                </span>
-            </li>
-
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-10-29
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/10/29/js数据转换/">js数据转换</a>
-                </span>
-            </li>
-
-        
-            </ul>
+          
         </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInUpShort back-2">
+        
+          vue_router
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInUpShort back-3">
+      
+        <h1 id="Vue-Router"><a href="#Vue-Router" class="headerlink" title="Vue Router"></a>Vue Router</h1><h2 id="Getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h2><p>告诉Vue Router在哪里渲染组件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- use router-link component <span class="keyword">for</span> navigation. --&gt;</span><br><span class="line">&lt;!-- specify the link by passing the <span class="string">`to`</span> prop. --&gt;</span><br><span class="line">&lt;!-- <span class="string">`&lt;router-link&gt;`</span> will be rendered <span class="keyword">as</span> an <span class="string">`&lt;a&gt;`</span> tag by <span class="keyword">default</span> --&gt;</span><br><span class="line">&lt;router-link to=<span class="string">"/foo"</span>&gt;Go to Foo&lt;<span class="regexp">/router-link&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- component matched by the route will render here --&gt;</span></span><br><span class="line"><span class="regexp">&lt;!-- 会指向new Router所定义的routes --&gt;</span></span><br><span class="line"><span class="regexp">&lt;router-view&gt;&lt;/</span>router-view&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a> <a href="https://router.vuejs.org/guide/#html" target="_blank" rel="noopener">https://router.vuejs.org/guide/#html</a></li>
+</ul>
+</blockquote>
+
+      
+    
     </div>
     
-  <nav class="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/前端/page/2/">2</a><a class="extend next" rel="next" href="/tags/前端/page/2/">Next ></a>
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Nian</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://cuteanian.top/2018/12/12/vue-router/">http://cuteanian.top/2018/12/12/vue-router/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://cuteanian.top">http://cuteanian.top</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+    
+      <a href="/2018/12/11/leetcode205-Isomorphic-Strings/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          leetcode205_290<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
   </nav>
 
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop">vue_router</a></li>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-Router"><span class="toc-text">Vue Router</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Getting-started"><span class="toc-text">Getting started</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol>
+    </div>
+  </aside>
+
+
+
+  
 
 
         </div>
