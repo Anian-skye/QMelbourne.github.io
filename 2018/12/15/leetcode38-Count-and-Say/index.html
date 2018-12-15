@@ -56,7 +56,7 @@
 
   <meta name="keywords" content="刷题, Nlvi">
 
-  <title> leetcode49_Group_Anagrams · CuteNian </title>
+  <title> leetcode38_Count_and_Say · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -230,12 +230,14 @@
     <header class="post-header">
       <div class="post-time syuanpi fadeInUpShort back-1">
         <div class="post-time-wrapper">
-          <span>2018-12-14</span>
+          <span>2018-12-15</span>
           
             
               <span class="post-category"><a href="/categories/leetcode/">leetcode</a></span>
             
               <span class="post-category"><a href="/categories/leetcode/string/">string</a></span>
+            
+              <span class="post-category"><a href="/categories/leetcode/string/递归/">递归</a></span>
             
           
           
@@ -251,22 +253,31 @@
       </div>
       <h1 class="post-title syuanpi fadeInUpShort back-2">
         
-          leetcode49_Group_Anagrams
+          leetcode38_Count_and_Say
         
       </h1>
     </header>
     <div class="post-content syuanpi fadeInUpShort back-3">
       
-        <p>把anagrams(颠倒字母顺序产生的单词)放在一起输出</p>
+        <p>递归+字符串</p>
 <a id="more"></a>
-<h1 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49. Group Anagrams"></a>49. Group Anagrams</h1><p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181214211829327.png" alt="image-20181214211829327"></p>
-<p>暴力解会超时</p>
-<p>思路一：</p>
-<p>很自然的想到把字符串排序，然后用hash表来保存</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">groupAnagrams</span><span class="params">(self, strs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type strs: List[str]</span></span><br><span class="line"><span class="string">        :rtype: List[List[str]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        hash_result = dict()</span><br><span class="line">        result = []</span><br><span class="line">        pos = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> strs:</span><br><span class="line">            sitem = self.sort(item)</span><br><span class="line">            <span class="keyword">if</span>(sitem <span class="keyword">not</span> <span class="keyword">in</span> hash_result):</span><br><span class="line">                hash_result[sitem] = pos</span><br><span class="line">                result.append([])</span><br><span class="line">                result[pos].append(item)</span><br><span class="line">                pos+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result[hash_result[sitem]].append(item)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">                                       </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sort</span><span class="params">(self,s)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>.join(sorted(list(s)))</span><br></pre></td></tr></table></figure>
-<p>思路二：</p>
-<p>不同素数的乘积不同，可以用素数来代替26个字母，然后用素数的乘积去代替思路一中字符串的排序</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">groupAnagrams</span><span class="params">(self, strs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type strs: List[str]</span></span><br><span class="line"><span class="string">        :rtype: List[List[str]]</span></span><br><span class="line"><span class="string">        """</span>       </span><br><span class="line">        hash_result = dict()</span><br><span class="line">        result = []</span><br><span class="line">        pos = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> strs:</span><br><span class="line">            mul = self.multi(item)</span><br><span class="line">            <span class="keyword">if</span>(mul <span class="keyword">not</span> <span class="keyword">in</span> hash_result):</span><br><span class="line">                hash_result[mul] = pos</span><br><span class="line">                result.append([])</span><br><span class="line">                result[pos].append(item)</span><br><span class="line">                pos+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result[hash_result[mul]].append(item)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">     </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">multi</span><span class="params">(self,s)</span>:</span></span><br><span class="line">        primes = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">23</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">41</span>, <span class="number">43</span>, <span class="number">47</span>, <span class="number">53</span>, <span class="number">59</span>, <span class="number">61</span>, <span class="number">67</span>, <span class="number">71</span>, <span class="number">73</span>, <span class="number">79</span>, <span class="number">83</span>, <span class="number">89</span>, <span class="number">97</span>, <span class="number">101</span>, <span class="number">103</span>]; </span><br><span class="line">        result = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            result *= primes[(ord(i)<span class="number">-97</span>)]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<p>#leetcode38_Count_and_Say </p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181215205457254.png" alt="image-20181215205457254"></p>
+<p>这个题就是题意写的很难懂</p>
+<p>大概意思就是数前一个输出的字符串的字符的个数</p>
+<p>n=1时输出“1”</p>
+<p>n=2的时候数“1”，有1个1，所以输出’11’</p>
+<p>n=3的时候数“11”，有2个1，所以输出“21”</p>
+<p>n=4的时候数”21”，有一个2一个1，所以输出”1211”</p>
+<p>n=4的时候数“1211”，有一个1，一个2，两个1，所以输出”111221”(不是直接计数，而是按顺序)</p>
+<p>n=5,输出“312211”</p>
+<p>先解决如何数数的问题，然后不管是递归还是直接循环求解都非常简单</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">(self,phrase)</span>:</span></span><br><span class="line">        result = <span class="string">""</span></span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        curr = phrase[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> phrase:</span><br><span class="line">            <span class="keyword">if</span>(i!=curr):</span><br><span class="line">                result+=str(count)+curr</span><br><span class="line">                count=<span class="number">1</span></span><br><span class="line">                curr=i</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">        result+=str(count)+curr</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<h2 id="解法一-递归"><a href="#解法一-递归" class="headerlink" title="解法一 递归"></a>解法一 递归</h2><p>很明显的递归思路，把问题分解成数数的问题</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countAndSay</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"1"</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> self.count(self.countAndSay(n<span class="number">-1</span>))</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">(self,phrase)</span>:</span></span><br><span class="line">        result = <span class="string">""</span></span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        curr = phrase[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> phrase:</span><br><span class="line">            <span class="keyword">if</span>(i!=curr):</span><br><span class="line">                result+=str(count)+curr</span><br><span class="line">                count=<span class="number">1</span></span><br><span class="line">                curr=i</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">        result+=str(count)+curr</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<h2 id="解法二-循环"><a href="#解法二-循环" class="headerlink" title="解法二 循环"></a>解法二 循环</h2><p>很简单的思路</p>
+<p>从1开始数，直到数到n个结束并返回</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countAndSay</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        phrase = <span class="string">"1"</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>):</span><br><span class="line">            phrase = self.count(phrase)</span><br><span class="line">        <span class="keyword">return</span> phrase</span><br><span class="line">            </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">(self,phrase)</span>:</span></span><br><span class="line">        count=<span class="number">0</span></span><br><span class="line">        result=<span class="string">""</span></span><br><span class="line">        curr = phrase[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> phrase:</span><br><span class="line">            <span class="keyword">if</span>(i!=curr):</span><br><span class="line">                result+=str(count)+curr</span><br><span class="line">                count=<span class="number">1</span></span><br><span class="line">                curr=i</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                count+=<span class="number">1</span></span><br><span class="line">        result +=str(count)+curr</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 
       
     
@@ -283,7 +294,7 @@
     </div>
     <div class="copy-url">
       <span>Url :</span>
-      <a href="http://cuteanian.top/2018/12/14/leetcode49-Group-Anagrams/">http://cuteanian.top/2018/12/14/leetcode49-Group-Anagrams/</a>
+      <a href="http://cuteanian.top/2018/12/15/leetcode38-Count-and-Say/">http://cuteanian.top/2018/12/15/leetcode38-Count-and-Say/</a>
     </div>
     <div class="copy-origin">
       <span>Origin :</span>
@@ -301,16 +312,10 @@
     
   <nav class="article-page">
     
-      <a href="/2018/12/15/PROTOTYPE-SELECTION/" id="art-left" class="art-left">
-        <span class="next-title">
-          <i class="iconfont icon-left"></i>PROTOTYPE_SELECTION
-        </span>
-      </a>
     
-    
-      <a href="/2018/12/12/vue-router/" id="art-right" class="art-right">
+      <a href="/2018/12/15/PROTOTYPE-SELECTION/" id="art-right" class="art-right">
         <span class="prev-title"> 
-          vue_router<i class="iconfont icon-right"></i>  
+          PROTOTYPE_SELECTION<i class="iconfont icon-right"></i>  
         </span>
       </a>
     
@@ -336,8 +341,8 @@
   <aside class="post-toc">
     <span class="title" id="toc-switch"><span>Index</span></span>
     <div class="toc-inner syuanpi back-1" style="display:none;">
-      <li class="title-link"><a href="javascript:;" class="toTop">leetcode49_Group_Anagrams</a></li>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#49-Group-Anagrams"><span class="toc-text">49. Group Anagrams</span></a></li></ol>
+      <li class="title-link"><a href="javascript:;" class="toTop">leetcode38_Count_and_Say</a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解法一-递归"><span class="toc-text">解法一 递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解法二-循环"><span class="toc-text">解法二 循环</span></a></li></ol>
     </div>
   </aside>
 
