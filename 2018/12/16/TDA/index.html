@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <link rel="stylesheet" href="/style/style.css">
+<script>
+  var nlviconfig = {
+    title: "CuteNian",
+    author: "Nian",
+    baseUrl: "/",
+    theme: {
+      scheme: "banderole",
+      lightbox: true,
+      animate: true,
+      search: true,
+      friends: false,
+      reward: false,
+      lazy: false
+    }
+  }
+</script>
+
+
+
+
+    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
+
+
+
+
+    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
+
+
+
+
+
+
+
+
+
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="browsermode" content="application">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CuteNian">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="msapplication-navbutton-color" content="#666666">
+<meta name="format-detection" content="telephone=no">
+<meta name="keywords" content="nlvi, Nlvi">
+
+
+
+
+
+  <meta name="keywords" content="拓扑, Nlvi">
+
+  <title> TDA拓扑数据分析 · CuteNian </title>
+</head>
+<body>
+  <div class="progress">
+  <div class="progress-inner"></div>
+</div>
+
+  
+    <div class="tagcloud-mask"></div>  
+<div class="tagcloud" id="tagcloud">
+  <div class="tagcloud-inner">
+    <a href="/tags/DP/" style="font-size: 14px;">DP</a> <a href="/tags/paper/" style="font-size: 14px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/体系结构/" style="font-size: 14px;">体系结构</a> <a href="/tags/刷题/" style="font-size: 14px;">刷题</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a> <a href="/tags/拓扑/" style="font-size: 14px;">拓扑</a>
+  </div>
+</div>
+  
+
+  <div class="container" style="display:none;">
+
+    <header class="header" id="header">
+  <div class="header-wrapper">
+    <div class="logo">
+  <div class="logo-inner syuanpi tvIn">
+    <span><a href="/">CuteNian</a></span>
+    
+  </div>
+</div>
+    <nav class="main-nav">
+  
+  <ul class="main-nav-list syuanpi tvIn">
+  
+    <li class="menu-item">
+      <a href="javascript:;" id="search">
+        <span>Search</span>
+        
+          <span class="menu-item-label">search</span>
+        
+      </a>
+    </li>
+  
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/" id="article">
+        <span class="base-name">Articles</span>
+        
+          <span class="menu-item-label">article</span>
+        
+      </a>
+    </li>
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/archives" id="archives">
+        <span class="base-name">Archives</span>
+        
+          <span class="menu-item-label">archives</span>
+        
+      </a>
+    </li>
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="javascript:;" id="tags">
+        <span class="base-name">Tags</span>
+        
+          <span class="menu-item-label">tags</span>
+        
+      </a>
+    </li>
+  
+    
+      
+    
+    <li class="menu-item">
+      <a href="/about" id="about">
+        <span class="base-name">About</span>
+        
+          <span class="menu-item-label">about</span>
+        
+      </a>
+    </li>
+  
+  </ul>
+  
+</nav>
+
+    
+    
+  </div>
+</header>
+<div class="mobile-header">
+  <div class="mobile-header-body">
+    <div class="mobile-header-list">
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/">
+                    <span>Articles</span>
+                    
+                    
+                </a>
+            </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/archives">
+                    <span>Archives</span>
+                    
+                    
+                </a>
+            </div>
+        
+      
+        
+          <div class="mobile-nav-item inner-cloud">
+            <div class="mobile-nav-tag">
+              <a href="javascript:;" id="mobile-tags">
+                <span>Tags</span>
+                
+                
+              </a>
+            </div>
+            <div class="mobile-nav-tagcloud">
+              <div class="mobile-tagcloud-inner">
+                <a href="/tags/DP/" style="font-size: 14px;">DP</a> <a href="/tags/paper/" style="font-size: 14px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/体系结构/" style="font-size: 14px;">体系结构</a> <a href="/tags/刷题/" style="font-size: 14px;">刷题</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a> <a href="/tags/拓扑/" style="font-size: 14px;">拓扑</a>
+              </div>
+            </div>
+          </div>
+        
+      
+        
+            <div class="mobile-nav-item">
+                <a href="/about">
+                    <span>About</span>
+                    
+                    
+                </a>
+            </div>
+        
+      
+    </div>
+  </div>
+  <div class="mobile-header-nav">
+    <div class="mobile-header-item" id="mobile-left">
+      <div class="header-menu-item">
+        <span class="header-menu-line"></span>
+      </div>
+    </div>
+    <h1 class="mobile-header-title">
+      <a href="/">CuteNian</a>
+    </h1>
+    <div class="mobile-header-item"></div>
+  </div>
+</div>
+    <div class="container-inner">
+      <main class="main" id="main">
+        <div class="main-wrapper">
+          
+    
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInUpShort back-1">
+        <div class="post-time-wrapper">
+          <span>2018-12-16</span>
+          
+          
+            
+              <aside class="post-tags syuanpi fadeInUpShort back-3">
+              
+                <a href="/tags/拓扑/">拓扑</a>
+              
+              </aside>
+            
+          
+        </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInUpShort back-2">
+        
+          TDA拓扑数据分析
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInUpShort back-3">
+      
+        <p>拓扑基础</p>
+<a id="more"></a>
+<p>#拓扑数据分析-持续同调（一）</p>
+<p>持续同调（PH）为我们提供了一个寻找不需要降维就能精要的刻画数据全貌的方法。</p>
+<p>拓扑学领域在数学空间性质的研究中主要关注的是点与点之间的关系。</p>
+<h2 id="拓扑学入门"><a href="#拓扑学入门" class="headerlink" title="拓扑学入门"></a>拓扑学入门</h2><h3 id="拓扑空间"><a href="#拓扑空间" class="headerlink" title="拓扑空间"></a>拓扑空间</h3><p>拓扑学关注的数学对象是拓扑空间：</p>
+<p> 拓扑空间是一组有序对 <img src="http://www.zhihu.com/equation?tex=%28X%2C+%5Ctau%29" alt="(X, \tau)"> ，其中 <img src="http://www.zhihu.com/equation?tex=X" alt="X"> 是集合， <img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ"> 是 <img src="http://www.zhihu.com/equation?tex=X" alt="X"> 的子集的集群，他们满足以下性质：</p>
+<ol>
+<li>空集和 <img src="http://www.zhihu.com/equation?tex=X" alt="X"> 属于 <img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ"> ，</li>
+<li><img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ"> 中任意多个元素的并仍属于 <img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ"> ，</li>
+<li><img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ"> 中有限个元素的交仍属于 <img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ"> 。</li>
+</ol>
+<p><img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ"> 的元素称为 <strong>开集</strong>，集群 <img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ"> 称为 <img src="http://www.zhihu.com/equation?tex=X" alt="X"> 上的一个拓扑。</p>
+<h3 id="紧密性"><a href="#紧密性" class="headerlink" title="紧密性"></a>紧密性</h3><p>拓扑空间的重要性是什么？一个重要的方面是拓扑空间最终定义了一个定义拓扑的元素之间的紧密关系。</p>
+<h3 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h3><p>无向图： G是顶点V的集合和边E的集合组成的有序二元组，即G=（V , E）</p>
+<p>有向图： G(V , E)的边集E是顶集V中元素的有序配对。因此，顶点之间的“连接”有方向。有序对的第一个顶点是开始，第二个顶点是结束。</p>
+<h3 id="预序关系"><a href="#预序关系" class="headerlink" title="预序关系"></a>预序关系</h3><p>可以在集合X和拓扑<img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ">上建立一个二元的预序关系。（具有自反性和传递性）</p>
+<p>自反性：每一个元素和自己有关， <img src="http://www.zhihu.com/equation?tex=a+%5Csim+a" alt="a \sim a"></p>
+<p>传递性：如果 <img src="http://www.zhihu.com/equation?tex=a" alt="a"> 与 <img src="http://www.zhihu.com/equation?tex=b" alt="b"> 有关， <img src="http://www.zhihu.com/equation?tex=b" alt="b"> 与 <img src="http://www.zhihu.com/equation?tex=c" alt="c"> 有关，那么 <img src="http://www.zhihu.com/equation?tex=a" alt="a"> 与 <img src="http://www.zhihu.com/equation?tex=c" alt="c"> 有关，即 <img src="http://www.zhihu.com/equation?tex=a%E2%88%BCb%E2%88%A7b%E2%88%BCc%E2%87%92a%E2%88%BCc" alt="a∼b∧b∼c⇒a∼c"></p>
+<p>预序关系（更准确的是X上的特殊预序关系）可以通过分析X上元素的成对关系得到。</p>
+<p>特殊化预序关系一般用 <img src="http://www.zhihu.com/equation?tex=%E2%89%A4" alt="≤"> 表示</p>
+<p><strong>Definition (Specialization Pre-order)</strong><br> x≤y, if and only if y is contained in all the open sets containing x </p>
+<p>举例：</p>
+<p> <img src="http://www.zhihu.com/equation?tex=X%3D%5C%7Ba%2C+b%2C+c%5C%7D" alt="X=\{a, b, c\}">,<img src="http://www.zhihu.com/equation?tex=%CF%84%3D%5C%7B%5Cemptyset%2C+%5C%7Ba%5C%7D%2C+%5C%7Bb%5C%7D%2C+%5C%7Ba%2C+b%5C%7D%2C+%5C%7Bb%2C+c%5C%7D%2C+%5C%7Ba%2C+b%2C+c%5C%7D%5C%7D" alt="τ=\{\emptyset, \{a\}, \{b\}, \{a, b\}, \{b, c\}, \{a, b, c\}\}"> </p>
+<p>只有一个预序关系  c<img src="http://www.zhihu.com/equation?tex=%E2%89%A4" alt="≤">b</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181217161346941.png" alt="image-20181217161346941"></p>
+<p>Z={a,b,c,d}，τZ={Z,∅,{b},{a,b},{b,c,d}}</p>
+<p>预序关系：</p>
+<p> a<img src="http://www.zhihu.com/equation?tex=%E2%89%A4" alt="≤">b</p>
+<p> c<img src="http://www.zhihu.com/equation?tex=%E2%89%A4" alt="≤">b</p>
+<p> c<img src="http://www.zhihu.com/equation?tex=%E2%89%A4" alt="≤">d</p>
+<p> d<img src="http://www.zhihu.com/equation?tex=%E2%89%A4" alt="≤">b</p>
+<p> d<img src="http://www.zhihu.com/equation?tex=%E2%89%A4" alt="≤">c</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181217162007574.png" alt="image-20181217162007574"></p>
+<p>By just looking at the graph you can determine a lot of the topological properties of the space. </p>
+<h3 id="Connectedness-连通性"><a href="#Connectedness-连通性" class="headerlink" title="Connectedness(连通性)"></a>Connectedness(连通性)</h3><p><strong>连通性</strong>：如果 <img src="http://www.zhihu.com/equation?tex=X" alt="X"> 不能表示为两个非空互斥的开集的并，我们说拓扑空间 <img src="http://www.zhihu.com/equation?tex=%28X%2C+%CF%84%29" alt="(X, τ)"> 是连通的。也就是说，如果 <img src="http://www.zhihu.com/equation?tex=%CF%84" alt="τ"> 中两个非空互斥的子集的并是 <img src="http://www.zhihu.com/equation?tex=X" alt="X"> ，此拓扑空间是不连通的。</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X=&#123;a,b,c&#125;,τ=&#123;&#123;&#125;,&#123;a&#125;,&#123;b&#125;,&#123;a,b&#125;,&#123;b,c&#125;,&#123;a,b,c&#125;&#125;X=&#123;a,b,c&#125;,τ=&#123;&#123;&#125;,&#123;a&#125;,&#123;b&#125;,&#123;a,b&#125;,&#123;b,c&#125;,&#123;a,b,c&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>对于上面的例子，拓扑空间<img src="http://www.zhihu.com/equation?tex=%28X%2C+%CF%84%29" alt="(X, τ)">是不连通的，因为 {a}∪{b,c}=X，{a},{b,c}非空互斥</p>
+<p>如果一个拓扑空间是联通的，那么所有的顶点都会被连接。</p>
+<p>在纯拓扑空间上，没有了距离的概念，只能说一个元素比另一个元素距离某个元素更近或者更远。</p>
+<h3 id="Metric-Spaces-度量空间"><a href="#Metric-Spaces-度量空间" class="headerlink" title="Metric Spaces(度量空间)"></a>Metric Spaces(度量空间)</h3><p>Metric Spaces是一种有着明确距离定义的拓扑空间</p>
+<p>拓扑数据分析使用的也是度量空间，而不是纯拓扑空间</p>
+<p><strong>Definition (Metric Space):</strong> </p>
+<blockquote>
+<p>A metric space is an ordered pair (M,d) where M is a set and d is a metric on M, that is, a functiond:</p>
+<p>d:  M×M→ℝ</p>
+</blockquote>
+<p>(This defines a function d mapping every ordered pair of elements in M to an element in the set of real numbers ℝ) </p>
+<ol>
+<li>d(x,y)&gt;=0（所有距离都是非负的）</li>
+<li>d(x,y)=0 当且仅当 x=y  </li>
+<li>d(x,y)=d(y,x)（距离是对称的）</li>
+<li>d(x,z)&lt;=d(x,y)+d(y,z)（从x 到 z 的直线距离必不大于经过任何中间点到达）</li>
+</ol>
+<p>度量空间由一个集合，以及一个可以返回任何两个元素之间距离的度量函数组成。</p>
+<p>举例：</p>
+<p>最常见的度量空间是数轴，集合是所有的实数，距离就是两个实数之间差值的绝对值（对于任意实数域 <img src="http://www.zhihu.com/equation?tex=%5Cmathbb+R" alt="\mathbb R"> 中的 <img src="http://www.zhihu.com/equation?tex=x%2C+y%2C+d%3D%7Cx-y%7C" alt="x, y, d=|x-y|">）</p>
+<p>度量空间不局限于实数，一堆图片，一些文本块都可以。只要能够计算出集合中任何两个元素之间的距离，他就是一个有效的度量空间。</p>
+<h3 id="Continuity-连续性"><a href="#Continuity-连续性" class="headerlink" title="Continuity(连续性)"></a>Continuity(连续性)</h3><p>因为拓扑定义的是点之间的相近关系，所以更改点的形状对于拓扑关系没有影响</p>
+<p><strong>Definition (Continuous Function)</strong></p>
+<blockquote>
+<p>对于两个拓扑空间 <img src="http://www.zhihu.com/equation?tex=%28X%2C+%CF%84_X%29" alt="(X, τ_X)"> 和 <img src="http://www.zhihu.com/equation?tex=%28Y%2C+%CF%84_Y%29" alt="(Y, τ_Y)"> 而言，如果每个元素 <img src="http://www.zhihu.com/equation?tex=V%5Cin%5Ctau_Y" alt="V\in\tau_Y"> （正如 <img src="http://www.zhihu.com/equation?tex=Y" alt="Y">的开集）的原像 <img src="http://www.zhihu.com/equation?tex=f%5E%7B-1%7D%28V%29" alt="f^{-1}(V)"> 存在于 <img src="http://www.zhihu.com/equation?tex=X" alt="X"> 中，那么函数 <img src="http://www.zhihu.com/equation?tex=f" alt="f"> 是连续的。</p>
+</blockquote>
+<p><strong>使用特殊化预序的理解</strong></p>
+<blockquote>
+<p>当且仅当函数 <img src="http://www.zhihu.com/equation?tex=f%EF%BC%9AX%E2%86%92Y" alt="f：X→Y"> 是保序的： <img src="http://www.zhihu.com/equation?tex=X" alt="X"> 中 <img src="http://www.zhihu.com/equation?tex=x%E2%89%A4y" alt="x≤y"> 表示 <img src="http://www.zhihu.com/equation?tex=Y" alt="Y"> 中 <img src="http://www.zhihu.com/equation?tex=f%28x%29%E2%89%A4f%28y%29" alt="f(x)≤f(y)"> ，函数 <img src="http://www.zhihu.com/equation?tex=f" alt="f"> 是<strong>连续</strong>的。</p>
+</blockquote>
+<p><strong>Definition(Homomorphism)</strong></p>
+<p>同态（等价关系）</p>
+<blockquote>
+<p>如果两个拓扑空间之间存在函数 <img src="http://www.zhihu.com/equation?tex=f%3AX%E2%86%92Y" alt="f:X→Y"> ，其中 <img src="http://www.zhihu.com/equation?tex=X" alt="X"> 和 <img src="http://www.zhihu.com/equation?tex=Y" alt="Y"> 是两个拓扑空间 <img src="http://www.zhihu.com/equation?tex=%28X%2C+%CF%84_X%29" alt="(X, τ_X)"> 和 <img src="http://www.zhihu.com/equation?tex=%28Y%2C+%CF%84_Y%29" alt="(Y, τ_Y)"> ，那么它们是同态的，其中 <img src="http://www.zhihu.com/equation?tex=f" alt="f"> 满足以下条件： </p>
+<ol>
+<li><p><img src="http://www.zhihu.com/equation?tex=f" alt="f"> 映射了 <img src="http://www.zhihu.com/equation?tex=X" alt="X"> 到 <img src="http://www.zhihu.com/equation?tex=Y" alt="Y"> 一一对应的关系（双射）。 </p>
+</li>
+<li><p><img src="http://www.zhihu.com/equation?tex=f" alt="f"> 是连续的。 </p>
+</li>
+<li><p>反函数 <img src="http://www.zhihu.com/equation?tex=f%5E%7B-1%7D" alt="f^{-1}"> 是连续的。</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>像，原像</strong></p>
+<blockquote>
+<p>f:X-Y  f的像是Y的子集，f的原像是X</p>
+</blockquote>
+<p>一个连续函数的例子：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fyanroug5kj30kt09zmym.jpg" alt="image-20181218094949707"></p>
+<h3 id="Simplices-and-Simplicial-Complexes-单纯形，单纯复形"><a href="#Simplices-and-Simplicial-Complexes-单纯形，单纯复形" class="headerlink" title="Simplices and Simplicial Complexes 单纯形，单纯复形"></a>Simplices and Simplicial Complexes 单纯形，单纯复形</h3><p>单纯复形可以逼近复杂的形状，并且比原始的形状在数学和计算上更容易处理</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyapzwuxufj30he048glu.jpg" alt="image-20181218110700481"></p>
+<p><strong>Example</strong></p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181218110839469.png" alt="image-20181218110839469"></p>
+<p>两个三角形共用一条边，中间是一个一维单纯形连接另一个二维单纯形。</p>
+<p>因为这个单纯复形的最高维单纯形是二维，所以他是一个二维单纯复形。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyaq7pb8s3j30hb054t91.jpg" alt="image-20181218111428244"></p>
+<p>在作图表示的时候，如果没有颜色填充，则表示线段（一维单纯形）组成的单纯复形而不是一个单纯形。</p>
+<p><strong>Definition(Abstract simplex)</strong></p>
+<blockquote>
+<p>一个抽象的单纯形是任何一个有限的顶点集合。例如，单纯形 <img src="http://www.zhihu.com/equation?tex=J%3D%5C%7Ba%2C+b%5C%7D" alt="J=\{a, b\}"> 和单纯形 <img src="http://www.zhihu.com/equation?tex=K%3D%5C%7Ba%2C+b%2C+c%5C%7D" alt="K=\{a, b, c\}"> 分别代表了1维单纯形和2维单纯形。</p>
+</blockquote>
+<p><strong>Definition(simplicial complex)</strong></p>
+<blockquote>
+<p><strong>单纯复形</strong>： 一个单纯复形 <img src="http://www.zhihu.com/equation?tex=%5Cmathcal+%7BK%7D" alt="\mathcal {K}"> 是单纯形的集合，它满足以下条件：</p>
+<ol>
+<li><img src="http://www.zhihu.com/equation?tex=%5Cmathcal+%7BK%7D" alt="\mathcal {K}"> 中任意一个单纯形的任意面仍属于 <img src="http://www.zhihu.com/equation?tex=%5Cmathcal+%7BK%7D" alt="\mathcal {K}"> </li>
+<li><img src="http://www.zhihu.com/equation?tex=%5Cmathcal+%7BK%7D" alt="\mathcal {K}"> 中任意两个单纯形 <img src="http://www.zhihu.com/equation?tex=%5Csigma_1%2C+%5Csigma_2" alt="\sigma_1, \sigma_2"> 的交集是空集或者二者共享的面中的其中一个。</li>
+</ol>
+</blockquote>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyaqdxom5xj30hc05r3z6.jpg" alt="image-20181218112029512"></p>
+<p>拓扑学家并不关心大小/规模的差异，也不关心边缘的扩展，他们关心拓扑的不变量(拓扑空间的性质不随特定类型的连续变形而变化)，例如孔、环和连接的组件。</p>
+<h3 id="Construct-a-simplicial-complex-from-data-建立单纯复形"><a href="#Construct-a-simplicial-complex-from-data-建立单纯复形" class="headerlink" title="Construct a simplicial complex from data(建立单纯复形)"></a>Construct a simplicial complex from data(建立单纯复形)</h3><p> The most common simplicial complexes go by names such as the Čech complex, Vietoris-Rips complex, alpha complex, and witness complex.</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyawc62g73j30mc05bt95.jpg" alt="image-20181218144621584"></p>
+<p>Take what are called the <strong>ϵ-balls</strong> around each point in P (the dotted circles of radius ϵ) and build edges between that point and all other points within its ball.</p>
+<p>How to choose ϵ？</p>
+<p>The key to actually discovering meaningful patterns in a simplicial complex is to continuously <strong>vary the ϵ parameter (and continually re-build complexes) from 0 to a maximum</strong> that results in a single massive simplex. </p>
+<p>Then you generate a diagram that shows what topological features are born and die as ϵ continuously increases. </p>
+<p>随着ϵ 的变化能保留更长时间的特征大概率是有用的特征，那些寿命比较短的特征更有可能是噪音。这个过程称为<strong>持续同调</strong> （随着ϵ 的变化在拓扑空间寻找持续存在的同源特征）</p>
+<p><strong>Definition(Vietoris-Rips Complex)</strong></p>
+<blockquote>
+<p><strong>VR 复形</strong>：如果在d-维空间中有一个点集P， <img src="http://www.zhihu.com/equation?tex=%5Cmathbb+R%5Ed" alt="\mathbb R^d"> 的子集，那么比例 <img src="http://www.zhihu.com/equation?tex=%5Cepsilon" alt="\epsilon"> 的VR复形 <img src="http://www.zhihu.com/equation?tex=V_%7B%5Cepsilon%7D%28P%29" alt="V_{\epsilon}(P)"> 是这样定义的： <img src="http://www.zhihu.com/equation?tex=V_%7B%5Cepsilon%7D%28P%29+%3D+%5C%7B+%5Csigma+%5Csubseteq+P+%5Cmid+d%28u%2Cv%29+%5Cle+%5Cepsilon%2C+%5Cforall+u+%5Cneq+v+%5Cin+%5Csigma+%5C%7D" alt="V_{\epsilon}(P) = \{ \sigma \subseteq P \mid d(u,v) \le \epsilon, \forall u \neq v \in \sigma \}"></p>
+</blockquote>
+<p>也就是说<img src="http://www.zhihu.com/equation?tex=%5Csigma" alt="\sigma"> 中任何不同点之间的距离不大于参数 <img src="http://www.zhihu.com/equation?tex=%5Cepsilon" alt="\epsilon"> 。</p>
+<p>基本上，如果我们有包含一系列点的数据集 <img src="http://www.zhihu.com/equation?tex=P" alt="P"> ，<img src="http://www.zhihu.com/equation?tex=%5Csigma" alt="\sigma">是P的一个子集，并且<img src="http://www.zhihu.com/equation?tex=%5Csigma" alt="\sigma">中所有点之间的距离都小于 <img src="http://www.zhihu.com/equation?tex=%5Cepsilon" alt="\epsilon"></p>
+<p>，那么P的所有子集都是单纯形，则P是一个单纯复形。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="http://outlace.com/TDApart1.html" target="_blank" rel="noopener">http://outlace.com/TDApart1.html</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/31734839" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31734839</a></li>
+</ul>
+</blockquote>
+
+      
+    
+    </div>
+    
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Nian</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://cuteanian.top/2018/12/16/TDA/">http://cuteanian.top/2018/12/16/TDA/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://cuteanian.top">http://cuteanian.top</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+      <a href="/2018/12/17/leetcode168Excel-Sheet-Column-Title/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>leetcode168Excel_Sheet_Column_Title
+        </span>
+      </a>
+    
+    
+      <a href="/2018/12/15/leetcode38-Count-and-Say/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          leetcode38_Count_and_Say<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
+  </nav>
+
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop">TDA拓扑数据分析</a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#拓扑学入门"><span class="toc-text">拓扑学入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#拓扑空间"><span class="toc-text">拓扑空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#紧密性"><span class="toc-text">紧密性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图论"><span class="toc-text">图论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预序关系"><span class="toc-text">预序关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Connectedness-连通性"><span class="toc-text">Connectedness(连通性)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Metric-Spaces-度量空间"><span class="toc-text">Metric Spaces(度量空间)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Continuity-连续性"><span class="toc-text">Continuity(连续性)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simplices-and-Simplicial-Complexes-单纯形，单纯复形"><span class="toc-text">Simplices and Simplicial Complexes 单纯形，单纯复形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Construct-a-simplicial-complex-from-data-建立单纯复形"><span class="toc-text">Construct a simplicial complex from data(建立单纯复形)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+  </aside>
+
+
+
+  
+
+
+        </div>
+      </main>
+
+      <footer class="footer syuanpi fadeIn" id="footer">
+  <hr>
+  <div class="footer-wrapper">
+    <div class="left">
+      <div class="contact-icon">
+    
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        
+        
+        
+            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
+        
+        
+        
+    
+        
+        
+        
+            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
+        
+    
+        
+        
+            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+        
+        
+        
+    
+        
+            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+        
+    
+</div>
+    </div>
+    <div class="right">
+      <div class="copyright">
+    <div class="info">
+        <span>&copy;</span>
+        <span>2016 ~ 2018</span>
+        <span>❤</span>
+        <span>Nian</span>
+    </div>
+    <div class="theme">
+        <span>
+            Powered by
+            <a href="http://hexo.io/" target="_blank">Hexo </a>
+        </span>
+        <span>
+            Theme
+            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
+        </span>
+    </div>
+    
+</div>
+
+    </div>
+  </div>
+</footer>
+    </div>
+  </div>
+  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+
+
+  <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/script/src/nlvi.js"></script>
+
+  <script src="/script/scheme/banderole.js"></script>
+
+<script src="/script/bootstarp.js"></script>
+
+
+<div class="backtop syuanpi melt toTop" id="backtop">
+    <i class="iconfont icon-up"></i>
+    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
+</div>
+
+
+  <div class="search" id="search">
+    <div class="mask" id="mask"></div>
+    <div class="search-wrapper syuanpi">
+      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
+      <div class="input">
+        <input type="text" id="local-search-input" results="0" name="">
+      </div>
+      <div id="local-search-result"></div>
+    </div>
+  </div>
+
+
+</body>
+</html>
