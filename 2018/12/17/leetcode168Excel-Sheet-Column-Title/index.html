@@ -56,7 +56,7 @@
 
   <meta name="keywords" content="刷题, Nlvi">
 
-  <title> leetcode168Excel_Sheet_Column_Title · CuteNian </title>
+  <title> leetcode168&171 · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -251,13 +251,14 @@
       </div>
       <h1 class="post-title syuanpi fadeInUpShort back-2">
         
-          leetcode168Excel_Sheet_Column_Title
+          leetcode168&171
         
       </h1>
     </header>
     <div class="post-content syuanpi fadeInUpShort back-3">
       
         <p>Excel_Sheet_Column_Title</p>
+<p>Excel Sheet Column Number</p>
 <a id="more"></a>
 <h1 id="Excel-Sheet-Column-Title"><a href="#Excel-Sheet-Column-Title" class="headerlink" title="Excel_Sheet_Column_Title"></a>Excel_Sheet_Column_Title</h1><p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181217221228544.png" alt="image-20181217221228544"></p>
 <p>这个题目有点不好懂，试了几次才知道是啥意思</p>
@@ -265,6 +266,9 @@
 <p>当成26进制写</p>
 <p>有一点小区别，这个进制表示里面没有0，取余等于0的时候要放入Z，高位要减一</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">convertToTitle</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        result=<span class="string">""</span></span><br><span class="line">        <span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">if</span>(n%<span class="number">26</span>==<span class="number">0</span>):</span><br><span class="line">                result+=<span class="string">"Z"</span></span><br><span class="line">                n=n/<span class="number">26</span><span class="number">-1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result+=chr(n%<span class="number">26</span>+<span class="number">64</span>)</span><br><span class="line">                n=n/<span class="number">26</span></span><br><span class="line">        <span class="keyword">return</span> result[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="Excel-Sheet-Column-Number"><a href="#Excel-Sheet-Column-Number" class="headerlink" title="Excel Sheet Column Number"></a>Excel Sheet Column Number</h1><p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181218155624465.png" alt="image-20181218155624465"></p>
+<p>跟上面那个题的输入输出相反</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">titleToNumber</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        result=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            result+= (ord(s[i])<span class="number">-64</span>)*(<span class="number">26</span>**(len(s)-i<span class="number">-1</span>))</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 
       
     
@@ -299,6 +303,12 @@
     
   <nav class="article-page">
     
+      <a href="/2018/12/20/Interpretable-Decision-Sets/" id="art-left" class="art-left">
+        <span class="next-title">
+          <i class="iconfont icon-left"></i>Interpretable_Decision_Sets
+        </span>
+      </a>
+    
     
       <a href="/2018/12/16/TDA/" id="art-right" class="art-right">
         <span class="prev-title"> 
@@ -328,8 +338,8 @@
   <aside class="post-toc">
     <span class="title" id="toc-switch"><span>Index</span></span>
     <div class="toc-inner syuanpi back-1" style="display:none;">
-      <li class="title-link"><a href="javascript:;" class="toTop">leetcode168Excel_Sheet_Column_Title</a></li>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Excel-Sheet-Column-Title"><span class="toc-text">Excel_Sheet_Column_Title</span></a></li></ol>
+      <li class="title-link"><a href="javascript:;" class="toTop">leetcode168&171</a></li>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Excel-Sheet-Column-Title"><span class="toc-text">Excel_Sheet_Column_Title</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Excel-Sheet-Column-Number"><span class="toc-text">Excel Sheet Column Number</span></a></li></ol>
     </div>
   </aside>
 
