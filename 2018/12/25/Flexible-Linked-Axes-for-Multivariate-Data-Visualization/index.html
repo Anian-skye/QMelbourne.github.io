@@ -54,9 +54,9 @@
 
 
 
-  <meta name="keywords" content="刷题, Nlvi">
+  <meta name="keywords" content="paper, Nlvi">
 
-  <title> leetcode226反转二叉树 · CuteNian </title>
+  <title> Flexible_Linked_Axes_for_Multivariate_Data_Visualization · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -230,19 +230,17 @@
     <header class="post-header">
       <div class="post-time syuanpi fadeInUpShort back-1">
         <div class="post-time-wrapper">
-          <span>2018-11-06</span>
+          <span>2018-12-25</span>
           
             
-              <span class="post-category"><a href="/categories/leetcode/">leetcode</a></span>
-            
-              <span class="post-category"><a href="/categories/leetcode/递归/">递归</a></span>
+              <span class="post-category"><a href="/categories/vis/">vis</a></span>
             
           
           
             
               <aside class="post-tags syuanpi fadeInUpShort back-3">
               
-                <a href="/tags/刷题/">刷题</a>
+                <a href="/tags/paper/">paper</a>
               
               </aside>
             
@@ -251,22 +249,74 @@
       </div>
       <h1 class="post-title syuanpi fadeInUpShort back-2">
         
-          leetcode226反转二叉树
+          Flexible_Linked_Axes_for_Multivariate_Data_Visualization
         
       </h1>
     </header>
     <div class="post-content syuanpi fadeInUpShort back-3">
       
-        <p>Invert Binary Tree</p>
+        <p>论文:Flexible Linked Axes for Multivariate Data Visualization</p>
+<p>作者:Jarry H.T. Claessen and Jarke J. van Wijk</p>
+<p>发表期刊:TVCG</p>
 <a id="more"></a>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fwypqvxn6pj31cw0lkjsk.jpg" alt="img"></p>
-<p>思路：</p>
-<p>跟昨天的题一样都是很简单的递归思路，有进步的地方就是这次没有去看别人的代码啦hhhh</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="comment">#         self.val = x</span></span><br><span class="line"><span class="comment">#         self.left = None</span></span><br><span class="line"><span class="comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">invertTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span>(root!=<span class="keyword">None</span>):</span><br><span class="line">            root.left,root.right = root.right,root.left</span><br><span class="line">            self.invertTree(root.left)</span><br><span class="line">            self.invertTree(root.right)</span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
-<p>代码是很简洁的三行，如果节点不为空先交换，然后再依次递归左子树和右子树</p>
-<p>但是在写的过程中对于递归返回值理解不对，以为返回了这个函数就结束了，不知道该在哪里返回root，摸索中AC了。</p>
-<p>递归的返回值应该是依次往上返回，最后一个返回空之后会回到上一个调用他的函数体中，然后返回这个节点，依次往上返回，最后回到最初调用的函数中，然后返回根节点root。</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fwypz9t4g6j30yq0f0teq.jpg" alt="img"></p>
+<p>[TOC]</p>
+<p>#Flexible Linked Axes for Multivariate Data Visualization</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>多变量数据是一种非常常见的数据格式，由数据的值以及数据的属性组成。如：人数据，有性别，年龄，身高，体重等等属性。现在有很多方法来对这样的数据进行可视化分析，如散点图，平行坐标图等。但是现有的方法在可视化结构上基本上都是固定的，用户只能改变一些属性</p>
+<p>文章提出了Flexible Linked Axes，一种可视化多变量数据的新方法。这种方法允许用户自由的定义并定位坐标轴的位置，然后通过连接这些坐标轴来指定合适的可视化方案。</p>
+<p>文章的流程如下:</p>
+<ol>
+<li>介绍背景和现有方法的缺陷以及启发</li>
+<li>介绍Flexible Linked Axes</li>
+<li>应用方法</li>
+<li>用户评估</li>
+<li>结论和对未来工作的建议</li>
+</ol>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>出发点:用户对于多变量数据分析的兴趣点</p>
+<ol>
+<li>独特数据项以及他们的属性</li>
+<li>相同属性不同数据项的分布</li>
+<li>两个属性值之间的关系</li>
+</ol>
+<p>现有方法都是基于属性关系图（ARGOI）: 顶点代表属性，边代表属性之间的关系。这种方式可以解决2，3。</p>
+<p>现有方法示例:</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyishk6kjuj30rs0jtk9o.jpg" alt="image-20181225103738825"></p>
+<p>通过变换轴的构造可以得到不同的结果，给用户展示不同构造的ARGOI。在现有的方法中，这些结构都是由作者定义好的，Flexible Linked Axes允许用户自定义结构。</p>
+<h2 id="Flexible-Linked-Axes"><a href="#Flexible-Linked-Axes" class="headerlink" title="Flexible Linked Axes"></a>Flexible Linked Axes</h2><p>简写：FLINA</p>
+<h3 id="定义FLINAPlot"><a href="#定义FLINAPlot" class="headerlink" title="定义FLINAPlot:"></a>定义FLINAPlot:</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyit1bt1l2j30ip0jb41b.jpg" alt="image-20181225105523122"></p>
+<h4 id="轴-Axis（最主要元素）"><a href="#轴-Axis（最主要元素）" class="headerlink" title="轴 Axis（最主要元素）"></a>轴 Axis（最主要元素）</h4><p>轴由两点之间的线段定义，每一个轴都有一些关联的数据属性：</p>
+<ol>
+<li>方向(direction)：A-&gt;B或者B-&gt;A</li>
+<li>边距(margin)：决定线段的哪一部分被使用</li>
+<li><p>范围(range)：决定轴的起始和终点对应属性值域的哪一段 [dmin , dmax ]</p>
+</li>
+<li><p>过滤器(filter)：[fmin , fmax ] 根据属性值来过滤掉不展示的数据项</p>
+</li>
+</ol>
+<h4 id="多边形-Polygons"><a href="#多边形-Polygons" class="headerlink" title="多边形 Polygons"></a>多边形 Polygons</h4><p>一个点可以被多个轴共享，为了方便用户的使用，轴的集合可以被定义为多边形。</p>
+<h4 id="连接-Link"><a href="#连接-Link" class="headerlink" title="连接 Link"></a>连接 Link</h4><p>Link定义了成对轴之间的关系，因此也定义了ARGOI中的边。</p>
+<p>对于每一个Link用户可以选择是使用PCP还是散点图来可视化这些数据项</p>
+<p><strong>一些定义</strong></p>
+<p>数据项：item i</p>
+<p>属性$A_{i}$ 的轴： a</p>
+<p>定义点$p_{ia}$  : $T_{i,j}$ (数据项i的第j个属性) 在轴a上的映射</p>
+<p><strong>两种风格的表达</strong></p>
+<p>PCP-style: 数据项i被表示为$p_{ia}$和$p_{ib}$的连线</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fyj04rtkw1j306u07w3zy.jpg" alt="image-20181225150212755"></p>
+<p>scatterplot-style: 数据项被表述为两轴之间的一个点</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fyj0myv5hfj307g08sq2v.jpg" alt="image-20181225150159179"></p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><h3 id="Cars"><a href="#Cars" class="headerlink" title="Cars"></a>Cars</h3><p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fyj0mxuqc1j315p0h8tuv.jpg" alt="image-20181225151939676"></p>
+<h3 id="Many-to-Many-PCPS"><a href="#Many-to-Many-PCPS" class="headerlink" title="Many-to-Many PCPS"></a>Many-to-Many PCPS</h3><p>对于PCP如何定义轴和连接的最小结构的挑战给出了一个可能的解决方法</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fyj0hdm9m4j314a0mt1kx.jpg" alt="image-20181225151419232"></p>
+<h3 id="Countries"><a href="#Countries" class="headerlink" title="Countries"></a>Countries</h3><p>FLINAPLOTS 一个应用是可以结合scaterplot和PCPS</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyj0cx8a2cj30kk0b4n3t.jpg" alt="image-20181225151002057"></p>
+<h3 id="Network-monitoring"><a href="#Network-monitoring" class="headerlink" title="Network monitoring"></a>Network monitoring</h3><p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyj0rfah1tj30ig0cndok.jpg" alt="image-20181225152353034"></p>
+<h2 id="User-Study"><a href="#User-Study" class="headerlink" title="User Study"></a>User Study</h2><p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyj13a73fcj30jq0anjt7.jpg" alt="image-20181225153521574"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>文章提出了一个非常简单直接的想法：允许用户灵活的设置坐标轴，实用这些坐标轴去自定义可视化方案。这种方法简单易用，具有灵活性，可以结合使用不同的可视化方案</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li>Flexible Linked Axes for Multivariate Data Visualization</li>
+</ul>
+</blockquote>
 
       
     
@@ -283,7 +333,7 @@
     </div>
     <div class="copy-url">
       <span>Url :</span>
-      <a href="http://cuteanian.top/2018/11/06/leetcode226反转二叉树/">http://cuteanian.top/2018/11/06/leetcode226反转二叉树/</a>
+      <a href="http://cuteanian.top/2018/12/25/Flexible-Linked-Axes-for-Multivariate-Data-Visualization/">http://cuteanian.top/2018/12/25/Flexible-Linked-Axes-for-Multivariate-Data-Visualization/</a>
     </div>
     <div class="copy-origin">
       <span>Origin :</span>
@@ -301,16 +351,10 @@
     
   <nav class="article-page">
     
-      <a href="/2018/11/07/a-simple-and-accurate-method-to-fool-deep-neural-networks/" id="art-left" class="art-left">
-        <span class="next-title">
-          <i class="iconfont icon-left"></i>a_simple_and_accurate_method_to_fool_deep_neural_networks
-        </span>
-      </a>
     
-    
-      <a href="/2018/11/05/leetcode617合并二叉树/" id="art-right" class="art-right">
+      <a href="/2018/12/24/leetcode3Longest-Substring-Without-Repeating-Characters/" id="art-right" class="art-right">
         <span class="prev-title"> 
-          leetcode617合并二叉树<i class="iconfont icon-right"></i>  
+          leetcode3Longest_Substring_Without_Repeating_Characters<i class="iconfont icon-right"></i>  
         </span>
       </a>
     
@@ -336,8 +380,8 @@
   <aside class="post-toc">
     <span class="title" id="toc-switch"><span>Index</span></span>
     <div class="toc-inner syuanpi back-1" style="display:none;">
-      <li class="title-link"><a href="javascript:;" class="toTop">leetcode226反转二叉树</a></li>
-      
+      <li class="title-link"><a href="javascript:;" class="toTop">Flexible_Linked_Axes_for_Multivariate_Data_Visualization</a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Background"><span class="toc-text">Background</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flexible-Linked-Axes"><span class="toc-text">Flexible Linked Axes</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义FLINAPlot"><span class="toc-text">定义FLINAPlot:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#轴-Axis（最主要元素）"><span class="toc-text">轴 Axis（最主要元素）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多边形-Polygons"><span class="toc-text">多边形 Polygons</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#连接-Link"><span class="toc-text">连接 Link</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples"><span class="toc-text">Examples</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cars"><span class="toc-text">Cars</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Many-to-Many-PCPS"><span class="toc-text">Many-to-Many PCPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Countries"><span class="toc-text">Countries</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Network-monitoring"><span class="toc-text">Network monitoring</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User-Study"><span class="toc-text">User Study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
     </div>
   </aside>
 
