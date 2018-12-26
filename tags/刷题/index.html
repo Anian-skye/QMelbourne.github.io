@@ -1,505 +1,790 @@
 <!DOCTYPE html>
-<html lang="">
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <link rel="stylesheet" href="/style/style.css">
-<script>
-  var nlviconfig = {
-    title: "CuteNian",
-    author: "Nian",
-    baseUrl: "/",
-    theme: {
-      scheme: "banderole",
-      lightbox: true,
-      animate: true,
-      search: true,
-      friends: false,
-      reward: false,
-      lazy: false
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CuteNian">
+<meta property="og:url" content="http://cuteanian.top/tags/刷题/index.html">
+<meta property="og:site_name" content="CuteNian">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CuteNian">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cuteanian.top/tags/刷题/">
+
+
+
+
+
+  <title>标签: 刷题 | CuteNian</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CuteNian</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  
+  
+  
+  <div class="post-block tag">
+
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>刷题<small>标签</small>
+        </h1>
+      </div>
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/25/leetcode395-Longest-Substring-with-At-Least-K-Repeating-Characters/" itemprop="url">
+              
+                <span itemprop="name">leetcode395_Longest_Substring_with_At_Least_K_Repeating_Characters</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-25T20:03:03+08:00" content="2018-12-25">
+          12-25
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/24/leetcode3Longest-Substring-Without-Repeating-Characters/" itemprop="url">
+              
+                <span itemprop="name">leetcode3Longest_Substring_Without_Repeating_Characters</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-24T21:45:01+08:00" content="2018-12-24">
+          12-24
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/22/leetcode12Integer-to-Roman/" itemprop="url">
+              
+                <span itemprop="name">leetcode12Integer_to_Roman</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-22T20:36:44+08:00" content="2018-12-22">
+          12-22
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/17/leetcode168Excel-Sheet-Column-Title/" itemprop="url">
+              
+                <span itemprop="name">leetcode168&171</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-17T22:11:28+08:00" content="2018-12-17">
+          12-17
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/15/leetcode38-Count-and-Say/" itemprop="url">
+              
+                <span itemprop="name">leetcode38_Count_and_Say</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-15T20:53:47+08:00" content="2018-12-15">
+          12-15
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/14/leetcode49-Group-Anagrams/" itemprop="url">
+              
+                <span itemprop="name">leetcode49_Group_Anagrams</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-14T21:17:20+08:00" content="2018-12-14">
+          12-14
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/11/leetcode205-Isomorphic-Strings/" itemprop="url">
+              
+                <span itemprop="name">leetcode205_290</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-11T17:35:42+08:00" content="2018-12-11">
+          12-11
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/10/leetcode345Reverse-Vowels-of-a-String/" itemprop="url">
+              
+                <span itemprop="name">leetcode345Reverse_Vowels_of_a_String</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-10T21:48:51+08:00" content="2018-12-10">
+          12-10
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/08/leetcode151-Reverse-Words-in-a-String/" itemprop="url">
+              
+                <span itemprop="name">leetcode151_Reverse_Words_in_a_String</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-08T17:17:25+08:00" content="2018-12-08">
+          12-08
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/12/07/leetcode383Ransom-Note/" itemprop="url">
+              
+                <span itemprop="name">leetcode383Ransom_Note</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2018-12-07T14:01:16+08:00" content="2018-12-07">
+          12-07
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+    </div>
+
+  </div>
+  
+  
+  
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/tags/刷题/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/tags/刷题/page/4/">4</a><a class="extend next" rel="next" href="/tags/刷题/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Nian</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Nian</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
 </script>
 
 
 
 
-    <link rel="stylesheet" href="/script/lib/lightbox/css/lightbox.min.css">
 
 
 
 
-    <link rel="stylesheet" href="/syuanpi/syuanpi.min.css">
-
-
-
-
-
-
-
-
-
-
-
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="browsermode" content="application">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="CuteNian">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="msapplication-navbutton-color" content="#666666">
-<meta name="format-detection" content="telephone=no">
-<meta name="keywords" content="nlvi, Nlvi">
-
-
-
-
-
-  <title>
-  
-    刷题 · CuteNian
-  
-</title>
-</head>
-<body>
-  <div class="progress">
-  <div class="progress-inner"></div>
-</div>
 
   
-    <div class="tagcloud-mask"></div>  
-<div class="tagcloud" id="tagcloud">
-  <div class="tagcloud-inner">
-    <a href="/tags/DP/" style="font-size: 14px;">DP</a> <a href="/tags/paper/" style="font-size: 14px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/体系结构/" style="font-size: 14px;">体系结构</a> <a href="/tags/刷题/" style="font-size: 14px;">刷题</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a> <a href="/tags/拓扑/" style="font-size: 14px;">拓扑</a>
-  </div>
-</div>
-  
 
-  <div class="container" style="display:none;">
 
-    <header class="header" id="header">
-  <div class="header-wrapper">
-    <div class="logo">
-  <div class="logo-inner syuanpi tvIn">
-    <span><a href="/">CuteNian</a></span>
-    
-  </div>
-</div>
-    <nav class="main-nav">
-  
-  <ul class="main-nav-list syuanpi tvIn">
-  
-    <li class="menu-item">
-      <a href="javascript:;" id="search">
-        <span>Search</span>
-        
-          <span class="menu-item-label">search</span>
-        
-      </a>
-    </li>
+
+
+
+
+
+
+
+
+
+
   
   
-    
-      
-    
-    <li class="menu-item">
-      <a href="/" id="article">
-        <span class="base-name">Articles</span>
-        
-          <span class="menu-item-label">article</span>
-        
-      </a>
-    </li>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-    
-      
-    
-    <li class="menu-item">
-      <a href="/archives" id="archives">
-        <span class="base-name">Archives</span>
-        
-          <span class="menu-item-label">archives</span>
-        
-      </a>
-    </li>
+
   
-    
-      
-    
-    <li class="menu-item">
-      <a href="javascript:;" id="tags">
-        <span class="base-name">Tags</span>
-        
-          <span class="menu-item-label">tags</span>
-        
-      </a>
-    </li>
   
-    
-      
-    
-    <li class="menu-item">
-      <a href="/about" id="about">
-        <span class="base-name">About</span>
-        
-          <span class="menu-item-label">about</span>
-        
-      </a>
-    </li>
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
-  </ul>
+
   
-</nav>
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
 
-    
-    
-  </div>
-</header>
-<div class="mobile-header">
-  <div class="mobile-header-body">
-    <div class="mobile-header-list">
-      
-        
-            <div class="mobile-nav-item">
-                <a href="/">
-                    <span>Articles</span>
-                    
-                    
-                </a>
-            </div>
-        
-      
-        
-            <div class="mobile-nav-item">
-                <a href="/archives">
-                    <span>Archives</span>
-                    
-                    
-                </a>
-            </div>
-        
-      
-        
-          <div class="mobile-nav-item inner-cloud">
-            <div class="mobile-nav-tag">
-              <a href="javascript:;" id="mobile-tags">
-                <span>Tags</span>
-                
-                
-              </a>
-            </div>
-            <div class="mobile-nav-tagcloud">
-              <div class="mobile-tagcloud-inner">
-                <a href="/tags/DP/" style="font-size: 14px;">DP</a> <a href="/tags/paper/" style="font-size: 14px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/体系结构/" style="font-size: 14px;">体系结构</a> <a href="/tags/刷题/" style="font-size: 14px;">刷题</a> <a href="/tags/前端/" style="font-size: 14px;">前端</a> <a href="/tags/拓扑/" style="font-size: 14px;">拓扑</a>
-              </div>
-            </div>
-          </div>
-        
-      
-        
-            <div class="mobile-nav-item">
-                <a href="/about">
-                    <span>About</span>
-                    
-                    
-                </a>
-            </div>
-        
-      
-    </div>
-  </div>
-  <div class="mobile-header-nav">
-    <div class="mobile-header-item" id="mobile-left">
-      <div class="header-menu-item">
-        <span class="header-menu-line"></span>
-      </div>
-    </div>
-    <h1 class="mobile-header-title">
-      <a href="/">CuteNian</a>
-    </h1>
-    <div class="mobile-header-item"></div>
-  </div>
-</div>
-    <div class="container-inner">
-      <main class="main" id="main">
-        <div class="main-wrapper">
-          
-    
-    <div class="archive syuanpi fadeInUp" id="archive">
-        
-            <h2 class="archive-title"> now in </h2>
-            <span class="archive-name"> — 刷题</span>
-        
-        <div class="archive-list">
-            <ul>
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-25
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/25/leetcode395-Longest-Substring-with-At-Least-K-Repeating-Characters/">leetcode395_Longest_Substring_with_At_Least_K_Repeating_Characters</a>
-                </span>
-            </li>
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
 
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-24
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/24/leetcode3Longest-Substring-Without-Repeating-Characters/">leetcode3Longest_Substring_Without_Repeating_Characters</a>
-                </span>
-            </li>
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
 
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-22
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/22/leetcode12Integer-to-Roman/">leetcode12Integer_to_Roman</a>
-                </span>
-            </li>
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
 
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-17
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/17/leetcode168Excel-Sheet-Column-Title/">leetcode168&171</a>
-                </span>
-            </li>
 
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-15
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/15/leetcode38-Count-and-Say/">leetcode38_Count_and_Say</a>
-                </span>
-            </li>
+  
 
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-14
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/14/leetcode49-Group-Anagrams/">leetcode49_Group_Anagrams</a>
-                </span>
-            </li>
 
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-11
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/11/leetcode205-Isomorphic-Strings/">leetcode205_290</a>
-                </span>
-            </li>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-10
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/10/leetcode345Reverse-Vowels-of-a-String/">leetcode345Reverse_Vowels_of_a_String</a>
-                </span>
-            </li>
-
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-08
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/08/leetcode151-Reverse-Words-in-a-String/">leetcode151_Reverse_Words_in_a_String</a>
-                </span>
-            </li>
-
-        
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    2018-12-07
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/12/07/leetcode383Ransom-Note/">leetcode383Ransom_Note</a>
-                </span>
-            </li>
-
-        
-            </ul>
-        </div>
-    </div>
-    
-  <nav class="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/刷题/page/2/">2</a><a class="page-number" href="/tags/刷题/page/3/">3</a><a class="page-number" href="/tags/刷题/page/4/">4</a><a class="extend next" rel="next" href="/tags/刷题/page/2/">Next ></a>
-  </nav>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
-        </div>
-      </main>
-
-      <footer class="footer syuanpi fadeIn" id="footer">
-  <hr>
-  <div class="footer-wrapper">
-    <div class="left">
-      <div class="contact-icon">
-    
-    
-    
-    
-    
-    
-    
-    
-        
-        
-        
-        
-        
-            <a href="https://www.facebook.com/1" class="iconfont icon-facebook" title="facebook"></a>
-        
-        
-        
-    
-        
-        
-        
-            <a href="https://twitter.com/2" class="iconfont icon-twitter" title="twitter"></a>
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-        
-            <a href="https://www.instagram.com/3" class="iconfont icon-ins" title="instagram"></a>
-        
-    
-        
-        
-            <a href="https://weibo.com/4" class="iconfont icon-weibo" title="weibo"></a>
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-            <a href="https://www.zhihu.com/people/5" class="iconfont icon-zhihu" title="zhihu"></a>
-        
-        
-        
-        
-    
-        
-            <a href="https://github.com/6" class="iconfont icon-github" title="github"></a>
-        
-        
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-        
-        
-            <a href="https://www.linkedin.com/in/7" class="iconfont icon-linkedin" title="linkedin"></a>
-        
-        
-    
-</div>
-    </div>
-    <div class="right">
-      <div class="copyright">
-    <div class="info">
-        <span>&copy;</span>
-        <span>2016 ~ 2018</span>
-        <span>❤</span>
-        <span>Nian</span>
-    </div>
-    <div class="theme">
-        <span>
-            Powered by
-            <a href="http://hexo.io/" target="_blank">Hexo </a>
-        </span>
-        <span>
-            Theme
-            <a href="https://github.com/ColMugX/hexo-theme-Nlvi"> Nlvi </a>
-        </span>
-    </div>
-    
-</div>
-
-    </div>
-  </div>
-</footer>
-    </div>
-  </div>
-  <script src="/script/lib/jquery/jquery-3.2.1.min.js"></script>
+  
+  
 
 
-  <script src="/script/lib/lightbox/js/lightbox.min.js"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
 
 
 
@@ -508,30 +793,30 @@
 
 
 
-<script src="/script/src/nlvi.js"></script>
-
-  <script src="/script/scheme/banderole.js"></script>
-
-<script src="/script/bootstarp.js"></script>
 
 
-<div class="backtop syuanpi melt toTop" id="backtop">
-    <i class="iconfont icon-up"></i>
-    <span style="text-align:center;font-family:Georgia;"><span style="font-family:Georgia;" id="scrollpercent">1</span>%</span>
-</div>
 
 
-  <div class="search" id="search">
-    <div class="mask" id="mask"></div>
-    <div class="search-wrapper syuanpi">
-      <h2 id="search-header" class="syuanpi">搜索一下？</h2>
-      <div class="input">
-        <input type="text" id="local-search-input" results="0" name="">
-      </div>
-      <div id="local-search-result"></div>
-    </div>
-  </div>
+  
 
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
