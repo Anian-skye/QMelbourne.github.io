@@ -54,11 +54,9 @@
 
 
 
-  <title>
-  
-    Archives · CuteNian
-  
-</title>
+  <meta name="keywords" content="刷题, Nlvi">
+
+  <title> leetcode395_Longest_Substring_with_At_Least_K_Repeating_Characters · CuteNian </title>
 </head>
 <body>
   <div class="progress">
@@ -224,207 +222,126 @@
         <div class="main-wrapper">
           
     
-    <div class="archive syuanpi fadeInUp" id="archive">
-        
-            <h1 class="archive-title">Total</h1>
-            <span class="archive-num">63 Posts In Total</span>
-        
-        <div class="archive-list">
-            <ul>
-        
+  
+  <article class="
+  post
+   is_post 
+  ">
+    <header class="post-header">
+      <div class="post-time syuanpi fadeInUpShort back-1">
+        <div class="post-time-wrapper">
+          <span>2018-12-25</span>
+          
             
-                
-                
-                
-                    
-                     
-                        <h2 class="archive-year"> 2018 </h2>
-                    
-                
+              <span class="post-category"><a href="/categories/leetcode/">leetcode</a></span>
             
+              <span class="post-category"><a href="/categories/leetcode/String/">String</a></span>
             
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-09
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/09/vue基础二/">vue基础二</a>
-                </span>
-            </li>
-
-        
+          
+          
             
-                
-                
-                
+              <aside class="post-tags syuanpi fadeInUpShort back-3">
+              
+                <a href="/tags/刷题/">刷题</a>
+              
+              </aside>
             
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-08
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/08/leetcode102按层次输出二叉树的节点/">leetcode102按层次输出二叉树的节点</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-08
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/08/vue基础一/">vue基础一</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-07
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/07/leetcode543找出二叉树中最长的路径/">leetcode543找出二叉树中最长的路径</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-07
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/07/a-simple-and-accurate-method-to-fool-deep-neural-networks/">a_simple_and_accurate_method_to_fool_deep_neural_networks</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-06
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/06/leetcode226反转二叉树/">leetcode226反转二叉树</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-05
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/05/leetcode617合并二叉树/">leetcode617合并二叉树</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-05
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/05/vue基础三/">vue基础(三)  条件渲染、列表渲染</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-02
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/02/leetcode438找出同字母异序词/">leetcode438找出同字母异序词</a>
-                </span>
-            </li>
-
-        
-            
-                
-                
-                
-            
-            
-            <li class="archive-post">
-                <span class="archive-post-time">
-                
-                    11-01
-                
-                </span>
-                <span class="archive-post-link">
-                    <a href="/2018/11/01/leetcode283移动零/">leetcode283移动零</a>
-                </span>
-            </li>
-
-        
-            </ul>
+          
         </div>
+      </div>
+      <h1 class="post-title syuanpi fadeInUpShort back-2">
+        
+          leetcode395_Longest_Substring_with_At_Least_K_Repeating_Characters
+        
+      </h1>
+    </header>
+    <div class="post-content syuanpi fadeInUpShort back-3">
+      
+        <p>寻找每一个字符重复次数不小于k的最大子串</p>
+<p>分治</p>
+<a id="more"></a>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fyj8v66mz2j30r00oomyy.jpg" alt="image-20181225200421184"></p>
+<p>用分治的想法，首先找到一个个数少于k的字符，然后根据这个字符把字符串划分为左右两部分，再分别把这两部分继续划分，返回这两部分的最大值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestSubstring</span><span class="params">(self, s, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.findlongestSubstring(s,k)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findlongestSubstring</span><span class="params">(self,s,k)</span>:</span></span><br><span class="line">        sets = set(list(s))</span><br><span class="line">        i=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> sets:</span><br><span class="line">            <span class="keyword">if</span>(s.count(item)&lt;k):</span><br><span class="line">                i=s.index(item)              </span><br><span class="line">                <span class="keyword">return</span> max(self.findlongestSubstring(s[:i],k),</span><br><span class="line">                      self.findlongestSubstring(s[i+<span class="number">1</span>:],k))</span><br><span class="line">        <span class="keyword">return</span> len(s)</span><br></pre></td></tr></table></figure>
+<p>利用python的一些库函数可以更简洁</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestSubstring</span><span class="params">(self, s, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> len(s)&lt;k:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        c=min(set(s),key=s.count)  <span class="comment">#找出个数最小的   </span></span><br><span class="line">        <span class="keyword">if</span> s.count(c)&gt;=k:</span><br><span class="line">            <span class="keyword">return</span> len(s)</span><br><span class="line">        <span class="keyword">return</span> max(self.longestSubstring(t,k) <span class="keyword">for</span> t <span class="keyword">in</span> s.split(c))</span><br><span class="line">    </span><br><span class="line">Solution().longestSubstring(<span class="string">'baaabcb'</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+      
+    
     </div>
     
-  <nav class="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2018/11/page/2/">< Prev</a><a class="page-number" href="/archives/2018/11/">1</a><a class="page-number" href="/archives/2018/11/page/2/">2</a><span class="page-number current">3</span>
+      
+
+      
+  <hr class="copy-line">
+  <div class="post-copyright">
+    <div class="copy-author">
+      <span>Author :</span>
+      <span>Nian</span>
+    </div>
+    <div class="copy-url">
+      <span>Url :</span>
+      <a href="http://cuteanian.top/2018/12/25/leetcode395-Longest-Substring-with-At-Least-K-Repeating-Characters/">http://cuteanian.top/2018/12/25/leetcode395-Longest-Substring-with-At-Least-K-Repeating-Characters/</a>
+    </div>
+    <div class="copy-origin">
+      <span>Origin :</span>
+      <a href="http://cuteanian.top">http://cuteanian.top</a>
+    </div>
+    <div class="copy-license">
+      
+      著作权归作者所有，转载请联系作者获得授权。
+    </div>
+  </div>
+
+    
+  </article>
+  
+    
+  <nav class="article-page">
+    
+    
+      <a href="/2018/12/25/深入vue组件/" id="art-right" class="art-right">
+        <span class="prev-title"> 
+          深入vue组件<i class="iconfont icon-right"></i>  
+        </span>
+      </a>
+    
   </nav>
 
+    
+  <i id="com-switch" class="iconfont icon-more jumping-in long infinite" style="font-size:24px;display:block;text-align:center;transform:rotate(180deg);"></i>
+  <div class="post-comments" id="post-comments" style="display: block;margin: auto 16px;">
+    
+    
+    
+
+    
+
+  </div>
+
+
+
+  
+  
+    
+  
+  <aside class="post-toc">
+    <span class="title" id="toc-switch"><span>Index</span></span>
+    <div class="toc-inner syuanpi back-1" style="display:none;">
+      <li class="title-link"><a href="javascript:;" class="toTop">leetcode395_Longest_Substring_with_At_Least_K_Repeating_Characters</a></li>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+  </aside>
+
+
+
+  
 
 
         </div>
