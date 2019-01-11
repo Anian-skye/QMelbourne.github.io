@@ -114,9 +114,9 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fylhnjzlkbj30r80fg0u3.jpg">
 <meta property="og:image" content="http://vars.qiniudn.com/manacher_5.png">
-<meta property="og:image" content="http://cuteanian.top/Users/sky/Library/Application%20Support/typora-user-images/image-20190103194223336.png">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fyu9z3mte4j30ky04saah.jpg">
 <meta property="og:image" content="http://vars.qiniudn.com/manacher_2.png">
-<meta property="og:updated_time" content="2019-01-03T12:11:37.494Z">
+<meta property="og:updated_time" content="2019-01-05T01:16:59.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode5_Longest_Palindromic_Substring">
 <meta name="twitter:description" content="找到最长的回文子序列">
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-03 20:11:37" itemprop="dateModified" datetime="2019-01-03T20:11:37+08:00">2019-01-03</time>
+                <time title="Modified: 2019-01-05 09:16:59" itemprop="dateModified" datetime="2019-01-05T09:16:59+08:00">2019-01-05</time>
               
             
           </span>
@@ -514,6 +514,7 @@
 <p><img src="http://vars.qiniudn.com/manacher_5.png" alt="manacher_5"></p>
 <p>这样每一个回文字符串都是一个奇数串</p>
 <h3 id="算法核心"><a href="#算法核心" class="headerlink" title="算法核心"></a>算法核心</h3><p>保存一个数组p，记录以每一个字符为对称轴时的最长回文字符，算法的核心就是计算这个数组</p>
+<p>（实际上这个p是新数组每一个字符为对称轴时最长回文字符的半径）</p>
 <p>同时保存一个当前最长回文字符串 current_longest，以及这个字符串的中心center,和他的右边界mx</p>
 <p>分两种情况讨论</p>
 <ol>
@@ -521,7 +522,7 @@
 <p>记j为i关于center的对称点</p>
 <p>a. 如果i+p[j]&lt;mx 则说明以s[i]为对称轴的回文序列均在current_longest中</p>
 <p>​    直接让p[i]=p[j]</p>
-<p>​    <img src="/Users/sky/Library/Application Support/typora-user-images/image-20190103194223336.png" alt="image-20190103194223336"></p>
+<p>​    <img src="https://ws2.sinaimg.cn/large/006tNc79ly1fyu9z3mte4j30ky04saah.jpg" alt="image-20190103194223336"></p>
 <p> b. 如果i+p[j]&gt;=mx 则说明以s[i]为对称轴的回文序列一部分在current_longest中，还有一部分不确定，需要继续遍历</p>
 <p>   但可以确认的是p[i]至少大于mx-i</p>
 <p><img src="http://vars.qiniudn.com/manacher_2.png" alt="manacher_2"></p>
@@ -588,6 +589,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/05/Identifying-and-Comparing-Multiple-Graphs-at-a-Glance/" rel="prev" title="Identifying_and_Comparing_Multiple_Graphs_at_a_Glance">
+                Identifying_and_Comparing_Multiple_Graphs_at_a_Glance <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -657,7 +662,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">66</span>
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -750,7 +755,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">40</span>
+                      
+                    
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
