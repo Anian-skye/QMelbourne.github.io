@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[leetcode241_Different_Ways_to_Add_Parentheses]]></title>
+    <url>%2F2019%2F01%2F14%2Fleetcode241-Different-Ways-to-Add-Parentheses%2F</url>
+    <content type="text"><![CDATA[添加括号得到表达式的不同值 分治 按照运算符来分割字符串，当左右两边都是数字的时候进行计算，否则继续分割 问题出在一些细节问题上： 如何保存单次计算的到的值 什么时候像结果数组里面添加值 跟22的区别在于回溯里面还要有循环，而不是可以一条语句判断结束，也就是分治的思想 保存在数组中，每一次回溯都会有自己新的result数组，最后返回的是最外层的result 最外层的result数组，当第一次分割的字符串两边得到运算结果时才会更新。 12345678910111213141516171819202122class Solution(object): def diffWaysToCompute(self, input): result=[] if(input.isdigit()): return [int(input)] for i in range(len(input)): if(input[i] in '*-+'): left = self.diffWaysToCompute(input[:i]) right = self.diffWaysToCompute(input[i+1:]) op = input[i] for i in left: for j in right: result.append(self.helper(i,j,op)) return result def helper(self,before,after,op): if(op=='-'): return before-after elif(op=='+'): return before+after elif(op=='*'): return before*after 参考资料 http://bookshadow.com/weblog/2015/07/27/leetcode-different-ways-add-parentheses/]]></content>
+      <categories>
+        <category>string</category>
+        <category>分治</category>
+      </categories>
+      <tags>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Contextual_Contour_Visual_Analysis_on_Dynamic_Multi-Relational_Clustering]]></title>
     <url>%2F2019%2F01%2F14%2FContextual-Contour-Visual-Analysis-on-Dynamic-Multi-Relational-Clustering%2F</url>
     <content type="text"><![CDATA[动态关系数据可视化分析 [TOC] ##概览 文章介绍了一个探索分析系统：contexTour,这个系统生成可以探索多维集群活动的可视化表达，包括热点话题，代表用户以及集群生成的话题以及他们的进化。 系统包括两个重要的部分： Dynamic Realtional Clustering(DRC) 有效追踪集群的进化并可以平滑的适应集群的变化 Dynamic Network Contour-map(DNC) 多维的可视化社区活动和进化 Multi-relational: DRC同步地聚集多重关系，使得所有聚类在所有关系中都是一致的（DRC clusters multi-relations simultaneously such that all clusters are consistent across all relations). Soft-clustering: DRC生成软聚类结果提供一个有效的总结方法，可以让DNC选择重要的实体并且计算相似性 Time-evolving: DRC可以按照时间来追踪集群的变化，让DNC可以生成一个平滑的动态布局 Adaptive: DRC可以按照时间来自动调整集群的数目并且按概率生成集群的过渡，让DNC可以追踪集群 Scalable：算法时间空间都是线性的，可以处理大规模数据 DRC 注释： $W_{t}^{r}$ 时间t时关系r的矩阵 为了表达简便，省略r和t 其中 $p_{k}$ 是这个关系在集群k中的先验概率 $p_{t|k}^{q}$ Sq中第t个实体在集群k中存在的概率 矩阵格式 问题规划优化问题：目标是找到可以完美解释随时间变化数据实体的多重关系的smoothly evolving soft clusters DNC可视化DRC的结果 将实体总结成一个网络 可视化的表现随时间的进化以及维度转换 网络总构建和总结重点：将数据集缩小以便高效清晰的进行可视化 选择重要的实体衡量实体重要性 Cluster important 是实体i在cluster k中的重要性得分，等于$p_{i|k}$ 总重要性是指实体i在所有cluster中的得分之和 选取子集的抽样原则 选择具有全局高$s_{i}$的实体 每一个个cluster中选择固定个数的实体，每一层都倾向选择高$p_{i|k}$的实体 混合使用两种方法 相似度计算和网络构建将两个实体间的相似度定义为两个实体模糊集的成员得分的相似度 根据相似度来构建网络 如果$s_{i,j}$的值在top-a highest中就在i和j之间添加一条边（a选5%） 对于孤立的实体，将他们同大组件中最相近的实体连接起来 轮廓布局在整体网络上覆盖一个轮廓图来描述实体分布的密度 First put kernel functions over all the sampled entities then estimate the joint density distribution of allkernels. 把每一个未被抽样的实体分配给与他最相近的抽象实体 参考资料 ContexTour: Contextual Contour Visual Analysis on Dynamic Multi-Relational Clustering]]></content>
