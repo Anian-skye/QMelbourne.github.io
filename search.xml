@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[leetcode392Is_Subsequence]]></title>
+    <url>%2F2019%2F01%2F17%2Fleetcode392Is-Subsequence%2F</url>
+    <content type="text"><![CDATA[是否是子串 s能由t中的字符构成，但是不能改变字符在t中的位置 一开始把这个题想复杂了，字符并不是完全相邻一致的，只是相对位置一样就行了，所以只要遍历一次t就可以得到答案了 保存一个s的指针，每次得到相同的字符就+1，直到等于s的长度返回True即可。 12345678910111213141516class Solution(object): def isSubsequence(self, s, t): """ :type s: str :type t: str :rtype: bool """ if(not s): return True s_ptr = 0 for item in t: if(s[s_ptr] == item): s_ptr+=1 if(s_ptr==len(s)): return True return False]]></content>
+      <categories>
+        <category>leetcode</category>
+        <category>string</category>
+      </categories>
+      <tags>
+        <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[leetcode241_Different_Ways_to_Add_Parentheses]]></title>
     <url>%2F2019%2F01%2F14%2Fleetcode241-Different-Ways-to-Add-Parentheses%2F</url>
     <content type="text"><![CDATA[添加括号得到表达式的不同值 分治 按照运算符来分割字符串，当左右两边都是数字的时候进行计算，否则继续分割 问题出在一些细节问题上： 如何保存单次计算的到的值 什么时候像结果数组里面添加值 跟22的区别在于回溯里面还要有循环，而不是可以一条语句判断结束，也就是分治的思想 保存在数组中，每一次回溯都会有自己新的result数组，最后返回的是最外层的result 最外层的result数组，当第一次分割的字符串两边得到运算结果时才会更新。 12345678910111213141516171819202122class Solution(object): def diffWaysToCompute(self, input): result=[] if(input.isdigit()): return [int(input)] for i in range(len(input)): if(input[i] in '*-+'): left = self.diffWaysToCompute(input[:i]) right = self.diffWaysToCompute(input[i+1:]) op = input[i] for i in left: for j in right: result.append(self.helper(i,j,op)) return result def helper(self,before,after,op): if(op=='-'): return before-after elif(op=='+'): return before+after elif(op=='*'): return before*after 参考资料 http://bookshadow.com/weblog/2015/07/27/leetcode-different-ways-add-parentheses/]]></content>
