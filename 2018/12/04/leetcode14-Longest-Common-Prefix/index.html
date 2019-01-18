@@ -104,19 +104,19 @@
 
 
 
-  <meta name="description" content="寻找字符串的共同前缀">
+  <meta name="description" content="寻找字符串的共同前缀 已二刷">
 <meta name="keywords" content="刷题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode14_Longest_Common_Prefix">
 <meta property="og:url" content="http://cuteanian.top/2018/12/04/leetcode14-Longest-Common-Prefix/index.html">
 <meta property="og:site_name" content="CuteNian">
-<meta property="og:description" content="寻找字符串的共同前缀">
+<meta property="og:description" content="寻找字符串的共同前缀 已二刷">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxv0n7qgekj30r20dsab5.jpg">
-<meta property="og:updated_time" content="2018-12-04T13:10:21.339Z">
+<meta property="og:updated_time" content="2019-01-18T02:47:25.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode14_Longest_Common_Prefix">
-<meta name="twitter:description" content="寻找字符串的共同前缀">
+<meta name="twitter:description" content="寻找字符串的共同前缀 已二刷">
 <meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxv0n7qgekj30r20dsab5.jpg">
 
 
@@ -422,12 +422,24 @@
                 
               
 
-              <time title="Created: 2018-12-04 21:05:11 / Modified: 21:10:21" itemprop="dateCreated datePublished" datetime="2018-12-04T21:05:11+08:00">2018-12-04</time>
+              <time title="Created: 2018-12-04 21:05:11" itemprop="dateCreated datePublished" datetime="2018-12-04T21:05:11+08:00">2018-12-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-18 10:47:25" itemprop="dateModified" datetime="2019-01-18T10:47:25+08:00">2019-01-18</time>
               
             
           </span>
@@ -452,6 +464,13 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/string/" itemprop="url" rel="index"><span itemprop="name">string</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/string/前缀/" itemprop="url" rel="index"><span itemprop="name">前缀</span></a></span>
 
                 
                 
@@ -485,7 +504,7 @@
       
 
       
-        <p>寻找字符串的共同前缀</p>
+        <p>寻找字符串的共同前缀 已二刷</p>
 <a id="more"></a>
 <h1 id="leetcode14-Longest-Common-Prefix"><a href="#leetcode14-Longest-Common-Prefix" class="headerlink" title="leetcode14_Longest_Common_Prefix"></a>leetcode14_Longest_Common_Prefix</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxv0n7qgekj30r20dsab5.jpg" alt="image-20181204210621899"></p>
 <p>题目要求必须是所有字符串的共同前缀，所以可以保留第一个字符串作为比较值，一个指针记录当前相同的长度</p>
@@ -496,6 +515,9 @@
 <li>第一个字符串不一定是最长的，也就是说以第一个为参考字符串会导致越界，所以要判断一句是否越界，如果越界则结束并输出结果</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestCommonPrefix</span><span class="params">(self, strs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type strs: List[str]</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span>(strs==[]):</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">        first = strs[<span class="number">0</span>]</span><br><span class="line">        l=<span class="number">0</span></span><br><span class="line">        flag=<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(l&lt;len(first)):</span><br><span class="line">            <span class="keyword">for</span> item <span class="keyword">in</span> strs:</span><br><span class="line">                <span class="keyword">if</span>(l&gt;=len(item)):</span><br><span class="line">                    flag=<span class="number">1</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">if</span>(item[l]!=first[l]):</span><br><span class="line">                    flag=<span class="number">1</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span>(flag==<span class="number">0</span>):</span><br><span class="line">                l+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">return</span> first[:l]</span><br></pre></td></tr></table></figure>
+<h2 id="二刷"><a href="#二刷" class="headerlink" title="二刷"></a>二刷</h2><p>二刷竟然竟然还没能不看思路写出来..也不知道脑袋里装了什么奇怪的东西</p>
+<p>但好在写出来的代码好看了很多,这样看之前写的代码还真的跟emmm一样，各种if疯狂break</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestCommonPrefix</span><span class="params">(self, strs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type strs: List[str]</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span>(strs==[]):</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">        item = strs[<span class="number">0</span>]</span><br><span class="line">        pos = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(pos&lt;len(item)):</span><br><span class="line">            <span class="keyword">for</span> string <span class="keyword">in</span> strs:</span><br><span class="line">                <span class="keyword">if</span>(pos&gt;=len(string) <span class="keyword">or</span> string[pos]!=item[pos]):</span><br><span class="line">                    <span class="keyword">return</span> item[<span class="number">0</span>:pos]</span><br><span class="line">            pos+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> item[<span class="number">0</span>:pos]</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -695,7 +717,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -733,6 +759,21 @@
           
 
           
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/QMelbourne" title="GitHub &rarr; https://github.com/QMelbourne" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
 
           
 
@@ -758,7 +799,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode14-Longest-Common-Prefix"><span class="nav-number">1.</span> <span class="nav-text">leetcode14_Longest_Common_Prefix</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode14-Longest-Common-Prefix"><span class="nav-number">1.</span> <span class="nav-text">leetcode14_Longest_Common_Prefix</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二刷"><span class="nav-number">1.1.</span> <span class="nav-text">二刷</span></a></li></ol></li></ol></div>
             
 
           </div>

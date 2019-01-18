@@ -112,12 +112,12 @@
 <meta property="og:site_name" content="CuteNian">
 <meta property="og:description" content="判断一个字符串是否能用另一个字符串里的字符来构成">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://cuteanian.top/Users/sky/Library/Application%20Support/typora-user-images/image-20181207140305075.png">
-<meta property="og:updated_time" content="2018-12-07T08:01:50.630Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fzai97emkkj30qq0dymz8.jpg">
+<meta property="og:updated_time" content="2019-01-18T02:49:10.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode383Ransom_Note">
 <meta name="twitter:description" content="判断一个字符串是否能用另一个字符串里的字符来构成">
-<meta name="twitter:image" content="http://cuteanian.top/Users/sky/Library/Application%20Support/typora-user-images/image-20181207140305075.png">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fzai97emkkj30qq0dymz8.jpg">
 
 
 
@@ -422,12 +422,24 @@
                 
               
 
-              <time title="Created: 2018-12-07 14:01:16 / Modified: 16:01:50" itemprop="dateCreated datePublished" datetime="2018-12-07T14:01:16+08:00">2018-12-07</time>
+              <time title="Created: 2018-12-07 14:01:16" itemprop="dateCreated datePublished" datetime="2018-12-07T14:01:16+08:00">2018-12-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-18 10:49:10" itemprop="dateModified" datetime="2019-01-18T10:49:10+08:00">2019-01-18</time>
               
             
           </span>
@@ -487,14 +499,26 @@
       
         <p>判断一个字符串是否能用另一个字符串里的字符来构成</p>
 <a id="more"></a>
-<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20181207140305075.png" alt="image-20181207140305075"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fzai97emkkj30qq0dymz8.jpg" alt="image-20181207140305075"></p>
 <p>还是一道简单的string类型的题目</p>
 <h2 id="count"><a href="#count" class="headerlink" title="count"></a>count</h2><p>第一个想法就是用hash表记录下每个字符的个数，然后发现python的count函数可以直接计算个数</p>
 <p>有一个小技巧，在遍历ransomNote时使用set函数，去掉重复的值，加快运行速度</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canConstruct</span><span class="params">(self, ransomNote, magazine)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type ransomNote: str</span></span><br><span class="line"><span class="string">        :type magazine: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> set(ransomNote):</span><br><span class="line">            <span class="keyword">if</span>(ransomNote.count(item)&gt;magazine.count(item)):</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
 <h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>不用count的方法:</p>
-<p>遍历ransomNote，然后记录下当前r中元素在m中的下标p。再遇到相同元素时，从m的p+1的位置开始查找，如果没有这个元素，则返回False，如果有，则更新这个元素保存的下标。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canConstruct</span><span class="params">(self, ransomNote, magazine)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type ransomNote: str</span></span><br><span class="line"><span class="string">        :type magazine: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        l = &#123;&#125;</span><br><span class="line">        m = len(ransomNote)</span><br><span class="line">        <span class="keyword">if</span>(m==<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">if</span>(m&gt;len(magazine)):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> ransomNote:</span><br><span class="line">            <span class="keyword">if</span>(i <span class="keyword">in</span> l):</span><br><span class="line">                p = magazine.find(i,l[i]+<span class="number">1</span>)</span><br><span class="line">                print(p)</span><br><span class="line">                <span class="keyword">if</span>(p==<span class="number">-1</span>):</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">                l[i] = p</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                p = magazine.find(i)</span><br><span class="line">                <span class="keyword">if</span>(p==<span class="number">-1</span>):</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">                l[i] = p</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<p>无非两种情况返回False:</p>
+<ol>
+<li>ransomNote需要的字符不在magazine中</li>
+<li>ransomNote需要的某个字符的个数大于该字符在magazine中的个数</li>
+</ol>
+<p>保存一个字典result，记录下ransomNote所需字符在magazine中的位置</p>
+<p>遍历ransomNote</p>
+<ol>
+<li><p>个数是否满足：如果需要的字符char在result中，位置是index，则从magazine[index:]中查找看是否还有一个char，有的话则更新result，没有则返回False</p>
+</li>
+<li><p>是否存在：如果需要的char不在result中，则中magazine中查找看是否有char，有的话更新result,没有的话则返回False</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canConstruct</span><span class="params">(self, ransomNote, magazine)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type ransomNote: str</span></span><br><span class="line"><span class="string">        :type magazine: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        l = &#123;&#125;</span><br><span class="line">        m = len(ransomNote)</span><br><span class="line">        <span class="keyword">if</span>(m==<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">if</span>(m&gt;len(magazine)):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> ransomNote:</span><br><span class="line">            <span class="keyword">if</span>(i <span class="keyword">in</span> l):</span><br><span class="line">                p = magazine.find(i,l[i]+<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">if</span>(p==<span class="number">-1</span>):</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">                l[i] = p</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                p = magazine.find(i)</span><br><span class="line">                <span class="keyword">if</span>(p==<span class="number">-1</span>):</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">                l[i] = p</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -694,7 +718,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -731,6 +759,21 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/QMelbourne" title="GitHub &rarr; https://github.com/QMelbourne" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
           
 
           
