@@ -113,7 +113,7 @@
 <meta property="og:description" content="双指针移除元素">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fx7wdbssfkj31cq0iwq5w.jpg">
-<meta property="og:updated_time" content="2018-11-14T13:15:26.007Z">
+<meta property="og:updated_time" content="2019-02-18T12:54:46.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode27移除元素">
 <meta name="twitter:description" content="双指针移除元素">
@@ -422,12 +422,24 @@
                 
               
 
-              <time title="Created: 2018-11-14 21:09:17 / Modified: 21:15:26" itemprop="dateCreated datePublished" datetime="2018-11-14T21:09:17+08:00">2018-11-14</time>
+              <time title="Created: 2018-11-14 21:09:17" itemprop="dateCreated datePublished" datetime="2018-11-14T21:09:17+08:00">2018-11-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-18 20:54:46" itemprop="dateModified" datetime="2019-02-18T20:54:46+08:00">2019-02-18</time>
               
             
           </span>
@@ -501,6 +513,15 @@
 <li>如果指向的是val则j和数组不作操作,i+1。</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></span><br><span class="line">        l = len(nums)</span><br><span class="line">        result = l</span><br><span class="line">        j=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">            <span class="keyword">if</span>(val != nums[i]):</span><br><span class="line">                temp = nums[i]</span><br><span class="line">                nums[i] = nums[j]</span><br><span class="line">                nums[j] = temp</span><br><span class="line">                j+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result-=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<h2 id="二刷"><a href="#二刷" class="headerlink" title="二刷"></a>二刷</h2><p>读完题知道应该是把要移除的值后移，最开始想的是判断如果是val则把这个值与最后面的交换，但是这样如果出现如果最后面的值也是val就会出错。</p>
+<p>思路应该是反过来：</p>
+<p>遍历判断当前值看是否不等于val</p>
+<ol>
+<li>如果不等于则result+1,并把这个值前移</li>
+<li>若等于则继续遍历</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></span><br><span class="line">        result=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            <span class="keyword">if</span>(nums[i]!=val):</span><br><span class="line">                nums[i],nums[result] = nums[result],nums[i]</span><br><span class="line">                result+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<p>代码比第一次的时候思路要清晰多了</p>
 
       
     </div>
@@ -621,7 +642,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">74</span>
+                    <span class="site-state-item-count">76</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -784,7 +805,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode27移除元素"><span class="nav-number">1.</span> <span class="nav-text">leetcode27移除元素</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#leetcode27移除元素"><span class="nav-number">1.</span> <span class="nav-text">leetcode27移除元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二刷"><span class="nav-number">1.1.</span> <span class="nav-text">二刷</span></a></li></ol></li></ol></div>
             
 
           </div>
