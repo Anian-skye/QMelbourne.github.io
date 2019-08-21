@@ -373,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/19/promise对象/">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/08/20/Cross-domain-Collaboration-Recommendation/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Nian">
@@ -393,7 +393,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/19/promise对象/" class="post-title-link" itemprop="url">promise对象</a>
+                <a href="/2019/08/20/Cross-domain-Collaboration-Recommendation/" class="post-title-link" itemprop="url">Cross-domain And topic mining</a>
               
             
           </h1>
@@ -418,7 +418,7 @@
                 
               
 
-              <time title="Created: 2019-03-19 21:58:50" itemprop="dateCreated datePublished" datetime="2019-03-19T21:58:50+08:00">2019-03-19</time>
+              <time title="Created: 2019-08-20 14:16:34" itemprop="dateCreated datePublished" datetime="2019-08-20T14:16:34+08:00">2019-08-20</time>
             
 
             
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-21 20:56:01" itemprop="dateModified" datetime="2019-03-21T20:56:01+08:00">2019-03-21</time>
+                <time title="Modified: 2019-08-21 09:01:13" itemprop="dateModified" datetime="2019-08-21T09:01:13+08:00">2019-08-21</time>
               
             
           </span>
@@ -452,7 +452,14 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/" itemprop="url" rel="index"><span itemprop="name">vis</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/cross-domain/" itemprop="url" rel="index"><span itemprop="name">cross-domain</span></a></span>
 
                 
                 
@@ -487,16 +494,37 @@
 
       
         
-          <p>promise</p>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/19/promise对象/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
+            <h1 id="Cross-domain-Collaboration-Recommendation"><a href="#Cross-domain-Collaboration-Recommendation" class="headerlink" title="Cross-domain Collaboration Recommendation"></a><strong>Cross-domain Collaboration Recommendation</strong></h1><p><strong>goals:</strong> Rank and recommend potential collaborators in the target domain for a specific user vq from the source domain.</p>
+<p><strong>methods: </strong>propose the Cross-domain Topic Learning (CTL) method; CTL is a generative topic model that differentiates relevant topics to cross-domain collaboration from other topics.</p>
+<p><strong>algorithm:</strong></p>
+<p><strong>Author Matching</strong></p>
+<p>construct a collaboration graph connecting users between source and target domains and then use a random walk with restart algorithm [28] to rank collaborators in the target domain.</p>
+<p>建立合作网络，找到节点之间的相关性得分（using the Random Walks with Restarts (RWR) theory）</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190820205953829.png" alt="image-20190820205953829"></p>
+<p><strong>Topic Matching</strong></p>
+<p>Author-Conference-Topic model utilizes the topic distribution to represent the interdependencies among authors, papers, and publication venues.</p>
+<p>得到话题，然后分别计算两个学科之间话题的alignment</p>
+<ol>
+<li>ACT model obtain two sets of topic distribution</li>
+<li>Estimate the alignment between topics of these two domains.</li>
+</ol>
+<p>在创建的图中，用户节点v和话题节点z的边权重由ACT模型得出的可能性$P(z|v)$来决定。</p>
+<p>询问的节点和目标话题之间或者目标域中节点的关联都可以通过随机游走模型的可能性来决定。（Then the relatedness of the query node to a target topic z′is defined by a similar formula as that in Eq. 1 and analogously we can define the relatedness between the query node and user nodes in the target domain.）</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190820210553750.png" alt="image-20190820210553750"></p>
+<p><strong>CTL(Cross-domain Topic Learning): </strong></p>
+<p>CTL is a generative topic model that differentiates relevant topics to cross-domain collaboration from other topics.</p>
+<p>找到交叉学科的话题</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190820211654865.png" alt="image-20190820211654865"></p>
+<h1 id="A-Web-scale-system-for-scientific-knowledge-exploration"><a href="#A-Web-scale-system-for-scientific-knowledge-exploration" class="headerlink" title="A Web-scale system for scientific knowledge exploration"></a>A Web-scale system for scientific knowledge exploration</h1><p><strong>goals: </strong></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
           
-          <!--/noindex-->
         
       
     </div>
@@ -551,7 +579,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/18/动态规划/">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/08/15/gitDataMining/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Nian">
@@ -571,7 +599,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/18/动态规划/" class="post-title-link" itemprop="url">动态规划-算法导论笔记</a>
+                <a href="/2019/08/15/gitDataMining/" class="post-title-link" itemprop="url">gitDataMining</a>
               
             
           </h1>
@@ -596,24 +624,12 @@
                 
               
 
-              <time title="Created: 2019-03-18 15:53:50" itemprop="dateCreated datePublished" datetime="2019-03-18T15:53:50+08:00">2019-03-18</time>
+              <time title="Created: 2019-08-15 18:31:59 / Modified: 18:34:35" itemprop="dateCreated datePublished" datetime="2019-08-15T18:31:59+08:00">2019-08-15</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-03-21 15:45:49" itemprop="dateModified" datetime="2019-03-21T15:45:49+08:00">2019-03-21</time>
               
             
           </span>
@@ -630,7 +646,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/动态规划/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/gitdata/" itemprop="url" rel="index"><span itemprop="name">gitdata</span></a></span>
 
                 
                 
@@ -665,17 +681,16 @@
 
       
         
-          <p>动态规划</p>
-<p>[TOC]</p>
-          <!--noindex-->
           
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/18/动态规划/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
+            <h1 id="DATA-COLLECTION-AND-ANALYSIS-OF-GitHub-REPOSITORIES-AND-USERS"><a href="#DATA-COLLECTION-AND-ANALYSIS-OF-GitHub-REPOSITORIES-AND-USERS" class="headerlink" title="DATA COLLECTION AND ANALYSIS OF GitHub REPOSITORIES AND USERS"></a>DATA COLLECTION AND ANALYSIS OF GitHub REPOSITORIES AND USERS</h1><p><strong>goals: </strong> Aiming to understand GitHub user behavior and project success factors. </p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
           
-          <!--/noindex-->
         
       
     </div>
@@ -730,7 +745,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/18/Drawing-Clustered-Graphs-as-Topographic-Maps/">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/08/15/euroVis/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Nian">
@@ -750,7 +765,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/03/18/Drawing-Clustered-Graphs-as-Topographic-Maps/" class="post-title-link" itemprop="url">Drawing_Clustered_Graphs_as_Topographic_Maps</a>
+                <a href="/2019/08/15/euroVis/" class="post-title-link" itemprop="url">euroVis</a>
               
             
           </h1>
@@ -775,7 +790,172 @@
                 
               
 
-              <time title="Created: 2019-03-18 10:23:53" itemprop="dateCreated datePublished" datetime="2019-03-18T10:23:53+08:00">2019-03-18</time>
+              <time title="Created: 2019-08-15 17:29:21 / Modified: 18:32:34" itemprop="dateCreated datePublished" datetime="2019-08-15T17:29:21+08:00">2019-08-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/" itemprop="url" rel="index"><span itemprop="name">vis</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ConToVi-Multi-Party-Conversation-Exploration-using-Topic-Space-Views"><a href="#ConToVi-Multi-Party-Conversation-Exploration-using-Topic-Space-Views" class="headerlink" title="ConToVi: Multi-Party Conversation Exploration using Topic-Space Views"></a>ConToVi: Multi-Party Conversation Exploration using Topic-Space Views</h1><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/08/14/pacificvis/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CuteNian">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/14/pacificvis/" class="post-title-link" itemprop="url">pacificvis</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-14 17:09:57" itemprop="dateCreated datePublished" datetime="2019-08-14T17:09:57+08:00">2019-08-14</time>
             
 
             
@@ -792,7 +972,1223 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-21 16:31:49" itemprop="dateModified" datetime="2019-03-21T16:31:49+08:00">2019-03-21</time>
+                <time title="Modified: 2019-08-15 16:24:17" itemprop="dateModified" datetime="2019-08-15T16:24:17+08:00">2019-08-15</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/" itemprop="url" rel="index"><span itemprop="name">vis</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="GitViz-An-Interactive-Visualization-System-for-Analyzing-Development-Trends-in-the-Open-Source-Software-Community"><a href="#GitViz-An-Interactive-Visualization-System-for-Analyzing-Development-Trends-in-the-Open-Source-Software-Community" class="headerlink" title="GitViz: An Interactive Visualization System for Analyzing Development Trends in the Open-Source Software Community"></a><strong>GitViz: An Interactive Visualization System for Analyzing Development Trends in the Open-Source Software Community</strong></h1><p><strong>goal:</strong> we propose a visualization system that can easily and quickly explore the technology trends in computer and data science. </p>
+<p><strong>methods:</strong> Design a system for analyzing technology trends in the computer/data science field by using open-source projects shared through GitHub.</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190814200519505.png" alt="image-20190814200519505"></p>
+<h1 id="A-Visual-Approach-for-the-Comparative-Analysis-of-Character-Networks-in-Narrative-Texts"><a href="#A-Visual-Approach-for-the-Comparative-Analysis-of-Character-Networks-in-Narrative-Texts" class="headerlink" title="A Visual Approach for the Comparative Analysis of Character Networks in Narrative Texts"></a><strong>A Visual Approach for the Comparative Analysis of Character Networks in Narrative Texts</strong></h1><p><strong>background: </strong> humanities scholars want to describe and compare characters’ personality traits, their roles, their relationships, and the evolution of these aspects over the course of a novel.</p>
+<p><strong>goal:</strong> analyze the plot and characters of a novel visually.</p>
+<p><strong>basic question:</strong>  Support humanities scholars’ analysis about investigating and comparing character constellations at different timestamps of the plot.</p>
+<p><strong>detail questions: </strong> </p>
+<ol>
+<li>The visual approach should enable users to select different ranges of a text document and it should visually represent the character networks described within them.</li>
+<li>It should support a <strong>comparison mode</strong> that enables users to compare selected character networks with each other to highlight the differences and commonalities of them.</li>
+<li>The character network visualization should be equipped with interactive features to facilitate the focus- ing and filtering of different parts of the network, for example, to highlight characters that only occur in one of the selected ranges.</li>
+<li>The approach should provide suitable visual comparison rep- resentations for smaller and larger character networks.</li>
+<li>The character network representations should be linked to a text view, which enables a close reading approach.</li>
+<li>It should be possible to analyze the relationships between characters in more detail, for example, to show a textual summarization of their contexts.</li>
+<li>The visual approach should also provide a similarity overview of all selected character networks that serve as a starting point for a more in-depth analysis.</li>
+</ol>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190815112611993.png" alt="image-20190815112611993"></p>
+<p><strong>visual design:</strong> </p>
+<ol>
+<li>node-link </li>
+</ol>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190815154116089.png" alt="image-20190815154116089"></p>
+<ol start="2">
+<li><p>Adjacency matrix</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190815154202767.png" alt="image-20190815154202767"></p>
+</li>
+<li><p>Grid View</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190815154553082.png" alt="image-20190815154553082"></p>
+</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/08/13/domain/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CuteNian">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/13/domain/" class="post-title-link" itemprop="url">domain</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-13 19:11:33" itemprop="dateCreated datePublished" datetime="2019-08-13T19:11:33+08:00">2019-08-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-16 20:43:15" itemprop="dateModified" datetime="2019-08-16T20:43:15+08:00">2019-08-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/" itemprop="url" rel="index"><span itemprop="name">vis</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="A-century-of-physics"><a href="#A-century-of-physics" class="headerlink" title="A century of physics"></a>A century of physics</h1><p><strong>Goal:</strong> what is physics? Is the interdisciplinary role of physics something new — a potential fad — or has it always been an integral part of the field? Is physics dying or thriving, becoming more insular<br>or more interdisciplinary?</p>
+<ol>
+<li>What is physice</li>
+<li>The growth of physics</li>
+<li><p>Impact and its variations</p>
+</li>
+<li><p>The inner structure of physics </p>
+</li>
+</ol>
+<p>#CHI 1994-2013: Mapping Two Decades of Intellectual Progress through Co-word Analysis</p>
+<p><strong>goal:</strong> map and visualize the intellectual landscape of the CHI conference on Human Computer Interaction</p>
+<p><strong>techniques:</strong> hierarchical cluster,graph theory,strategic diagrms,graphs</p>
+<p><strong>method: </strong> </p>
+<p>two graph theory: density and centrality</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1g5z90r13rvj30f909jacp.jpg" alt="image-20190814104003617"></p>
+<ol>
+<li>supervised clustering method to reach as many clusters as possible while maintaining content validity and cluster fitness</li>
+<li>constructed two strategic diagrams to visualize;  node-link</li>
+<li>analysis on individual keywords; Find core research topics</li>
+</ol>
+<h1 id="Bridging-Text-Visualization-and-Mining-A-Task-Driven-Survey"><a href="#Bridging-Text-Visualization-and-Mining-A-Task-Driven-Survey" class="headerlink" title="Bridging Text Visualization and Mining: A Task-Driven Survey"></a>Bridging Text Visualization and Mining: A Task-Driven Survey</h1><p><strong>background： </strong>We are still in need of an overview, accounting for both the user-facing visualization and the back-end data mining approaches.</p>
+<p><strong>goals: </strong>provide an overview of the relevant techniques and analysis tasks, as well as the relationships between visualization and text mining.</p>
+<p><strong>methods: </strong> Highlight associations between analysis tasks, visualization techniques, and text mining techniques through a set of taxonomies</p>
+<p><strong>requirement：</strong> </p>
+<ol>
+<li>understand a common set of concepts used in this research topic</li>
+<li>facilitate the exploration of the relationships between visualization techniques, mining techniques, and analysis tasks</li>
+<li>understand the current practice in developing visual text analytics tools</li>
+<li>seek potential research opportunities by narrowing the gulf between visualization and mining techniques based on the analysis tasks</li>
+<li>analyze other interdisciplinary research areas in a similar way</li>
+</ol>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190816104707692.png" alt="image-20190816104707692"></p>
+<p><strong>steps</strong></p>
+<ol>
+<li>concept extraction</li>
+<li>taxonomy building</li>
+<li>concept visualization</li>
+</ol>
+<h1 id="Visualization-as-Seen-Through-its-Research-Paper-Keywords"><a href="#Visualization-as-Seen-Through-its-Research-Paper-Keywords" class="headerlink" title="Visualization as Seen Through its Research Paper Keywords"></a>Visualization as Seen Through its Research Paper Keywords</h1><p><strong>goal:</strong> Derive a set of visualization topics that we discuss in the context of the current taxonomy that is used to categorize papers and assign reviewers in the IEEE VIS reviewing process. </p>
+<p><strong>contribution:</strong></p>
+<ol>
+<li>Mapping visualization research</li>
+<li>Taxonomy and Terminology Discussion</li>
+<li>keyvis.org</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/08/11/Visualizing-Research-Impact-through-Citation-Data/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CuteNian">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/11/Visualizing-Research-Impact-through-Citation-Data/" class="post-title-link" itemprop="url">individual_papers</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-11 13:26:04" itemprop="dateCreated datePublished" datetime="2019-08-11T13:26:04+08:00">2019-08-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-15 19:09:47" itemprop="dateModified" datetime="2019-08-15T19:09:47+08:00">2019-08-15</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/" itemprop="url" rel="index"><span itemprop="name">vis</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Visualizing-Research-Impact-through-Citation-Data"><a href="#Visualizing-Research-Impact-through-Citation-Data" class="headerlink" title="Visualizing Research Impact through Citation Data"></a>Visualizing Research Impact through Citation Data</h1><p><strong>research impact :</strong> evaluating the research quality and influence of a scholar, a journal, or a conference. </p>
+<p><strong>Goals:</strong> better exploration of research impact through citation data. </p>
+<p><strong>Methods:</strong> propose an interactive and compact visual design based on matrix visualization, ImpactVis, to comprehensively show the details of research impact. </p>
+<p><strong>Tasks:</strong> </p>
+<ol>
+<li>overview of research impact</li>
+<li>general fields of research impact</li>
+<li>temporal evolution of publication and citations</li>
+<li>involvement of others researchers</li>
+<li>showing details on demand</li>
+</ol>
+<p><strong>Design:</strong></p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190811150000335.png" alt="image-20190811150000335"></p>
+<p>The cell at Row i Column j (where j ≥ i) represents the citations that the papers published in Yeari received in Year j. </p>
+<h1 id="Episogram-Visual-Summarization-of-Egocentric-Social-Interactions"><a href="#Episogram-Visual-Summarization-of-Egocentric-Social-Interactions" class="headerlink" title="Episogram: Visual Summarization of Egocentric Social Interactions"></a><strong>Episogram: Visual Summarization of Egocentric Social Interactions</strong></h1><p><strong>Goals: </strong> Understanding about the common structure of social interaction processes</p>
+<p>​              Help users gain insights from the social interac- tion data via data exploration.</p>
+<p><strong>Methods:</strong>  A novel egocentric representation for visualizing individuals’ interaction histories.</p>
+<p>​                    two types of layout: initiator or responder</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190813102939976.png" alt="image-20190813102939976"></p>
+<h1 id="Visual-Exploration-of-Academic-Career-Paths"><a href="#Visual-Exploration-of-Academic-Career-Paths" class="headerlink" title="Visual Exploration of Academic Career Paths"></a>Visual Exploration of Academic Career Paths</h1><p><strong>Goals:</strong> the study of patterns in scholarly contributions as well as for the exploration of scientific disputes associated with an individuals career. </p>
+<p><strong>Methods: </strong> </p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190813103837288.png" alt="image-20190813103837288"></p>
+<h1 id="A-Design-Study-of-Personal-Bibliographic-Data-Visualization"><a href="#A-Design-Study-of-Personal-Bibliographic-Data-Visualization" class="headerlink" title="A Design Study of Personal Bibliographic Data Visualization"></a><strong>A Design Study of Personal Bibliographic Data Visualization</strong></h1><p><strong>Goal:</strong> Our objective is to understand each visual representation’s strengths and lim- itations in characterizing individual researchers’ academic perfor- mance and paths in terms of their publication records.</p>
+<p><strong>Methods:</strong> Compare node-link and jacency matrices and then purpose their own design: a botanical tree metaphor</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190813162734903.png" alt="image-20190813162734903"></p>
+<h1 id="VIS-Author-Profiles-Interactive-Descriptions-of-Publication-Records-Combining-Text-and-Visualization"><a href="#VIS-Author-Profiles-Interactive-Descriptions-of-Publication-Records-Combining-Text-and-Visualization" class="headerlink" title="VIS Author Profiles: Interactive Descriptions of Publication Records Combining Text and Visualization"></a>VIS Author Profiles: Interactive Descriptions of Publication Records Combining Text and Visualization</h1><p><strong>goal:</strong> generate integrated textual and visual descriptions to highlight patterns in publication records</p>
+<p><strong>methods:</strong> </p>
+<p>Mixing low-level publication data with high-level abstractions and background information;</p>
+<p>Leverage template-based natural language generation to summarize <strong>notable publication statistics,evolution of research topics and collaboration relationships</strong></p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190813160902782.png" alt="image-20190813160902782"></p>
+<p><strong>Limit:</strong> Maybe there is chance to mix  evolution of research topics with collaboration relationships.</p>
+<h1 id="VisualBib-Narrative-Views-for-Customized-Bibliographies"><a href="#VisualBib-Narrative-Views-for-Customized-Bibliographies" class="headerlink" title="VisualBib: Narrative Views for Customized Bibliographies"></a>VisualBib: Narrative Views for Customized Bibliographies</h1><p><strong>goal: </strong>create, modify, visualize and share bibliographies</p>
+<p><strong>methods:</strong> </p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/07/18/egoNetwork/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CuteNian">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/18/egoNetwork/" class="post-title-link" itemprop="url">egoNetwork</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-18 19:29:33" itemprop="dateCreated datePublished" datetime="2019-07-18T19:29:33+08:00">2019-07-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-19 14:55:42" itemprop="dateModified" datetime="2019-07-19T14:55:42+08:00">2019-07-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/" itemprop="url" rel="index"><span itemprop="name">vis</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-5D-Egocentric-Dynamic-Network-Visualization"><a href="#1-5D-Egocentric-Dynamic-Network-Visualization" class="headerlink" title="1.5D Egocentric Dynamic Network Visualization"></a>1.5D Egocentric Dynamic Network Visualization</h3><p><strong>Goals:</strong>  visualization of large dynamic network.</p>
+<p><strong>Methods:</strong> Egocentric dynamic network; New visualization design</p>
+<p>Introduce a temporal glyph to represent the trend of the focus node</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190719104207859.png" alt="image-20190719104207859"></p>
+<p>contribution:</p>
+<p>dynamic</p>
+<p>trend glyphs</p>
+<p>interaction</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/07/16/vis-Application/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CuteNian">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/16/vis-Application/" class="post-title-link" itemprop="url">vis_Application</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-16 16:38:26 / Modified: 21:28:28" itemprop="dateCreated datePublished" datetime="2019-07-16T16:38:26+08:00">2019-07-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/" itemprop="url" rel="index"><span itemprop="name">vis</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/application/" itemprop="url" rel="index"><span itemprop="name">application</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Situ-Identifying-and-Explaining-Suspicious-Behavior-in-Networks"><a href="#Situ-Identifying-and-Explaining-Suspicious-Behavior-in-Networks" class="headerlink" title="Situ: Identifying and Explaining Suspicious Behavior in Networks"></a>Situ: Identifying and Explaining Suspicious Behavior in Networks</h3><p><strong>goals:</strong>  What is  needed is a visual analytics approach with algorithms to distinguish the signal from the noise and visualizations to provide a meaningful context for suspicious activity so operators can determine the impact and react appropriately.</p>
+<p><strong>Background</strong> :Existed solutions has limits: 1. can’t detect all 2: ignore the potential of human domain experts</p>
+<p><strong>Methods:</strong> Detect anomaly and visualize the result for expect to explore.</p>
+<p>​                    P-value anomaly scoring</p>
+<p><strong>Vis:</strong> Overview: Event Search Page </p>
+<p>​        Detail: Event detail page And IP detail page</p>
+<p><strong>contributions:</strong> </p>
+<ol>
+<li><p>a description of functional requirements for such a system,</p>
+</li>
+<li><p>the anomaly scoring algorithm and models,</p>
+</li>
+<li>the interactive visualization with integrated tooling, </li>
+<li>case studies that walk through two scenarios demonstrating the utility of the system, </li>
+<li>and feedback from analysts in a real-world production deployment of the tool. </li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/07/06/graph-summary-grouping/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CuteNian">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/06/graph-summary-grouping/" class="post-title-link" itemprop="url">graph_summary_static</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-06 14:06:35" itemprop="dateCreated datePublished" datetime="2019-07-06T14:06:35+08:00">2019-07-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-15 18:50:17" itemprop="dateModified" datetime="2019-08-15T18:50:17+08:00">2019-08-15</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/" itemprop="url" rel="index"><span itemprop="name">vis</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Graph-summarization-with-quality-guarantees"><a href="#Graph-summarization-with-quality-guarantees" class="headerlink" title="Graph summarization with quality guarantees"></a>Graph summarization with quality guarantees</h3><p>目的：Query efficiency   能够快速回答关于大图的问题，如节点的邻接性，度数，<a href="[https://zh.wikipedia.org/wiki/%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E4%B8%AD%E5%BF%83%E6%80%A7](https://zh.wikipedia.org/wiki/特征向量中心性">特征向量中心性</a>)(衡量节点对于网络的影响)，子图的数量。</p>
+<p>方法：Grouping               根据两种不同的误差得到近似最优的summary(误差： summary和原图之间的差距)</p>
+<p>输出：Supergraph           <u>有损耗</u>的图的简明表达</p>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190706190624857.png" alt="image-20190706190624857"></p>
+<h3 id="Scalable-Pattern-Matching-over-Compressed-Graphs-via-Dedensification"><a href="#Scalable-Pattern-Matching-over-Compressed-Graphs-via-Dedensification" class="headerlink" title="Scalable Pattern Matching over Compressed Graphs via Dedensification"></a>Scalable Pattern Matching over Compressed Graphs via Dedensification</h3><p>目的：Query efficiency  </p>
+<p>背景：图中的high-degree节点严重影响Query efficiency  ,这些节点周围的信息很多是多余的或者可以压缩的</p>
+<p>方法：simplification    压缩high-degree节点的邻居节点</p>
+<p>输出：smaller graph   减少边的数量</p>
+<h1 id="Hierarchical-Focus-Context-Heterogeneous-Network-Visualization"><a href="#Hierarchical-Focus-Context-Heterogeneous-Network-Visualization" class="headerlink" title="Hierarchical Focus+Context Heterogeneous Network Visualization"></a><strong>Hierarchical Focus+Context Heterogeneous Network Visualization</strong></h1><p><strong>goal: </strong> for exploratory visual analysis of large heterogeneous networks.</p>
+<p><strong>background: </strong> Existing network visualizations have allowed nodes to be aggregated based on node attributes or network topology, but very few previous systems have the capability to enjoy the best of both worlds.</p>
+<p><strong>methods: </strong>Allows nodes to be aggregated based on either node attributes, topology, or a mixture of both.</p>
+<p>top-down approach(<em>an initial overview and allows drilling down to details through interactions.</em>)</p>
+<p><strong>big question: </strong>How to visualize a large hetero-geneous network in a way that allows a user to perceive and explore both topology patterns and node/edge attributes attached on the network. </p>
+<p><strong>detail questions: </strong></p>
+<ol>
+<li>how to create the visual abstraction of a large heterogeneous network with both topol- ogy and attribute information. </li>
+<li>which interaction model to apply to guide the user from the initial visual abstraction to analyzing the low-level hetero- geneous network patterns.</li>
+</ol>
+<p><img src="/Users/sky/Library/Application Support/typora-user-images/image-20190815094057506.png" alt="image-20190815094057506"></p>
+<p><strong>steps: </strong></p>
+<ol>
+<li>creat a network abstraction</li>
+<li>filter</li>
+<li>interection for details</li>
+</ol>
+<p><strong>limit</strong></p>
+<p>stastic</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/06/10/Nested-Tracking-Graphs/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CuteNian">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/10/Nested-Tracking-Graphs/" class="post-title-link" itemprop="url">Nested_Tracking_Graphs</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-10 15:09:24" itemprop="dateCreated datePublished" datetime="2019-06-10T15:09:24+08:00">2019-06-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-11 16:12:45" itemprop="dateModified" datetime="2019-06-11T16:12:45+08:00">2019-06-11</time>
               
             
           </span>
@@ -851,1214 +2247,12 @@
 
       
         
-          <p>绘制图(clustered graph)的拓扑地图(Topographic maps)</p>
+          <p>观察图结构(层次)随时间的变化</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1g3w2viq3uij310y07qtd2.jpg" alt="image-20190610151104823"></p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/03/18/Drawing-Clustered-Graphs-as-Topographic-Maps/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/17/flask-mysql/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CuteNian">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/17/flask-mysql/" class="post-title-link" itemprop="url">flask_mysql</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-17 18:49:54 / Modified: 20:23:21" itemprop="dateCreated datePublished" datetime="2019-03-17T18:49:54+08:00">2019-03-17</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/flask/" itemprop="url" rel="index"><span itemprop="name">flask</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/flask/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>flask连接数据库</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/17/flask-mysql/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/14/vue-flask单页面应用/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CuteNian">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/14/vue-flask单页面应用/" class="post-title-link" itemprop="url">vue_flask单页面应用</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-14 20:53:08 / Modified: 21:56:27" itemprop="dateCreated datePublished" datetime="2019-03-14T20:53:08+08:00">2019-03-14</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>创建vue-flask单页面</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/14/vue-flask单页面应用/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/11/leetcode-55-Jump-Game/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CuteNian">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/11/leetcode-55-Jump-Game/" class="post-title-link" itemprop="url">leetcode_55_Jump_Game</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-11 19:54:19 / Modified: 20:50:39" itemprop="dateCreated datePublished" datetime="2019-03-11T19:54:19+08:00">2019-03-11</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/array/" itemprop="url" rel="index"><span itemprop="name">array</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>是否可以跳到终点</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/11/leetcode-55-Jump-Game/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/07/leetcode0275H-index-II/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CuteNian">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/07/leetcode0275H-index-II/" class="post-title-link" itemprop="url">leetcode0275H-index_II</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-07 20:53:53" itemprop="dateCreated datePublished" datetime="2019-03-07T20:53:53+08:00">2019-03-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-03-11 18:11:07" itemprop="dateModified" datetime="2019-03-11T18:11:07+08:00">2019-03-11</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/array/" itemprop="url" rel="index"><span itemprop="name">array</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>二叉查找</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/07/leetcode0275H-index-II/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/07/Probabilistic-Graph-Layout-for-Uncertain-Network-Visualization/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CuteNian">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/07/Probabilistic-Graph-Layout-for-Uncertain-Network-Visualization/" class="post-title-link" itemprop="url">Probabilistic_Graph_Layout_for_Uncertain_Network_Visualization</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-07 11:37:15 / Modified: 11:52:06" itemprop="dateCreated datePublished" datetime="2019-03-07T11:37:15+08:00">2019-03-07</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/vis/" itemprop="url" rel="index"><span itemprop="name">vis</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Probabilistic-Graph-Layout-for-Uncertain-Network-Visualization"><a href="#Probabilistic-Graph-Layout-for-Uncertain-Network-Visualization" class="headerlink" title="Probabilistic Graph Layout for Uncertain Network Visualization"></a>Probabilistic Graph Layout for Uncertain Network Visualization</h2><p>不确定网络的可视化布局</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/07/Probabilistic-Graph-Layout-for-Uncertain-Network-Visualization/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/02/leetcode0134-Gas-Station/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CuteNian">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/02/leetcode0134-Gas-Station/" class="post-title-link" itemprop="url">leetcode0134_Gas_Station</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-02 22:15:40" itemprop="dateCreated datePublished" datetime="2019-03-02T22:15:40+08:00">2019-03-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-03-04 11:04:30" itemprop="dateModified" datetime="2019-03-04T11:04:30+08:00">2019-03-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/array/" itemprop="url" rel="index"><span itemprop="name">array</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>加油站的油是否够走一个来回</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/02/leetcode0134-Gas-Station/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2019/03/01/leetcode299Bulls-and-Cows/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CuteNian">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/01/leetcode299Bulls-and-Cows/" class="post-title-link" itemprop="url">leetcode299Bulls_and_Cows</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-03-01 20:21:27 / Modified: 20:53:46" itemprop="dateCreated datePublished" datetime="2019-03-01T20:21:27+08:00">2019-03-01</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/array/" itemprop="url" rel="index"><span itemprop="name">array</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>猜数字</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/01/leetcode299Bulls-and-Cows/#more" rel="contents">
+              <a class="btn" href="/2019/06/10/Nested-Tracking-Graphs/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -2107,7 +2301,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2152,7 +2346,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">92</span>
+                    <span class="site-state-item-count">106</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2249,7 +2443,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>

@@ -112,13 +112,13 @@
 <meta property="og:site_name" content="CuteNian">
 <meta property="og:description" content="动态规划 [TOC]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g170od0q7zj30i602cmxj.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1g3ks4mqik8j30i602cweg.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1g185d8kj5uj30qy0qi0vr.jpg">
-<meta property="og:updated_time" content="2019-03-21T07:45:49.326Z">
+<meta property="og:updated_time" content="2019-05-31T12:53:18.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划-算法导论笔记">
 <meta name="twitter:description" content="动态规划 [TOC]">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g170od0q7zj30i602cmxj.jpg">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1g3ks4mqik8j30i602cweg.jpg">
 
 
 
@@ -440,7 +440,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-21 15:45:49" itemprop="dateModified" datetime="2019-03-21T15:45:49+08:00">2019-03-21</time>
+                <time title="Modified: 2019-05-31 20:53:18" itemprop="dateModified" datetime="2019-05-31T20:53:18+08:00">2019-05-31</time>
               
             
           </span>
@@ -501,14 +501,14 @@
 <p><strong>（3）按自底向上的方式计算最优解的值。</strong></p>
 <p><strong>（4）由计算出的结果构造出一个最优解。</strong></p>
 <h2 id="例题-钢条切割问题"><a href="#例题-钢条切割问题" class="headerlink" title="例题 - 钢条切割问题"></a>例题 - 钢条切割问题</h2><p>给定一个长度为n的钢条，以及一个价格表p，p中列出了每英寸钢条的价格，将长度为n的钢条切割为若干短钢条出售，求一个钢条的切割方案，使得收益$r_{n}$ 最大，切割工序没有成本。比如价格表p如下：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g170od0q7zj30i602cmxj.jpg" alt="image-20190318161514997"></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1g3ks4mqik8j30i602cweg.jpg" alt="image-20190318161514997"></p>
 <h3 id="分析描述最优解"><a href="#分析描述最优解" class="headerlink" title="分析描述最优解"></a>分析描述最优解</h3><p>为了求解这个规模为n的原问题，可以先求解形式完全一样，但是规模更小的子问题</p>
-<p>$r_{n} = max(p_{n},r_{1}+r_{n-1}+r_{2}+r_{n-2}+…+r_{n-1}+r_{1})$</p>
-<p>先考虑不切割$r_{n}=p_{n}​$,然后再考虑不同的切割组合</p>
+<p>$r_{n} = max(p_{n},r_{1}+r_{n-1},r_{2}+r_{n-2},…+r_{n-1}+r_{1})$</p>
+<p>先考虑不切割$r_{n}=p_{n}$,然后再考虑不同的切割组合</p>
 <p>简化问题：</p>
 <p>每次从左边切下长度为i的钢条不再继续做切割，然后考虑剩下n-i的切割</p>
-<p>$r_{n} = max(p_{i}+r_{n-i}) ​$       $i=1,2,..n​$</p>
-<p>如果直接递归求解，时间复杂度是$2^{n}​$</p>
+<p>$r_{n} = max(p_{i}+r_{n-i}) $       $i=1,2,..n$</p>
+<p>如果直接递归求解，时间复杂度是$2^{n}$</p>
 <h3 id="动态规划求解"><a href="#动态规划求解" class="headerlink" title="动态规划求解"></a>动态规划求解</h3><p>动态规划对于每个子问题只求解一次，并将结果保存下来，付出额外的内存空间来节省计算时间</p>
 <p>两种等价的实现方式</p>
 <ol>
@@ -524,12 +524,12 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">BOTTOM-UP-CUT-ROD(p,n)</span><br><span class="line">      let  r[<span class="number">0.</span>.n] be a <span class="keyword">new</span> <span class="built_in">array</span></span><br><span class="line">      let  s[<span class="number">0.</span>.n] be a <span class="keyword">new</span> <span class="built_in">array</span></span><br><span class="line">      r[<span class="number">0</span>]= <span class="number">0</span></span><br><span class="line">      <span class="keyword">for</span>  j = <span class="number">1</span> to n</span><br><span class="line">      	q= -∞</span><br><span class="line">      	<span class="keyword">for</span>  i = <span class="number">1</span> to j</span><br><span class="line">      		<span class="keyword">if</span>(q &lt; p[i] + r[j-i])</span><br><span class="line">            q = p[i] + r[j-i]</span><br><span class="line">            <span class="comment">//保存下第一次分割的地方</span></span><br><span class="line">            s[j] = i </span><br><span class="line">      	r[j]= q   </span><br><span class="line">      <span class="keyword">return</span>  r <span class="keyword">and</span> s</span><br><span class="line">      </span><br><span class="line">PRINT-CUT-ROD-SOLUTION(p,n)</span><br><span class="line">    (r,s)= EXTENDED-BOTTOM-UP-CUT-ROD(p, n)</span><br><span class="line">    <span class="keyword">while</span> n &gt; <span class="number">0</span></span><br><span class="line">       <span class="comment">//每次输出第一次切割，然后再去输出后面一段的第一次切割，一直到全部切割完停止</span></span><br><span class="line">        print s[n]</span><br><span class="line">        n = n-s[n]</span><br></pre></td></tr></table></figure>
 <h2 id="例题-矩阵链乘法"><a href="#例题-矩阵链乘法" class="headerlink" title="例题-矩阵链乘法"></a>例题-矩阵链乘法</h2><p>问题描述：给定n个矩阵的链($A_{1},A_{2},…A_{n}$),矩阵$A_{i}$的规模为$p_{i-1}*p_{i}$，求完全括号方案，使得计算乘积$A_{1}A_{2}A_{3}…A_{n}$所需标量乘法次数最小</p>
 <h3 id="分析描述最优解-1"><a href="#分析描述最优解-1" class="headerlink" title="分析描述最优解"></a>分析描述最优解</h3><p>首先要把整个问题分解成若干个子问题的解</p>
-<p>把$A_{i},A_{i+1},…A_{j}​$的乘积结果表示为$A_{i..j}​$</p>
+<p>把$A_{i},A_{i+1},…A_{j}$的乘积结果表示为$A_{i..j}$</p>
 <p>如果要对$A_{i},A_{i+1},…A_{j}$的乘积括号化，则一定存在一个分割点k，将矩阵划分为$A_{i,k},A_{k+1,j}$</p>
 <p>计算的代价就等于矩阵$A_{i,…k}$的计算代价，矩阵$A_{k+1,..j}$的计算代价，再加上两者相乘的计算代价</p>
 <p><strong>也就是说我们把问题划分为两个子问题，求出子问题实例的最优解，然后将子问题的最优解组合起来。</strong></p>
 <h3 id="递归定义最优解"><a href="#递归定义最优解" class="headerlink" title="递归定义最优解"></a>递归定义最优解</h3><p>我们用$m[i,j]$来表示计算矩阵$A_{i..j}$所需要标量乘法的最小次数</p>
-<p>当i==j时，明显$m[i,j]==0​$</p>
+<p>当i==j时，明显$m[i,j]==0$</p>
 <p>当i&lt;j时     $m[i,j] = min(m[i,k] + m[k+1,j] + p_{i-1}p_{k}p_{j})$</p>
 <p>公式中假设最优分割点k已知，但事实上我们并不知道这个点在哪里，但可以确定的是它存在于i-j中，因此我们可以检查所有情况找到最优解</p>
 <h3 id="动态规划求解-1"><a href="#动态规划求解-1" class="headerlink" title="动态规划求解"></a>动态规划求解</h3><p>自底向上的表格法</p>
@@ -599,8 +599,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/19/promise对象/" rel="prev" title="promise对象">
-                promise对象 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/19/vue-and-d3/" rel="prev" title="vue_and_d3">
+                vue_and_d3 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -673,7 +673,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">92</span>
+                    <span class="site-state-item-count">106</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -770,7 +770,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
