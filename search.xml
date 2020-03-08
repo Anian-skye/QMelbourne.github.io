@@ -12,35 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[摘抄本]]></title>
-    <url>%2F2019%2F08%2F23%2F%E6%91%98%E6%8A%84%E6%9C%AC%2F</url>
-    <content type="text"><![CDATA[The amount of published data and findings makes it impossible for a human to survey the entirety of relevant publications exhaustively which inherently leads to the question of what kind of important information or insight may go unnoticed or insufficiently appreciated.(公布的数据和发现的数量使得人们无法彻底地调查整个相关文献集，这本质上导致了什么样的重要信息或洞察力可能被忽视或不充分理解的问题。) The complex and highly heterogeneous nature of data of interest requires a sufficiently nuanced analytical framework which is capable of inferring the wide range of changes and interactions between topics over time（感兴趣的数据的复杂和高度异构性质需要一个足够细微的分析框架，能够推断出主题之间的广泛变化和相互作用。） This information can provide valuable insight into the refinement of ideas and findings in the scientific com- munity, effected by new research and accumulating evidence.（通过新的研究和积累的证据，这些信息可以为科学界的思想和发现的完善提供有价值的见解） Despite T-SNE is able to preserve many interesting qualities of the semantic space, projecting the entire keyword space into the same display makes the appreciation of details in proximity data a harder task to achieve, even if the appro- priate interaction techniques are correctly applied. 参考资料]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[graph_embedding]]></title>
-    <url>%2F2019%2F08%2F23%2Fgraph-embedding%2F</url>
-    <content type="text"><![CDATA[P2V: large‐scale academic paper embeddinggoals: Learn high-quality embeddings for academic papers on large-scale datasets. contributions: a model that can learn high-quality paper embeddings from text and citation links. scale to large dataset. Has state-of-the-art performance on paper clas- sification, paper similarity and influence prediction tasks. methods: three types of relations when learn- ing paper embeddings: word–word, document–word, and document–document relations. Model : Three Layer Shallow Neural Network visualization: Temporal Quasi-Semantic Visualization and Exploration of Large Scientific Publication Corporagoals: The tool allows the user to search for particular topics, track their temporal interdependencies (e.g. ances- tral or descendent topics), and examine their domi- nance within the corpus across time. Modelling topic evolution over time ： Key idea: While topics may change significantly over time, changes between successive epochs are limited. Incremental embedding for temporal networksgoals: Introduce ICMEN the first-in-class incremental meta-embedding method that produces vector representations of nodes respecting temporal dependencies in the graph. 参考资料]]></content>
-      <categories>
-        <category>vis</category>
-        <category>graph-embedding</category>
-      </categories>
-      <tags>
-        <tag>paper</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[vis_Application]]></title>
-    <url>%2F2019%2F07%2F16%2Fvis-Application%2F</url>
-    <content type="text"><![CDATA[Situ: Identifying and Explaining Suspicious Behavior in Networksgoals: What is needed is a visual analytics approach with algorithms to distinguish the signal from the noise and visualizations to provide a meaningful context for suspicious activity so operators can determine the impact and react appropriately. Background :Existed solutions has limits: 1. can’t detect all 2: ignore the potential of human domain experts Methods: Detect anomaly and visualize the result for expect to explore. ​ P-value anomaly scoring Vis: Overview: Event Search Page ​ Detail: Event detail page And IP detail page contributions: a description of functional requirements for such a system, the anomaly scoring algorithm and models, the interactive visualization with integrated tooling, case studies that walk through two scenarios demonstrating the utility of the system, and feedback from analysts in a real-world production deployment of the tool. 参考资料]]></content>
-      <categories>
-        <category>vis</category>
-        <category>application</category>
-      </categories>
-      <tags>
-        <tag>paper</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Nested_Tracking_Graphs]]></title>
     <url>%2F2019%2F06%2F10%2FNested-Tracking-Graphs%2F</url>
     <content type="text"><![CDATA[观察图结构(层次)随时间的变化 Definition 将每一个时间戳上的图抽象成nested tree,nested tree同原图有一样的节点集N。 $E_{N}$ ：每一个nested tree内部的边 $E_{T}$：连接同一层的nested tree Nested Tracking Graph $G = (N,E_{T} ,E_{N}).$ Implementation$D_{t}$:记录t时刻每一个节点的数值 $C_{t}^{l}$:记录t时刻每一个节点是否属于l层(&gt;0则属于) Visualization首先优化每一个tracking graph的布局，然后从低层次到高层次的进行渲染。 每一个颜色代表一个层次 Examplehttps://www.jluk.de/blog/NestedTrackingGraphs/ 参考资料]]></content>
@@ -63,11 +34,6 @@
       <tags>
         <tag>python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2F2019%2F03%2F30%2FeduvisAPI%2F</url>
-    <content type="text"><![CDATA[接口描述请求成绩接口请求参数 参数名 描述 参数类型 参数格式 是否必须 grade 年级 string 高( 一 or 二 or 三) 是 semeter 学期 string 2018-2019-(0,1） 是 返回值 json格式12345678910111213141516171819&#123; "exam_number", "exam_nunname", "classScore":[ "cla_Name", "cla_id", "subScore":[ "mes_sub_name", "mes_sub_id", "scores":[ "mes_Score", "mes_StudentID", "mes_T_Score", "mes_Z_Score", "mes_dengdi" ] ] ]&#125; mes_TestID,考试id exam_number,考试编码 exam_numname,考试编码名称 mes_sub_id,考试学科id mes_sub_name,考试学科名 exam_term,考试学期 exam_type,考试类型（对应考试类型表） exam_sdate,考试开始时间 mes_StudentID,学生id mes_Score,考试成绩(-1为作弊，-2为缺考，-3为免考) mes_Z_Score,换算成Z-score（Z-score、T-score、等第 是一种学生成绩评价方式，可以参考网络百科） mes_T_Score,换算成T-score es_dengdi：换算成等第 cla_id:班级ID cla_Name:班级名]]></content>
   </entry>
   <entry>
     <title><![CDATA[promise对象]]></title>
