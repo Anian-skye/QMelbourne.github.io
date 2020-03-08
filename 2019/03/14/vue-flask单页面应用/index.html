@@ -105,7 +105,7 @@
 
 
   <meta name="description" content="创建vue-flask单页面">
-<meta name="keywords" content="前端">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue_flask单页面应用">
 <meta property="og:url" content="http://cuteanian.top/2019/03/14/vue-flask单页面应用/index.html">
@@ -114,7 +114,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g12nxwgi5qj30jm06s74v.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcly1g12o0wj3x2j30z905j3yn.jpg">
-<meta property="og:updated_time" content="2019-03-14T13:56:27.202Z">
+<meta property="og:updated_time" content="2020-03-08T13:31:09.808Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue_flask单页面应用">
 <meta name="twitter:description" content="创建vue-flask单页面">
@@ -423,16 +423,60 @@
                 
               
 
-              <time title="Created: 2019-03-14 20:53:08 / Modified: 21:56:27" itemprop="dateCreated datePublished" datetime="2019-03-14T20:53:08+08:00">2019-03-14</time>
+              <time title="Created: 2019-03-14 20:53:08" itemprop="dateCreated datePublished" datetime="2019-03-14T20:53:08+08:00">2019-03-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-03-08 21:31:09" itemprop="dateModified" datetime="2020-03-08T21:31:09+08:00">2020-03-08</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/框架/" itemprop="url" rel="index"><span itemprop="name">框架</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/框架/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -465,7 +509,7 @@
 <a id="more"></a>
 <h2 id="Vue部分"><a href="#Vue部分" class="headerlink" title="Vue部分"></a>Vue部分</h2><p>添加一个Home.vue,一个About.vue组件，然后使用路由切换</p>
 <p><strong>不要忘记添加路由出口 router-view，否则切换没有效果</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- APP.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">'/Home'</span>&gt;</span> Home <span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">/About</span>&gt;</span> About <span class="tag">&lt;/<span class="name">router-link</span>&gt;</span> </span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'app'</span></span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-id">#app</span> &#123;</span></span><br><span class="line"><span class="undefined">  font-family: 'Avenir', Helvetica, Arial, sans-serif;</span></span><br><span class="line"><span class="undefined">  -webkit-font-smoothing: antialiased;</span></span><br><span class="line"><span class="undefined">  -moz-osx-font-smoothing: grayscale;</span></span><br><span class="line"><span class="undefined">  text-align: center;</span></span><br><span class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#2c3e50</span>;</span></span><br><span class="line"><span class="undefined">  margin-top: 60px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- APP.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">'/Home'</span>&gt;</span> Home <span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">/About</span>&gt;</span> About <span class="tag">&lt;/<span class="name">router-link</span>&gt;</span> </span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'app'</span></span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">#app &#123;</span></span><br><span class="line"><span class="undefined">  font-family: 'Avenir', Helvetica, Arial, sans-serif;</span></span><br><span class="line"><span class="undefined">  -webkit-font-smoothing: antialiased;</span></span><br><span class="line"><span class="undefined">  -moz-osx-font-smoothing: grayscale;</span></span><br><span class="line"><span class="undefined">  text-align: center;</span></span><br><span class="line"><span class="undefined">  color: #2c3e50;</span></span><br><span class="line"><span class="undefined">  margin-top: 60px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App.vue'</span></span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'./components/Home.vue'</span></span><br><span class="line"><span class="keyword">import</span> About <span class="keyword">from</span> <span class="string">'./components/About.vue'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> routes = [</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">'/Home'</span>, <span class="attr">component</span>: Home &#125;,</span><br><span class="line">  &#123; <span class="attr">path</span>: <span class="string">'/About'</span>, <span class="attr">component</span>: About &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  router: router,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App),</span><br><span class="line">&#125;).$mount(<span class="string">'#app'</span>)</span><br></pre></td></tr></table></figure>
 <p>修改文件输出位置，需要在根目录下面建一个新的文件Vue.config.js</p>
 <p>这样输出的dist文件就和vue项目在一个等级下</p>
@@ -508,7 +552,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -605,7 +649,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">97</span>
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -712,7 +756,27 @@
                     
                       
                     
-                    <span class="site-state-item-count">45</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -745,7 +809,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

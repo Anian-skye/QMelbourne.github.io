@@ -104,18 +104,26 @@
 
 
 
-  <meta name="description" content="promise对象">
+  <meta name="description" content="JS中的异步编程">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="promise对象">
 <meta property="og:url" content="http://cuteanian.top/2019/03/19/promise对象/index.html">
 <meta property="og:site_name" content="CuteNian">
-<meta property="og:description" content="promise对象">
+<meta property="og:description" content="JS中的异步编程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-21T12:58:24.575Z">
+<meta property="og:image" content="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p582">
+<meta property="og:image" content="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p583">
+<meta property="og:image" content="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p584">
+<meta property="og:image" content="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p585">
+<meta property="og:image" content="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p586">
+<meta property="og:image" content="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p589">
+<meta property="og:image" content="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p588">
+<meta property="og:updated_time" content="2020-03-08T13:46:17.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="promise对象">
-<meta name="twitter:description" content="promise对象">
+<meta name="twitter:description" content="JS中的异步编程">
+<meta name="twitter:image" content="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p582">
 
 
 
@@ -437,7 +445,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-03-21 20:58:24" itemprop="dateModified" datetime="2019-03-21T20:58:24+08:00">2019-03-21</time>
+                <time title="Modified: 2020-03-08 21:46:17" itemprop="dateModified" datetime="2020-03-08T21:46:17+08:00">2020-03-08</time>
               
             
           </span>
@@ -488,9 +496,122 @@
       
 
       
-        <p>promise对象</p>
+        <p>JS中的异步编程</p>
 <a id="more"></a>
-<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p>[toc]</p>
+<h3 id="异步编程的原因"><a href="#异步编程的原因" class="headerlink" title="异步编程的原因"></a>异步编程的原因</h3><p>因为JS是一种单线程的语言，就是指一次只能完成一件任务。如果有多个任务，就必须排队，前面一个任务完成，再执行后面一个任务，以此类推。</p>
+<p>但是如果有一个任务耗时很长，后面的任务都必须排队等着，会拖延整个程序的执行。为了解决这个问题Javascript语言将任务的执行模式分成两种：同步（Synchronous）和异步（Asynchronous）</p>
+<ol>
+<li><p>“同步模式”后一个任务等待前一个任务结束，然后再执行，程序的执行顺序与任务的排列顺序是一致的、同步的；</p>
+</li>
+<li><p>“异步模式”则完全不同，每一个任务有一个或多个回调函数（callback），前一个任务结束后，不是执行后一个任务，而是执行回调函数，后一个任务则是不等前一个任务结束就执行，所以程序的执行顺序与任务的排列顺序是不一致的、异步的。</p>
+</li>
+</ol>
+<h3 id="实现异步操作的方法"><a href="#实现异步操作的方法" class="headerlink" title="实现异步操作的方法"></a>实现异步操作的方法</h3><h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><p>如果有一个函数f1非常耗时，函数f2等待f1的执行结果才能执行，就可以将f2写成f1的回调函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">　　function f1(callback)&#123;</span><br><span class="line"></span><br><span class="line">　　　　setTimeout(function () &#123;</span><br><span class="line"></span><br><span class="line">　　　　　　// f1的任务代码</span><br><span class="line"></span><br><span class="line">　　　　　　callback();</span><br><span class="line"></span><br><span class="line">　　　　&#125;, 1000);</span><br><span class="line"></span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">f1(f2)</span><br></pre></td></tr></table></figure>
+<p>f1不会堵塞程序运行，相当于先执行程序的主要逻辑，将耗时的操作推迟执行。</p>
+<p>回调函数的优点是简单、容易理解和部署</p>
+<p>缺点是不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程会很混乱，而且每个任务只能指定一个回调函数。</p>
+<p>但是可以嵌套多个回调函数<img src="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p582" alt="fa46f9dfc34b13ffaacc8431c34e4148.jpeg"></p>
+<p>容易产生回调地狱，你需要追踪多个回调函数并做清理操作</p>
+<h4 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h4><p>任务的执行不取决于代码的顺序，而是取决于某个事件是否发生</p>
+<p>比如说on事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">f1.on(<span class="string">'done'</span>, f2);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// f1的任务代码</span></span><br><span class="line"></span><br><span class="line">f1.trigger(<span class="string">'done'</span>);</span><br><span class="line"></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种方法的优点是比较容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，而且可以”去耦合”（Decoupling），有利于实现模块化。</p>
+<p>缺点是整个程序都要变成事件驱动型，运行流程会变得很不清晰。</p>
+<h4 id="发布订阅模式"><a href="#发布订阅模式" class="headerlink" title="发布订阅模式"></a>发布订阅模式</h4><p>事件监听里面的事件可以理解成是信号</p>
+<p>假定，存在一个”信号中心”，某个任务执行完成，就向信号中心”发布”（publish）一个信号，其他任务可以向信号中心”订阅”（subscribe）这个信号，从而知道什么时候自己可以开始执行。这就叫做”发布/订阅模式”（publish-subscribe pattern），又称”观察者模式”（observer pattern）。</p>
+<p>这种方法的性质与”事件监听”类似，但是明显优于后者。因为我们可以通过查看”消息中心”，了解存在多少信号、每个信号有多少订阅者，从而监控程序的运行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">jQuery.subscribe(<span class="string">"done"</span>, f2);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">// f1的任务代码</span></span><br><span class="line"></span><br><span class="line">jQuery.publish(<span class="string">"done"</span>);</span><br><span class="line"></span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ES6中的promise"><a href="#ES6中的promise" class="headerlink" title="ES6中的promise"></a>ES6中的promise</h4><p>Promise是为了异步操作结果所准备的占位符。异步执行的函数可以返回一个promise，而不必订阅一个事件，或向函数传递一个回调函数</p>
+<p>好像是这个函数返回一个‘承诺’，虽然现在还未完成执行，但是承诺在为未来的某个时间点完成。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise = readFile(<span class="string">"example.txt"</span>)</span><br></pre></td></tr></table></figure>
+<p>&nbsp;</p>
+<h5 id="Promise的生命周期"><a href="#Promise的生命周期" class="headerlink" title="Promise的生命周期"></a>Promise的生命周期</h5><p>初始为pending state(进行态)，表示异步操作还未结束</p>
+<p>一个在进行中的状态也可能被认为是unsettled(未处理的)</p>
+<p>一旦操作结束，会进入一下两种状态之一：</p>
+<ol>
+<li><p>fullfilled 成功结束</p>
+</li>
+<li><p>rejected 操作未成功结束，可能出现了错误或其他原因</p>
+</li>
+</ol>
+<p>这些内部属性并未暴露出来，但是可以使用then方法来在状态改变时执行一些特定操作。</p>
+<p>&nbsp;</p>
+<p>promise对象上的方法：</p>
+<p><strong>then</strong></p>
+<p>then方法接受两个参数：完成时需要调用的参数；被拒绝时调用的参数</p>
+<p>这两个参数都是可选的，可以监听完成与拒绝的任意组合形式</p>
+<p><img src="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p583" alt="fb12dc3c5df9deb291c4424650eddcae.jpeg"></p>
+<p><strong>catch</strong></p>
+<p>行为等同于只把拒绝处理函数传递给then</p>
+<p>组合使用then和catch来正确处理异步操作的结果。这个体系让操作是成功还是失败变得完全清晰，要优于事件和回调。</p>
+<p>每次调用then或者catch都会创建一个新的作业，他会在Promise处理后执行，这些作业最终会进入一个完全为Promise保留的作业队列。</p>
+<h5 id="创建未处理的Promise"><a href="#创建未处理的Promise" class="headerlink" title="创建未处理的Promise"></a>创建未处理的Promise</h5><p>新的Promise使用promise构造器来创建。</p>
+<p>这个构造器接受单个参数：被称为执行器的函数，包含初始化Promise的代码</p>
+<p>执行器会传递两个名为resolve(),reject()的函数作为参数。</p>
+<p>resolve在执行器被成功执行时调用，reject在操作失败后调用</p>
+<p><img src="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p584" alt="132bf9ef6558579481b8b2641c46fec6.jpeg"></p>
+<p>resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；</p>
+<p>reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为rejected）， 在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</p>
+<p>then方法中第一个回调函数是Promise对象的状态变为resolved时调用，第二个回调函数是Promise对象的状态变为rejected时调用。如果reject或者resolve调用时有传参，这个参数就会变成then中方法的参数。</p>
+<h5 id="创建已处理的Promise"><a href="#创建已处理的Promise" class="headerlink" title="创建已处理的Promise"></a>创建已处理的Promise</h5><p>两种方法：Promise.resolve,Promise.reject</p>
+<p>他们都可以接受单个值，来创建一个已完成的Promise,跟在执行器内调用resolve的结果相同</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve(<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line">promise.then(<span class="function">(<span class="params">d</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(d)) <span class="comment">//42</span></span><br></pre></td></tr></table></figure>
+<p>也可以接受一个非Promise的thenable对象</p>
+<p>（当一个对象拥有resolve与reject参数的then方法，就认为这个对象是一个非Promise的thenabel对象）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> thenable = &#123;</span><br><span class="line"></span><br><span class="line">then:<span class="function"><span class="keyword">function</span>(<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">resolve(<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve(<span class="number">42</span>);</span><br><span class="line"></span><br><span class="line">promise.then(<span class="function">(<span class="params">d</span>)=&gt;</span>&#123;<span class="built_in">console</span>.log(d)&#125;);<span class="comment">//42</span></span><br></pre></td></tr></table></figure>
+<h5 id="Promise的拒绝处理"><a href="#Promise的拒绝处理" class="headerlink" title="Promise的拒绝处理"></a>Promise的拒绝处理</h5><p>当promise被拒绝时若缺少拒绝处理函数，就会静默失败，即使被立刻拒绝也会在调用catch等方法时才会被处理。</p>
+<p>后面再来补充</p>
+<p><strong>Node.js中的拒绝处理</strong></p>
+<p><strong>浏览器的拒绝处理</strong></p>
+<h5 id="在Promise链中返回值"><a href="#在Promise链中返回值" class="headerlink" title="在Promise链中返回值"></a>在Promise链中返回值</h5><p>Promose链的另一重要特性是能从一个Promise传递数据给下一个Promise。可以指定完成处理函数的返回值，以便沿着一个链继续传递</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve(<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line">promise.then(<span class="function">(<span class="params">d</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(d) <span class="comment">//42</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> d+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">&#125;).then(<span class="function">(<span class="params">d</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(d) <span class="comment">//43</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="在Promise链中返回Promise"><a href="#在Promise链中返回Promise" class="headerlink" title="在Promise链中返回Promise"></a>在Promise链中返回Promise</h5><p><img src="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p585" alt="8cffb7937e04a42608fbfc9d95f7ec25.jpeg"></p>
+<p>在p1的then中返回了一个已经被resolve的promise，如果p2成功调用则继续下一个then,如果报错就调用可能存在的距离处理函数，而不会调用第二个完成处理函数。</p>
+<p>从完成或者拒绝函数中返回thenable并不会改变这些promise执行器的执行顺序，因为第一个被定义的promise总会先执行他的执行器，接下来是第二个，以此类推，返回thenable只是能让你在promise结果之外定义附加相应。</p>
+<p>如果你希望推迟处理函数的执行，则需要在完成处理函数内创建新的promise</p>
+<p><img src="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p586" alt="fe70394bb275b623a599d7c676dd6748.jpeg"></p>
+<h5 id="响应多个promise"><a href="#响应多个promise" class="headerlink" title="响应多个promise"></a>响应多个promise</h5><p>promise.all()</p>
+<p>这个方法接受单个可迭代对象（如数组）作为参数，并返回一个Promise。</p>
+<p>这个可迭代对象的元素都是数组，只有在他们都完成之后，所返回的Promise才会被完成</p>
+<p><img src="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p589" alt="34d1c35ce6ceb96185888a10f49dc620.jpeg"></p>
+<p>promise.race()</p>
+<p>参数和promise.all相同，但是只要可迭代对象中有一个promise被处理，返回的新的promise就立刻被处理。</p>
+<p><img src="evernotecid://3399F317-90BA-46E5-B31F-F170FF57130A/appyinxiangcom/26652170/ENResource/p588" alt="50b45005ba045b47897d3f6053639a09.jpeg"></p>
+<h4 id="generator函数"><a href="#generator函数" class="headerlink" title="generator函数"></a>generator函数</h4><p>Promise 的最大问题是代码冗余，原来的任务被 Promise 包装了一下，不管什么操作，一眼看去都是一堆then，原来的语义变得很不清楚。</p>
+<p>那么，有没有更好的写法呢？—-generator</p>
+<p>生成器函数之前已经复习过（ES6中的迭代器和生成器）</p>
+<p>生成器函数最大的特点就是可以利用yeild语句来中断执行，交出函数的执行权，同时也可以恢复执行，这是他可以用来封装异步任务的根本原因。</p>
+<p>同时它还具有两个特征：</p>
+<ol>
+<li><p>函数体内外的数据交换</p>
+</li>
+<li><p>错误处理机制</p>
+</li>
+</ol>
+<h5 id="如何封装"><a href="#如何封装" class="headerlink" title="如何封装"></a>如何封装</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fetch = <span class="built_in">require</span>(<span class="string">'node-fetch'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> url = <span class="string">'https://api.github.com/users/github'</span>;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="keyword">yield</span> fetch(url);</span><br><span class="line">  <span class="built_in">console</span>.log(result.bio);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = gen();</span><br><span class="line"><span class="keyword">var</span> result = g.next();</span><br><span class="line"></span><br><span class="line">result.value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> data.json();</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  g.next(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>上面代码中，首先执行 Generator 函数，获取遍历器对象，然后使用next方法（第二行），执行异步任务的第一阶段。由于Fetch模块返回的是一个 Promise 对象，因此要用then方法调用下一个next方法。</p>
+<p>可以看到，虽然 Generator 函数将异步操作表示得很简洁，但是流程管理却不方便（即何时执行第一阶段、何时执行第二阶段。</p>
+<h5 id="Thunk函数"><a href="#Thunk函数" class="headerlink" title="Thunk函数"></a>Thunk函数</h5><p>thunk函数是一种自动执行生成器的函数</p>
+<p>编译器的“传名调用”实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。它是“传名调用”的一种实现策略，用来替换某个表达式</p>
+<p><strong>JS中的Thunk函数</strong></p>
+<p>在 JavaScript 语言中，Thunk 函数替换的不是表达式，而是多参数函数，将其替换成一个只接受回调函数作为参数的单参数函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 正常版本的readFile（多参数版本）</span></span><br><span class="line">fs.readFile(fileName, callback);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Thunk版本的readFile（单参数版本）</span></span><br><span class="line"><span class="keyword">var</span> Thunk = <span class="function"><span class="keyword">function</span> (<span class="params">fileName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> fs.readFile(fileName, callback);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> readFileThunk = Thunk(fileName);</span><br><span class="line">readFileThunk(callback);</span><br></pre></td></tr></table></figure>
+<p>Thunk函数把参数分成普通参数和回调函数参数，然后两者分别调用</p>
+<p>也就是说，任意函数，只要有回调函数就可以写成是thunk函数的样子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5版本</span></span><br><span class="line"><span class="keyword">var</span> Thunk = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>)</span>&#123;</span><br><span class="line">      args.push(callback);</span><br><span class="line">      <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, args);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6版本</span></span><br><span class="line"><span class="keyword">const</span> Thunk = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> fn.call(<span class="keyword">this</span>, ...args, callback);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> readFileThunk = Thunk(fs.readFile);</span><br><span class="line">readFileThunk(fileA)(callback);</span><br></pre></td></tr></table></figure>
+<p>有点柯里化的意思，但不完全，因为他的其他函数是一次传入的，而不是()()()分开调用的，只是把回调函数单独拿出来。</p>
+<p><strong>Thunk函数可以用于Generator函数的自动流程管理。</strong></p>
+<p>在生成器函数中，yield语句将执行权移出函数，如果需要自动执行，就需要一个方法来把执行权还回去，这个方法就是thunk方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> gen = fn();</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = gen.next(data);</span><br><span class="line">    <span class="keyword">if</span> (result.done) <span class="keyword">return</span>;</span><br><span class="line">    result.value(next);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  next();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFileThunk(<span class="string">'fileA'</span>);</span><br><span class="line">  <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFileThunk(<span class="string">'fileB'</span>);</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">var</span> fn = <span class="keyword">yield</span> readFileThunk(<span class="string">'fileN'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">run(g);</span><br></pre></td></tr></table></figure>
+<p>不管内部有多少个异步操作，直接把 Generator 函数传入run函数即可。当然，前提是每一个异步操作，都要是 Thunk 函数，也就是说，跟在yield命令后面的必须是 Thunk 函数。</p>
+<p><strong>Thunk 函数并不是 Generator 函数自动执行的唯一方案。因为自动执行的关键是，必须有一种机制，自动控制 Generator 函数的流程，接收和交还程序的执行权。回调函数可以做到这一点，Promise 对象也可以做到这一点。</strong></p>
+<h5 id="基于-Promise-对象的自动执行"><a href="#基于-Promise-对象的自动执行" class="headerlink" title="基于 Promise 对象的自动执行"></a>基于 Promise 对象的自动执行</h5><p>在这里readFile会返回一个promise对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> readFile = <span class="function"><span class="keyword">function</span> (<span class="params">fileName</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>)</span>&#123;</span><br><span class="line">    fs.readFile(fileName, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (error) <span class="keyword">return</span> reject(error);</span><br><span class="line">      resolve(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</span><br><span class="line">  <span class="keyword">var</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = gen();</span><br><span class="line"></span><br><span class="line">g.next().value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  g.next(data).value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    g.next(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>手动执行是不停的调用then方法，根据这一点可以写一个自动执行函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">run</span>(<span class="params">gen</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> g = gen();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> result = g.next(data);</span><br><span class="line">        <span class="keyword">if</span>(result.done===<span class="literal">true</span>) <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            result.value.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">                next(data)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    next()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href=""></a></li>
 <li><a href=""></a></li>
@@ -616,7 +737,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">97</span>
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -723,7 +844,27 @@
                     
                       
                     
-                    <span class="site-state-item-count">45</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -756,7 +897,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -807,7 +962,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">1.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#异步编程的原因"><span class="nav-number">1.</span> <span class="nav-text">异步编程的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现异步操作的方法"><span class="nav-number">2.</span> <span class="nav-text">实现异步操作的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#回调函数"><span class="nav-number">2.1.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件监听"><span class="nav-number">2.2.</span> <span class="nav-text">事件监听</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布订阅模式"><span class="nav-number">2.3.</span> <span class="nav-text">发布订阅模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6中的promise"><span class="nav-number">2.4.</span> <span class="nav-text">ES6中的promise</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise的生命周期"><span class="nav-number">2.4.1.</span> <span class="nav-text">Promise的生命周期</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建未处理的Promise"><span class="nav-number">2.4.2.</span> <span class="nav-text">创建未处理的Promise</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#创建已处理的Promise"><span class="nav-number">2.4.3.</span> <span class="nav-text">创建已处理的Promise</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Promise的拒绝处理"><span class="nav-number">2.4.4.</span> <span class="nav-text">Promise的拒绝处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在Promise链中返回值"><span class="nav-number">2.4.5.</span> <span class="nav-text">在Promise链中返回值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在Promise链中返回Promise"><span class="nav-number">2.4.6.</span> <span class="nav-text">在Promise链中返回Promise</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#响应多个promise"><span class="nav-number">2.4.7.</span> <span class="nav-text">响应多个promise</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#generator函数"><span class="nav-number">2.5.</span> <span class="nav-text">generator函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如何封装"><span class="nav-number">2.5.1.</span> <span class="nav-text">如何封装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Thunk函数"><span class="nav-number">2.5.2.</span> <span class="nav-text">Thunk函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于-Promise-对象的自动执行"><span class="nav-number">2.5.3.</span> <span class="nav-text">基于 Promise 对象的自动执行</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number"></span> <span class="nav-text">参考资料</span></a></li></div>
             
 
           </div>
