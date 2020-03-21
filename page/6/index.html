@@ -1624,6 +1624,215 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2018/11/25/2018-11-25-为什么JS中最大安全整数要减1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CuteNian">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/25/2018-11-25-为什么JS中最大安全整数要减1/" class="post-title-link" itemprop="url">为什么JS中最大安全整数要减1</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-11-25 18:43:43" itemprop="dateCreated datePublished" datetime="2018-11-25T18:43:43+08:00">2018-11-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-03-21 12:09:48" itemprop="dateModified" datetime="2020-03-21T12:09:48+08:00">2020-03-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p>[toc]</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在查看JS Number的API时发现最大安全整数（Number.MAX_SAVE_INTEGER）等于2^53-1，好奇为什么要减去一个1</p>
+<p>首先需要知道两点</p>
+<ol>
+<li><p>IEEE 754标准在保存数字时规定有三个部分，分别是</p>
+<ul>
+<li><p>0 符号位</p>
+</li>
+<li><p>1-11 指数位</p>
+</li>
+<li><p>12-63 有效数字位 共52位  但是默认第一位为1，所以有效数字共有53位</p>
+<p><img src="https://img-blog.csdn.net/20170715123840325?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYWJjZHUx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img"></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">比如说数字4.5：4的二进制是100，0.5的二进制是1  所以4.5应该是100.1</span><br><span class="line"></span><br><span class="line">也就是1.001*2^1  所以4.5的保存就是</span><br><span class="line"></span><br><span class="line">0 00000000001 000000000...001</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>​     </p>
+<ol start="2">
+<li>安全的意思是指 双精度的浮点数和整数必须是一一对应的（所有的整数都有唯一的浮点数表示）</li>
+</ol>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>1*2^53  表示</p>
+<p>符号位0   指数位53  有效数位52全为0</p>
+<p>这个数本身是安全的，但是我们来看  2^53+1怎么表示</p>
+<p>2^53时小数点已经移动到最后一位的还要向后一位</p>
+<p>也就是   1000000000..0  共53个0  </p>
+<p>此时+1 会变成 1000…0001  共52个0最后一位为1</p>
+<p>如果按照754标准进行表示，由于精度问题，最后一位就被省略了，所以+1的表示和2^53完全一致</p>
+<p>因此这个数并不安全，所以最大的安全整数就是 2^53-1</p>
+<p>​    </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2018/11/25/第三周总结-全排列链表/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1974,191 +2183,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cuteanian.top/2018/11/22/leetcode206-Reverse-Linked-List/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Nian">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CuteNian">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/22/leetcode206-Reverse-Linked-List/" class="post-title-link" itemprop="url">leetcode206_Reverse_Linked_List</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-11-22 22:25:07" itemprop="dateCreated datePublished" datetime="2018-11-22T22:25:07+08:00">2018-11-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-11-25 19:11:55" itemprop="dateModified" datetime="2018-11-25T19:11:55+08:00">2018-11-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/leetcode/list/" itemprop="url" rel="index"><span itemprop="name">list</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链表的反转问题</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/22/leetcode206-Reverse-Linked-List/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2208,7 +2232,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">95</span>
+                    <span class="site-state-item-count">96</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2289,7 +2313,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                      
+                    
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2340,7 +2366,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

@@ -515,7 +515,7 @@
 <p>如果使用css来操作这张图片的话，就相当于按比例去放大这张图片</p>
 <p>比如我尝试设置500,500  就变成了宽放大（500/300）高放大（500/150），就会得到一个拉长的圆形</p>
 <p><strong>解决方法</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接在canvas标签里进行设置，并且不要加任何单位</span></span><br><span class="line">&lt;canvas width=<span class="number">500</span> height=<span class="number">400</span>&gt;&lt;/canvas&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者动态设置</span></span><br><span class="line">canvas=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'canvas'</span>)[<span class="number">0</span>];</span><br><span class="line">canvas.width=<span class="number">500</span>;</span><br><span class="line">canvas.height=<span class="number">400</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接在canvas标签里进行设置，并且不要加任何单位</span></span><br><span class="line">&lt;canvas width=<span class="number">500</span> height=<span class="number">400</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//或者动态设置</span></span><br><span class="line">canvas=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'canvas'</span>)[<span class="number">0</span>];</span><br><span class="line">canvas.width=<span class="number">500</span>;</span><br><span class="line">canvas.height=<span class="number">400</span>;</span><br></pre></td></tr></table></figure>
 <h3 id="画球"><a href="#画球" class="headerlink" title="画球"></a>画球</h3><p>这一步就没什么好说的了，canvas的操作很像是在画板里面画画</p>
 <p>先获取到画板，画笔，然后设置画笔的颜色，起始点和结束点，最后选择是否填充或者描边</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'circle'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">drawCircle(ctx)</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">drawCircle</span>(<span class="params">ctx</span>)</span>&#123;</span><br><span class="line">    ctx.fillStyle = <span class="string">'white'</span></span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(<span class="number">20</span>,<span class="number">20</span>,<span class="number">20</span>,<span class="number">0</span>,<span class="built_in">Math</span>.PI*<span class="number">2</span>,<span class="literal">true</span>);</span><br><span class="line">    ctx.fill()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -684,7 +684,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">95</span>
+                    <span class="site-state-item-count">96</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -765,7 +765,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                      
+                    
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -816,7 +818,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

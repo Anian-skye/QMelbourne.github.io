@@ -676,6 +676,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[为什么JS中最大安全整数要减1]]></title>
+    <url>%2F2018%2F11%2F25%2F2018-11-25-%E4%B8%BA%E4%BB%80%E4%B9%88JS%E4%B8%AD%E6%9C%80%E5%A4%A7%E5%AE%89%E5%85%A8%E6%95%B4%E6%95%B0%E8%A6%81%E5%87%8F1%2F</url>
+    <content type="text"><![CDATA[[toc] 背景在查看JS Number的API时发现最大安全整数（Number.MAX_SAVE_INTEGER）等于2^53-1，好奇为什么要减去一个1 首先需要知道两点 IEEE 754标准在保存数字时规定有三个部分，分别是 0 符号位 1-11 指数位 12-63 有效数字位 共52位 但是默认第一位为1，所以有效数字共有53位 12345比如说数字4.5：4的二进制是100，0.5的二进制是1 所以4.5应该是100.1也就是1.001*2^1 所以4.5的保存就是0 00000000001 000000000...001 ​ 安全的意思是指 双精度的浮点数和整数必须是一一对应的（所有的整数都有唯一的浮点数表示） 解释1*2^53 表示 符号位0 指数位53 有效数位52全为0 这个数本身是安全的，但是我们来看 2^53+1怎么表示 2^53时小数点已经移动到最后一位的还要向后一位 也就是 1000000000..0 共53个0 此时+1 会变成 1000…0001 共52个0最后一位为1 如果按照754标准进行表示，由于精度问题，最后一位就被省略了，所以+1的表示和2^53完全一致 因此这个数并不安全，所以最大的安全整数就是 2^53-1 ​]]></content>
+      <categories>
+        <category>前端</category>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>数据精度</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[第三周总结_全排列链表]]></title>
     <url>%2F2018%2F11%2F25%2F%E7%AC%AC%E4%B8%89%E5%91%A8%E6%80%BB%E7%BB%93-%E5%85%A8%E6%8E%92%E5%88%97%E9%93%BE%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[考试周题目做的有点杂，主要类型是全排列和总结 Sum周一是一道sum的题目，leetcode上面还有2sum,3sum等相同类型的题 给定一个数组和一个目标值，判断数组中是否有两个（或三个）数加起来等于目标值 这个题目要求的是输出索引，所以需要建立一个字典来保存 步骤： 遍历数组 如果t-n[i]不在字典中则把n[i]放入字段 key=n[i] value=i+1，然后继续遍历 如果t-n[i]在字典中，则输出[d[t-n[i]],i+1] 全排列全排列的题目做了两道，都是用的DFS的思想去解。跟之前做过的递归题相比，这次处理的不是构造好的树，而是数组。 46_Permutations 步骤: 如果深度等于想要的排列长度就把当前cur添加进结果数组 如果不等于则继续遍历 如果遍历的值被用过则下一个值 没有被用过则添加进cur然后继续递归下一个值 cur添加进结果数组后得到返回值回溯到上一个调用的函数中，把最后加入cur的值pop掉，并改成未被使用，然后继续向后搜索 47_Permutations_II跟46是一个类型的题，唯一的区别是要求输出的全排列给出的数组有重复的数，就导致结果需要去重 一句去重的代码 12if(used[i]==1 or i&gt;0 and used[i-1]==used[i] and used[i-1]==0): continue 如果两个相邻的数相等并且前面的数没有被用过，则说明前面的数刚刚被移出cur，再加入一个相同的数会产生重复，因此需要跳过 链表206_Reverse_Linked_List链表的反转 最简单的思路：遍历链表，入栈，然后出栈并返回一个新链表 递归的思路: next=None时return，然后依次加入到新链表并返回 三个指针 三个指针的思路: 一个pre指针指向前一个节点，一个cur指针指向当前节点，一个temp指针保存当前节点的下一个节点 12345while(cur!=None): temp = cur.next #保存下当前节点的下一个节点 cur.next = pre #当前节点指向前一个节点 pre = cur #前一个节点后移 cur = temp #当前节点后移]]></content>
@@ -761,17 +773,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[天池“数智教育”比赛总结]]></title>
-    <url>%2F2018%2F11%2F18%2F%E5%A4%A9%E6%B1%A0%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[比赛总结/系统介绍 [TOC] 需求描述要求有三个域的分析： 1、学生域数据分析。 2、课程域数据分析。 3、群体域数据分析。 提供了七种类型的数据：教师表teacher.csv，学生信息表studentinfo.csv,考勤表kaoqin.csv,考勤类型表kaoqintype.csv,学生成绩表chengji.csv,考试类型表exam_type.csv,学生消费信息表consumption.csv 通过对上述数据的分析来更有效的支持学校管理 系统设计]]></content>
-      <categories>
-        <category>比赛</category>
-      </categories>
-      <tags>
-        <tag>比赛</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[双指针总结]]></title>
     <url>%2F2018%2F11%2F18%2F%E5%8F%8C%E6%8C%87%E9%92%88%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[按照主题的第二周的刷题，这周都是双指针的题目 一共五道题 这五个题涉及到的双指针可以解决的类型有： 数组的原地排序（两个数905,三个数75） 回文序列 125 寻找环 287 后面遇到其他的类型再继续添加]]></content>
@@ -781,6 +782,17 @@
       </categories>
       <tags>
         <tag>刷题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[天池“数智教育”比赛总结]]></title>
+    <url>%2F2018%2F11%2F18%2F%E5%A4%A9%E6%B1%A0%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[比赛总结/系统介绍 [TOC] 需求描述要求有三个域的分析： 1、学生域数据分析。 2、课程域数据分析。 3、群体域数据分析。 提供了七种类型的数据：教师表teacher.csv，学生信息表studentinfo.csv,考勤表kaoqin.csv,考勤类型表kaoqintype.csv,学生成绩表chengji.csv,考试类型表exam_type.csv,学生消费信息表consumption.csv 通过对上述数据的分析来更有效的支持学校管理 系统设计]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>比赛</tag>
       </tags>
   </entry>
   <entry>
